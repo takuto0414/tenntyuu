@@ -1,0 +1,28 @@
+        @charset "utf-8";
+        header {
+            background-color: rgba(255, 0, 21, 0.329);
+        }
+        
+        li {
+            list-style: none;
+        }
+        
+        h1 {
+            margin: 10px 10px 10px 10px;
+            padding: 10px 10px 10px 10px;
+            font-size: 50px;
+        }
+        
+        .list1 {
+            float: right;
+            margin-left: 500px;
+            color: red;
+        }
+        
+        .list2 {
+            margin-top: 500px;
+        }
+        
+        footer {
+            background-color: rgba(182, 166, 133, 0.89);
+        }
