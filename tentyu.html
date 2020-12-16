@@ -6,27 +6,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>株式会社　店厨サポート</title>
     <link rel="stylesheet" href="tentyu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.slider').bxSlider({
+                auto: true,
+                pause: 3000,
+            });
+        });
+    </script>
+
 </head>
 
 <body>
     <header>
         <h1>株式会社　店厨サポート</h1>
-        <h2>店舗厨房サービス</h2>
+        <h2>店舗厨房サービス
+        </h2>
+        <div class="header-right">
+            <a href="#">機器一覧</a>
+            <a href="#">メンテナンス</a>
+            <a href="#">物件受付</a>
+            <a href="#">会員登録</a>
+            <a href="#">お問い合わせ</a>
+        </div>
+
+
+
     </header>
     <menu>
-        <ul class="list1">
-            <li>機器一覧</li>
-            <li>メンテナンス</li>
-            <li>物件受付</li>
-            <li>会員登録</li>
-            <li>お問い合わせ</li>
 
-        </ul>
+
 
 
     </menu>
     <main>
         <!--スライドショー入る-->
+
+        <div class="slider">
+            <img src="gazou1.jpg" width="500" height="500" alt="">
+            <img src="gazou2.jpg" width="500" height="500" alt="">
+            <img src="gazou3.jpg" width="500" height="500" alt="">
+            <img src="gazou4.jpg" width="500" height="500" alt="">
+            <img src="gazou5.jpg" width="500" height="500" alt="">
+
+
+        </div>
+
         <ul class="list2">
             <li>取扱商品</li>
             <li>メンテナンス</li>

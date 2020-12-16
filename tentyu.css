@@ -1,6 +1,8 @@
         @charset "utf-8";
         header {
-            background-color: rgba(255, 0, 21, 0.329);
+            background-color: rgba(73, 69, 69, 1);
+            height: 100%;
+            color: white;
         }
         
         li {
@@ -8,15 +10,30 @@
         }
         
         h1 {
-            margin: 10px 10px 10px 10px;
-            padding: 10px 10px 10px 10px;
             font-size: 50px;
+            text-align: left;
+            margin-bottom: 1px;
         }
         
-        .list1 {
-            float: right;
-            margin-left: 500px;
-            color: red;
+        h2 {
+            text-align: left;
+        }
+        
+        .header-right {
+            text-align: left;
+        }
+        
+        header a {
+            background-color: white;
+            color: rgba(73, 69, 69, 1);
+        }
+        
+        header a:hover {
+            background-color: wheat;
+        }
+        
+        header a:active {
+            color: white;
         }
         
         .list2 {
