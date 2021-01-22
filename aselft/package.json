@@ -1,0 +1,19 @@
+{
+    "name": "aselft",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "dev": "nuxt",
+        "build": "nuxt build",
+        "start": "nuxt start",
+        "generate": "nuxt generate"
+    },
+    "dependencies": {
+        "@nuxtjs/vuetify": "^1.11.2",
+        "core-js": "^3.6.5",
+        "firebase": "^8.2.2",
+        "firebase-tools": "^9.1.2",
+        "nuxt": "^2.14.6",
+        "yarn": "^1.22.10"
+    }
+}
