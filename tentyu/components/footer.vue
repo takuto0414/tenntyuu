@@ -1,39 +1,38 @@
  <template>
- <div>
-  <div class="footer-color">
-    <footer>
-      <div class="footerdiv">
-        <div class="footer-title">株式会社　店厨サポート</div>
-        <div class="map">
-          <ul>
-            <li>〒442-0807 愛知県豊川市谷川町中道181番地</li>
-            <li>TEL0533-00-0000</li>
-          </ul>
+  <div>
+    <div class="footer-color">
+      <footer>
+        <div class="footerdiv">
+          <div class="footer-title">株式会社　店厨サポート</div>
+          <div class="map">
+            <ul>
+              <li>〒442-0807 愛知県豊川市谷川町中道181番地</li>
+              <li>TEL0533-00-0000</li>
+            </ul>
+          </div>
+          <div class="footer-btn">
+            <ul>
+              <li><v-btn plain small text to="/rule" nuxt>利用規約</v-btn></li>
+              <li>
+                <v-btn plain small text to="/pri" nuxt
+                  >プライバシーポリシー</v-btn
+                >
+              </li>
+              <li>
+                <v-btn plain small text to="/stcc" nuxt>特定取引法表示</v-btn>
+              </li>
+            </ul>
+          </div>
         </div>
-        <div class="footer-btn">
-          <ul>
-            <li><v-btn plain small text to="/rule" nuxt>利用規約</v-btn></li>
-            <li>
-              <v-btn plain small text to="/pri" nuxt
-                >プライバシーポリシー</v-btn
-              >
-            </li>
-            <li>
-              <v-btn plain small text to="/stcc" nuxt>特定取引法表示</v-btn>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </footer>
-  </div>
+      </footer>
+    </div>
   </div>
 </template>
 <style>
-.footer-color{
-  background-color: whitesmoke;
+.footer-color {
+  background-color: white;
 }
 footer {
-
   height: 100%;
   margin: 18px 35px;
   border-top: solid 2px black;
@@ -41,7 +40,6 @@ footer {
 
 .footer-title {
   font-size: 35px;
-  font-weight: bold;
   
 }
 .footer-list {
@@ -80,16 +78,13 @@ footer {
 .map li {
   list-style: none;
 }
-.footer-btn{
+.footer-btn {
   overflow: hidden;
   margin-top: 15px;
-  
 }
-.footer-btn li{
-  float:left;
-  border-right: solid .5px;
- border-right-color:black;
-
+.footer-btn li {
+  float: left;
+  border-right: solid 0.5px;
+  border-right-color: black;
 }
-
 </style>

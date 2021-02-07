@@ -1,11 +1,16 @@
 <template>
   <div>
-    <div>送信完了しました。</div>
-   
+    <div class="contact-comp-font">
+      <div>送信完了しました。</div>
+
       <div>メールまたはお電話でお返事させていただきます。</div>
-  
-    <div><v-btn class="inquire-link" elevation="2" plain rounded text to="/home"
-        >TOPへ戻る</v-btn>
+    </div>
+    <div>
+      <v-btn class="mainte-btn" large elevation="" to="/home" nuxt>
+        TOPへ戻る</v-btn
+      >
     </div>
   </div>
 </template>
+<style>
+</style>

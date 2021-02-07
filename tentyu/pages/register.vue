@@ -2,6 +2,8 @@
   <div>
     <div v-show="!userConfirm">
       <div class="register-title">お客様情報登録</div>
+      <v-card class="register--card">
+        <div class="contact-navi">下記にてお客様情報の登録をお願い致します。</div>
       <div class="register-text">
         <ul class="register-list">
           <li>
@@ -64,8 +66,9 @@
         </div>
       </div>
       <div class="register-card">
+        <div class="register-prantitle">メンテナンスプラン</div>
         <v-card class="pa-4 ma-4">
-          <div class="register-prantitle">メンテナンスプラン</div>
+          
           <div class="register-pran">
             <v-radio-group v-model="user.radios">
               <v-radio value="ベーシックプラン(冷蔵機器)">
@@ -155,13 +158,9 @@
         </div>
       </div>
 
-      <div class="baseline">口座</div>
-      <v-btn class="inquire-link" elevation="2" plain rounded text to="/rule"
-        >利用規約</v-btn
-      >
-      <v-btn class="inquire-link" elevation="2" plain rounded text to="/pri"
-        >プライバシーポリシー</v-btn
-      >
+      
+      
+      
       <div class="register-mko">
         <v-container fluid>
           <v-checkbox v-model="checkbox">
@@ -169,7 +168,7 @@
               <v-tooltip bottom>
                 <template v-slot:activator="{ on }">
                   <a target="_blank" @click.stop v-on="on">
-                    上記利用規約、プライバシーポリシー<br />について同意する。
+                    <a  target="_blank" href="/rule">利用規約</a>、<a target="_blank" href="/pri">プライバシーポリシー</a><br />について同意する。
                   </a>
                 </template>
                 Opens in new window
@@ -182,100 +181,69 @@
 
       <div class="register-btn">
         <a @click="showConfirm">
-          <v-btn class="inquire-link" elevation="2" plain rounded text
-            >確 認</v-btn
-          ></a
+          <v-btn class="mainte-btn" large elevation="" >
+      確認</v-btn
+    ></a
         >
       </div>
+    </v-card>
+
     </div>
     <div v-show="userConfirm">
       <div class="form-ck">入力項目確認</div>
       <div class="register-card">
-        <v-card disabled elevation="11">
+        <v-card>
           <div class="form-ck-li">
             <ul>
               <li>
-                <span> 店舗名/会社名: </span>
-                <span>{{ user.storeName }}</span>
-              </li>
-
-              <li>
-                <v-card disabled elevation="11"> 電話番号: </v-card>
+                <span class="span-title"> 店舗名/会社名: </span>
+                <span class="span-title2">{{ user.storeName }}</span>
               </li>
               <li>
-                <v-card disabled elevation="11"> 代表者名: </v-card>
+                  <span class="span-title">電話番号:  </span>
+                  <span>{{ user.tel }}</span>
               </li>
               <li>
-                <v-card disabled elevation="11"> かな: </v-card>
+                <span class="span-title"> 代表者名: </span>
+                <span>{{ user.name }}</span>
               </li>
               <li>
-                <v-card disabled elevation="11"> 携帯電話: </v-card>
+                <span class="span-title"> かな: </span>
+                <span>{{ user.kanaName }}</span>
               </li>
               <li>
-                <v-card disabled elevation="11"> メールアドレス: </v-card>
+                <span class="span-title"> 携帯番号: </span>
+                <span>{{ user.phoneTel }}</span>
               </li>
               <li>
-                <v-card disabled elevation="11">住所: </v-card>
-              </li>
-
-              <li>
-                <v-card disabled elevation="11"> パスワード: </v-card>
+               <span class="span-title"> メールアドレス: </span>
+                <span>{{ user.email }}</span>
               </li>
               <li>
-                <v-card disabled elevation="11"> メンテナンスプラン: </v-card>
+               <span class="span-title"> 住所: </span>
+                <span>{{ user.address }}</span>
+              </li>
+              <li>
+                <span class="span-title"> パスワード: </span>
+                <span>{{ user.password }}</span>
+              </li>
+              <li>
+                <span class="span-title"> メンテナンスプラン: </span>
+                <span>{{ user.radios }}</span>
               </li>
             </ul>
           </div>
-          <div class="form-ck-li2">
-            <ul>
-              <li>
-                <v-card disabled elevation="11">{{ user.storeName }}</v-card>
-              </li>
-              <li>
-                <v-card disabled elevation="11">{{ user.tel }}</v-card>
-              </li>
-              <li>
-                <v-card disabled elevation="11">{{ user.name }}</v-card>
-              </li>
-              <li>
-                <v-card disabled elevation="11">{{ user.kanaName }}</v-card>
-              </li>
-              <li>
-                <v-card disabled elevation="11">{{ user.phoneTel }}</v-card>
-              </li>
-              <li>
-                <v-card disabled elevation="11">{{ user.email }}</v-card>
-              </li>
-              <li>
-                <v-card disabled elevation="11">{{ user.address }}</v-card>
-              </li>
-              <li>
-                <v-card disabled elevation="11">{{ user.password }}</v-card>
-              </li>
-              <li>
-                <v-card disabled elevation="11">{{ user.radios }}</v-card>
-              </li>
-            </ul>
-          </div>
+          
         </v-card>
       </div>
 
       <div>
         <v-btn
-          class="inquire-link"
-          elevation="2"
-          plain
-          rounded
-          text
-          color="primary"
+          class="mainte-btn" large
           @click="userConfirm = false"
           >修正</v-btn
         >　<v-btn
-          class="inquire-link"
-          elevation="2"
-          plain
-          rounded
-          text
+          class="mainte-btn" large
           @click="submit"
           to="/login-comp"
           >送信</v-btn
@@ -299,7 +267,7 @@ export default {
         storeName: "",
         tel: "",
         name: "",
-        kaneName: "",
+        kanaName: "",
         phoneTel: "",
         email: "",
         address: "",
@@ -408,7 +376,7 @@ export default {
         }
       );
 
-      console.log("決済結果処理終了" ,res);
+      console.log("決済結果処理終了", res);
     },
     showConfirm() {
       this.userConfirm = true;
@@ -475,34 +443,35 @@ li {
 }
 
 .register-title {
-  font-size: 20px;
+  font-size: 35px;
   font-weight: bold;
 }
 .register-text ul li {
-  margin: 5px 500px;
+ padding-top:5px;
   text-align: left;
-  height: 60px;
+  height: 65px;
 }
 .register-pass {
-  margin: 5px 500px;
+  
   text-align: left;
 }
 
 .register-prantitle {
-  border-bottom: solid 1px;
-  border-bottom-color: rgb(103, 104, 117);
+  font-size: 25px;
+  font-weight: bold;
+  text-align: left;
 }
 .inquire-link {
   margin-top: 20px;
 }
 .form-ck {
-  font-size: 20px;
+  font-size: 35px;
   font-weight: bold;
 }
 
 .form-ck-li li {
   margin: 5px 5px;
-  text-align: center;
+  text-align: left;
   padding: 2px;
 }
 .form-ck-li2 li {
@@ -510,12 +479,7 @@ li {
   text-align: left;
   padding: 2px;
 }
-.register-card {
-  margin: 5px 500px;
-}
-.register-mko {
-  margin: 5px 500px;
-}
+
 .card-label-container {
   height: 1.5em;
   width: 100%;
@@ -538,5 +502,13 @@ ion-row {
 .input {
   padding: 5px 0 6px 0;
   border-bottom: 1px solid #ddd;
+}
+.register--card{
+  padding: 24px;
+  margin: 0px 100px;
+}
+.register-mko{
+  text-align: center;
+  margin-left: 400px;
 }
 </style>

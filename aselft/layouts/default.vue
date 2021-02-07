@@ -9,10 +9,11 @@
 </template>
 <script>
 import Header from "@/components/header.vue"; // headerをインポート
-
+import Footer from "@/components/footer.vue"; 
 export default {
   components: {
     Header,
+    Footer,
   },
 };
 </script>
@@ -27,6 +28,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  font-family: fantasy;
 }
 
 *,

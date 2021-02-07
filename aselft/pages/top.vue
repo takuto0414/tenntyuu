@@ -52,13 +52,7 @@
         ></v-img>
       </div>
     </main>
-    <footer>
-      <div class="footer-logo">
-        <h2>A self t</h2>
-      </div>
-      <div><p>概要等</p></div>
-      <div><link rel="stylesheet" href="" />snsリンク</div>
-    </footer>
+    
   </div>
 </template>
 <script>
@@ -79,7 +73,7 @@ export default {
 </script>
 <style>
 header {
-  background-color: #302b2bc9;
+  background-color: #302b2be8;
   color: white;
 }
 
@@ -102,14 +96,6 @@ header {
 .image {
   display: flex;
 }
-footer {
-  background-color: #302b2bc9;
-  color: white;
-}
-.footer-logo {
-  font-size: 35px;
-}
-.footer-logo h2 {
-  font-family: fantasy;
-}
+
+
 </style>

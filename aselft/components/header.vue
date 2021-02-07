@@ -10,7 +10,7 @@
             <li class="list1">
               <a href="#"
                 ><v-btn block elevation="8" large tile
-                  ><NuxtLink to="/goods">商品1</NuxtLink></v-btn
+                  ><NuxtLink to="/goods">Wallet</NuxtLink></v-btn
                 ></a
               >
             </li>

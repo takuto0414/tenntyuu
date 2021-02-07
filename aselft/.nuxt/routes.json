@@ -1,0 +1,23 @@
+[
+  {
+    "name": "goods",
+    "path": "/goods",
+    "component": "/Users/otsukitakuto/tenntyuu/aselft/pages/goods.vue",
+    "chunkName": "pages/goods",
+    "_name": "_97ee3888"
+  },
+  {
+    "name": "top",
+    "path": "/top",
+    "component": "/Users/otsukitakuto/tenntyuu/aselft/pages/top.vue",
+    "chunkName": "pages/top",
+    "_name": "_27fad1bb"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/otsukitakuto/tenntyuu/aselft/pages/index.vue",
+    "chunkName": "pages/index",
+    "_name": "_30c75738"
+  }
+]

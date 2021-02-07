@@ -163,20 +163,20 @@
 </template>
 <style>
 .rule {
-  margin: 0px 300px 0px 300px;
+  margin: 0px 100px 0px 100px;
   text-align: left;
 }
 .rule-card {
   padding: 12px;
-  margin-top:12px;
+  margin-top: 12px;
 }
 .rule-title {
-  font-size: 20px;
+  font-size: 35px;
   font-weight: bold;
   text-align: center;
 }
 .rule-stitle {
-  font-size: 18px;
+  font-size: 25px;
   font-weight: bold;
 }
 .rule-h {

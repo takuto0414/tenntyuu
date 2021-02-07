@@ -18,10 +18,9 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-
 main {
   height: 100%;
- min-height: 70vh;
+  min-height: 180vh;
   text-align: center;
   padding: 30px;
   background-color: whitesmoke;

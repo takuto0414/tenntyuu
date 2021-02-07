@@ -1,4 +1,3 @@
-const functions = require('firebase-functions');
 const axios = require('axios');
 exports.createContacts = functions.region("asia-northeast1")
     .firestore.document('contacts/{contactId}').onCreate(async(snap, _) => {
@@ -7,7 +6,7 @@ exports.createContacts = functions.region("asia-northeast1")
         console.log('sendSlack call', data);
 
         const messageContent = backQuote + '店舗名/会社名: ' + data.storeName + backQuote + '氏名: ' + data.name + backQuote + 'メールアドレス: ' + data.email +
-            backQuote + '連絡先: ' + data.tel + backQuote + 'お問い合わせ内容: ' + data.content + backQuote + '住所:' + data.address
+            backQuote + '連絡先: ' + data.tel + backQuote + 'お問い合わせ内容: ' + data.content
 
 
 

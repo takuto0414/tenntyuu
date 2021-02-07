@@ -4,8 +4,8 @@
       <Logo />
 
       <NuxtLink to="/home">Home page</NuxtLink>
-
-      <h1 class="title">アイウエオ</h1>
+<NuxtLink to="/signup">signup page</NuxtLink>
+      <h1 class="title">テスト</h1>
 
       <v-btn elevation="2">click</v-btn>
 
