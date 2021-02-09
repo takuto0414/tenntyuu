@@ -3,11 +3,17 @@
     <div class="header-color">
       <header>
         <div class="header-title">
-          <a class="homelink" href="/home"
-            >株式会社　店厨サポート<br />
-            <span class="header-sub">店舗厨房販売サービス</span>
-          </a>
+          <div class="header-sub" 
+            >店舗厨房販売サービス<br />
+            <span class="homelink">株式会社　店厨サポート</span>
+          </div>
           <div class="header-right">
+        {{this.$store.state.planName}}
+        <div v-for="(user, i) in planName" :key="i">
+        {{ user.radios }}</div>
+            <v-btn class="mainte-btn" large elevation="" to="/home" nuxt
+              >HOME</v-btn
+            >
             <v-btn class="mainte-btn" large elevation="" to="/maintenance" nuxt
               >メンテナンス</v-btn
             >
@@ -15,7 +21,7 @@
               >ログイン</v-btn
             >
             <v-btn class="mainte-btn" large elevation="" to="/contact" nuxt>
-              <v-icon color="teal darken-2"> mdi-email </v-icon>
+              
               お問い合わせ</v-btn
             >
           </div>
@@ -26,36 +32,40 @@
 </template>
 <style>
 .header-color {
-  background-color: white;
+  background-color: whitesmoke;
 }
 header {
   height: 130px;
-  margin: 18px 35px;
-  border-bottom: solid 2px;
+  border-bottom: solid 2px #000000;
+  padding:0px 6px;
 }
 
 .homelink {
-  
   text-decoration-line: none;
-  color: black;
+  color: #000000;
   text-align: left;
   float: left;
+   font-size: 40px;
+   font-weight: bold;
+}
+.header-title{
+  padding-left: 6px;
+  
 }
 
-.header-title {
-  font-size: 50px;
-}
 
 .header-right {
-  padding: 20px 0px;
+  padding: 20px 6px;
   text-align: right;
 }
 
 .header-sub {
-  font-size: 25px;
+  font-size: 20px;
   text-decoration-line: none;
-  color: black;
+  color: #000000;
   text-align: left;
   float: left;
+  font-weight: bold;
 }
+
 </style>

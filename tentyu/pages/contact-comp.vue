@@ -13,4 +13,7 @@
   </div>
 </template>
 <style>
+.contact-comp-font{
+  color:#bdc1c6;
+}
 </style>

@@ -64,7 +64,7 @@
 <style>
 .table-responsive {
   text-align: center;
-  margin: 0px 100px 0px 100px;
+  margin: 0px 200px 0px 200px;
 }
 .stcc-sub {
   text-align: left;

@@ -3,76 +3,61 @@
     <div v-show="!userConfirm">
       <div class="register-title">お客様情報登録</div>
       <v-card class="register--card">
-        <div class="contact-navi">下記にてお客様情報の登録をお願い致します。</div>
-      <div class="register-text">
-        <ul class="register-list">
-          <li>
-            <v-text-field
-              v-model="user.storeName"
-              label="店舗名/会社名"
-              filled
-            ></v-text-field>
-          </li>
-          <li>
-            <v-text-field
-              v-model="user.phoneTel"
-              label="電話番号"
-              filled
-            ></v-text-field>
-          </li>
-          <li>
-            <v-text-field
-              v-model="user.name"
-              label="代表者名"
-              filled
-            ></v-text-field>
-          </li>
-          <li>
-            <v-text-field
-              v-model="user.kanaName"
-              label="かな"
-              filled
-            ></v-text-field>
-          </li>
-          <li>
-            <v-text-field
-              v-model="user.tel"
-              label="携帯電話"
-              filled
-            ></v-text-field>
-          </li>
-          <li>
-            <v-text-field
-              v-model="user.email"
-              label="メールアドレス"
-              filled
-            ></v-text-field>
-          </li>
-          <li>
-            <v-text-field
-              v-model="user.address"
-              label="住所"
-              filled
-            ></v-text-field>
-          </li>
-        </ul>
-
-        <div class="register-pass">
-          <v-text-field
-            v-model="user.password"
-            label="パスワード"
-            filled
-          ></v-text-field>
+        <div class="contact-navi">
+          下記にてお客様情報の登録をお願い致します。
         </div>
-      </div>
-      <div class="register-card">
-        <div class="register-prantitle">メンテナンスプラン</div>
-        <v-card class="pa-4 ma-4">
-          
+        <div class="register-text">
+          <ul class="register-list">
+            <li>
+              <v-text-field
+                v-model="user.storeName"
+                label="店舗名/会社名"
+                 color="#0045AD"
+              ></v-text-field>
+            </li>
+            <li>
+              <v-text-field
+                v-model="user.phoneTel"
+                label="電話番号"
+                 color="#0045AD"
+              ></v-text-field>
+            </li>
+            <li>
+              <v-text-field v-model="user.name" label="代表者名"  color="#0045AD"></v-text-field>
+            </li>
+            <li>
+              <v-text-field v-model="user.kanaName" label="かな"  color="#0045AD"></v-text-field>
+            </li>
+            <li>
+              <v-text-field v-model="user.tel" label="携帯電話"  color="#0045AD"></v-text-field>
+            </li>
+            <li>
+              <v-text-field
+                v-model="user.email"
+                label="メールアドレス"
+                 color="#0045AD"
+              ></v-text-field>
+            </li>
+            <li>
+              <v-text-field v-model="user.address" label="住所"  color="#0045AD"></v-text-field>
+            </li>
+          </ul>
+
+          <div class="register-pass">
+            <v-text-field
+              v-model="user.password"
+              label="パスワード"
+               color="#0045AD"
+            ></v-text-field>
+          </div>
+        </div>
+        <div class="register-card">
+          <div class="register-prantitle">メンテナンスプラン</div>
+
           <div class="register-pran">
-            <v-radio-group v-model="user.radios">
+            <v-radio-group v-model="user.radios" >
               <v-radio value="ベーシックプラン(冷蔵機器)">
-                <template v-slot:label>
+                <template v-slot:label >
                   <div>ベーシックプラン(冷蔵機器)</div>
                 </template>
               </v-radio>
@@ -93,9 +78,8 @@
               </v-radio>
             </v-radio-group>
           </div>
-        </v-card>
-      </div>
-      <!-- <div class="register-bank"></div>
+        </div>
+        <!-- <div class="register-bank"></div>
       <div class="card-label-container">
         <label for="card-number" data-tid="elements.form.card_number_label">
           カード番号
@@ -117,138 +101,138 @@
       </div>
       <div id="card-cvc" class="input empty"></div> -->
 
-      <!-- for stripe -->
-      <div class="container">
-        <h1 class="title" v-text="title" />
-        <div class="card">
-          <p class="image-area">
-            <img :src="product.image" :alt="product.name" class="image" />
-          </p>
-          <div class="info-area">
-            <h2 class="name" v-text="product.name" />
-            <p class="desc" v-text="product.desc" />
-            <p
-              class="amount"
-              v-text="'¥' + product.amount.toLocaleString() + '-'"
-            />
-            <client-only>
-              <p class="stripe-area">
-                <card
-                  :options="stripeOptions"
-                  :stripe="stripePK"
-                  class="stripe"
-                  @change="isEntered = $event.complete"
+        <!-- for stripe -->
+        <div class="container">
+          <h1 class="title" v-text="title" />
+          <div class="card">
+            <p class="image-area">
+              <img :src="product.image" :alt="product.name" class="image" />
+            </p>
+            <div class="info-area">
+              <h2 class="name" v-text="product.name" />
+              <p class="desc" v-text="product.desc" />
+              <p
+                class="amount"
+                v-text="'¥' + product.amount.toLocaleString() + '-'"
+              />
+              <client-only>
+                <p class="stripe-area">
+                  <card
+                    :options="stripeOptions"
+                    :stripe="stripePK"
+                    class="stripe"
+                    @change="isEntered = $event.complete"
+                  />
+                </p>
+              </client-only>
+              <div class="message" v-text="message" />
+              <p class="button-area">
+                <button
+                  class="button"
+                  :class="{ active: isEntered }"
+                  aria-label="決済する"
+                  @click="pay"
+                  v-text="'決済する'"
                 />
               </p>
-            </client-only>
-            <div class="message" v-text="message" />
-            <p class="button-area">
-              <button
-                class="button"
-                :class="{ active: isEntered }"
-                aria-label="決済する"
-                @click="pay"
-                v-text="'決済する'"
-              />
-            </p>
-          </div>
-          <div class="complete" :class="{ active: isComplete }">
-            <p class="message" v-text="'Thank you!'" />
+            </div>
+            <div class="complete" :class="{ active: isComplete }">
+              <p class="message" v-text="'Thank you!'" />
+            </div>
           </div>
         </div>
-      </div>
 
-      
-      
-      
-      <div class="register-mko">
-        <v-container fluid>
-          <v-checkbox v-model="checkbox">
-            <template v-slot:label>
-              <v-tooltip bottom>
-                <template v-slot:activator="{ on }">
-                  <a target="_blank" @click.stop v-on="on">
-                    <a  target="_blank" href="/rule">利用規約</a>、<a target="_blank" href="/pri">プライバシーポリシー</a><br />について同意する。
-                  </a>
-                </template>
-                Opens in new window
-              </v-tooltip>
-            </template>
-          </v-checkbox>
-        </v-container>
-      </div>
-      <div class="register-nji"></div>
+        <div class="register-mko">
+          <v-container fluid>
+            <v-checkbox v-model="checkbox">
+              <template v-slot:label>
+                <v-tooltip bottom>
+                  <template v-slot:activator="{ on }">
+                    <a target="_blank" @click.stop v-on="on">
+                      <a target="_blank" href="/rule">利用規約</a>、<a
+                        target="_blank"
+                        href="/pri"
+                        >プライバシーポリシー</a
+                      >について同意する。
+                    </a>
+                  </template>
+                  Opens in new window
+                </v-tooltip>
+              </template>
+            </v-checkbox>
+          </v-container>
+        </div>
+        <div class="register-nji"></div>
 
-      <div class="register-btn">
-        <a @click="showConfirm">
-          <v-btn class="mainte-btn" large elevation="" >
-      確認</v-btn
-    ></a
-        >
-      </div>
-    </v-card>
-
+        <div class="register-btn">
+          <a @click="showConfirm">
+            <v-btn class="mainte-btn" large elevation=""> 確認</v-btn></a
+          >
+        </div>
+      </v-card>
     </div>
     <div v-show="userConfirm">
       <div class="form-ck">入力項目確認</div>
-      <div class="register-card">
-        <v-card>
-          <div class="form-ck-li">
-            <ul>
-              <li>
-                <span class="span-title"> 店舗名/会社名: </span>
-                <span class="span-title2">{{ user.storeName }}</span>
-              </li>
-              <li>
-                  <span class="span-title">電話番号:  </span>
-                  <span>{{ user.tel }}</span>
-              </li>
-              <li>
-                <span class="span-title"> 代表者名: </span>
-                <span>{{ user.name }}</span>
-              </li>
-              <li>
-                <span class="span-title"> かな: </span>
-                <span>{{ user.kanaName }}</span>
-              </li>
-              <li>
-                <span class="span-title"> 携帯番号: </span>
-                <span>{{ user.phoneTel }}</span>
-              </li>
-              <li>
-               <span class="span-title"> メールアドレス: </span>
-                <span>{{ user.email }}</span>
-              </li>
-              <li>
-               <span class="span-title"> 住所: </span>
-                <span>{{ user.address }}</span>
-              </li>
-              <li>
-                <span class="span-title"> パスワード: </span>
-                <span>{{ user.password }}</span>
-              </li>
-              <li>
-                <span class="span-title"> メンテナンスプラン: </span>
-                <span>{{ user.radios }}</span>
-              </li>
-            </ul>
-          </div>
-          
+      
+        <v-card class="register-card1">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td style="background-color: #fafafa; width: 150px">
+                  店舗名/会社名
+                </td>
+                <td class="stcc-sub">{{ user.storeName }}</td>
+              </tr>
+              <tr>
+                <td style="background-color: #fafafa; width: 150px">
+                  電話番号
+                </td>
+                <td class="stcc-sub">{{ user.tel }}</td>
+              </tr>
+              <tr>
+                <td style="background-color: #fafafa; width: 150px">
+                  代表者名
+                </td>
+                <td class="stcc-sub">{{ user.name }}</td>
+              </tr>
+              <tr>
+                <td style="background-color: #fafafa; width: 150px">かな</td>
+                <td class="stcc-sub">{{ user.kanaName }}</td>
+              </tr>
+              <tr>
+                <td style="background-color: #fafafa; width: 150px">
+                  携帯番号
+                </td>
+                <td class="stcc-sub">{{ user.phoneTel }}</td>
+              </tr>
+              <tr>
+                <td style="background-color: #fafafa; width: 150px">
+                  メールアドレス
+                </td>
+                <td class="stcc-sub">{{ user.email }}</td>
+              </tr>
+              <tr>
+                <td style="background-color: #fafafa; width: 150px">住所</td>
+                <td class="stcc-sub">{{ user.address }}</td>
+              </tr>
+              <tr>
+                <td style="background-color: #fafafa; width: 150px">
+                  パスワード
+                </td>
+                <td class="stcc-sub">{{ user.password }}</td>
+              </tr>
+              <tr>
+                <td style="background-color: #fafafa; width: 150px">
+                  メンテナンスプラン
+                </td>
+                <td class="stcc-sub">{{ user.radios }}</td>
+              </tr>
+            </tbody>
+          </table>
         </v-card>
-      </div>
-
-      <div>
-        <v-btn
-          class="mainte-btn" large
-          @click="userConfirm = false"
-          >修正</v-btn
-        >　<v-btn
-          class="mainte-btn" large
-          @click="submit"
-          to="/login-comp"
-          >送信</v-btn
-        >
-      </div>
+      
+      <v-btn class="mainte-btn" large @click="userConfirm = false">修正</v-btn
+      >　<v-btn class="mainte-btn" large @click="submit">送信</v-btn>
     </div>
   </div>
 </template>
@@ -444,29 +428,29 @@ li {
 
 .register-title {
   font-size: 35px;
-  font-weight: bold;
 }
 .register-text ul li {
- padding-top:5px;
+  padding-top: 5px;
   text-align: left;
   height: 65px;
 }
 .register-pass {
-  
   text-align: left;
 }
-
+.register-pran {
+  padding: 6px 0px;
+}
 .register-prantitle {
   font-size: 25px;
   font-weight: bold;
   text-align: left;
+   color:#0045AD;
 }
 .inquire-link {
   margin-top: 20px;
 }
 .form-ck {
   font-size: 35px;
-  font-weight: bold;
 }
 
 .form-ck-li li {
@@ -503,12 +487,18 @@ ion-row {
   padding: 5px 0 6px 0;
   border-bottom: 1px solid #ddd;
 }
-.register--card{
+.register--card {
   padding: 24px;
-  margin: 0px 100px;
+  margin: 0px 200px;
 }
-.register-mko{
-  text-align: center;
-  margin-left: 400px;
+.register-mko {
+  text-align: left;
+}
+.span-title2 {
+  text-align: left;
+}
+.register-card1{
+  margin:0px 200px;
+  padding:12px;
 }
 </style>

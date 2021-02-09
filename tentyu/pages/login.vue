@@ -12,14 +12,14 @@
               <v-text-field
                 v-model="user.email"
                 label="メールアドレス"
-                filled
+                color="#0045AD"
               ></v-text-field>
             </li>
             <li>
               <v-text-field
                 v-model="user.password"
                 label="パスワード"
-                filled
+              color="#0045AD"
               ></v-text-field>
             </li>
           </ul>
@@ -45,9 +45,11 @@ export default {
       user: {
         email: "",
         password: "",
+
       },
       error: false,
       errorMessage: "",
+      
     };
   },
   methods: {
@@ -58,6 +60,20 @@ export default {
         .then(this.auth)
         .catch(this.showError);
 
+      const db = firebase.firestore();
+      let user = db.collection("user");
+      user.get().then((snapshot) => {
+        snapshot
+          .forEach((doc) => {
+            let data = doc.data();
+            console.log("SUCEESS getting document:", data);
+            this.user.push(data);
+          })
+          .catch(function (error) {
+            console.log("Error getting document:", error);
+          });
+      });
+    
     },
     auth(res) {
       console.log("auth", res.user.emailVerified);
@@ -69,12 +85,12 @@ export default {
         );
         return;
       }
-      this.$store.dispatch("auth", {
-        planName: 'プレミアム'
-        
+      this.$store.commit("auth", {
+        planName: ''
       });
       this.$router.push({ path: "/home" });
     },
+    
     showError() {
       this.errorMessage = "エラーが発生しました";
     },
@@ -92,7 +108,16 @@ export default {
 .login-list {
   margin: 0px 24px;
   padding-top: 30px;
+ 
 }
+@media (max-width: 1000px) {.non-rg {
+  font-size: 20px;
+  color:red;
+}
+}
+
+
+
 .non-rg {
   font-size: 12px;
 }
@@ -108,6 +133,6 @@ export default {
 }
 .login-card {
   height: 300px;
-  margin: 20px 100px 0px 100px;
+  margin: 20px 200px 0px 200px;
 }
 </style>

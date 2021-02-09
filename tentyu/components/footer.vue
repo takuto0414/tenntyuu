@@ -12,7 +12,7 @@
           </div>
           <div class="footer-btn">
             <ul>
-              <li><v-btn plain small text to="/rule" nuxt>利用規約</v-btn></li>
+              <li><v-btn plain small  to="/rule" nuxt>利用規約</v-btn></li>
               <li>
                 <v-btn plain small text to="/pri" nuxt
                   >プライバシーポリシー</v-btn
@@ -30,16 +30,17 @@
 </template>
 <style>
 .footer-color {
-  background-color: white;
+  background-color: #3f70bb;
+  color:#ffffff !important;
 }
 footer {
-  height: 100%;
-  margin: 18px 35px;
-  border-top: solid 2px black;
+ 
+  border-top: solid 5px #ffffff;
 }
 
 .footer-title {
   font-size: 35px;
+  padding-left:6px;
   
 }
 .footer-list {
@@ -64,6 +65,7 @@ footer {
 .map {
   text-align: left;
   display: inline-block;
+  padding-left:6px;
 }
 
 .map-title li {
@@ -81,10 +83,12 @@ footer {
 .footer-btn {
   overflow: hidden;
   margin-top: 15px;
+  padding-left:6px;
 }
 .footer-btn li {
   float: left;
   border-right: solid 0.5px;
   border-right-color: black;
+  color:white !important;
 }
 </style>

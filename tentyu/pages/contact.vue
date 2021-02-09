@@ -4,7 +4,7 @@
       <div class="contact-title">お問い合わせ</div>
       <v-card class="pa-4ma-4">
         <div class="contact-navi">
-          お客様からのご質問などをこちらのお問合せフォームにて受け付けております。<br />項目を記入後確認ボタンを押してください。
+          ご相談、お見積り、ご質問までお気軽にご連絡ください。<br />項目を記入後確認ボタンを押してください。
         </div>
         <div class="contact-sub-title">お問い合わせ入力</div>
 
@@ -51,14 +51,14 @@
               <v-text-field
                 v-model="contactInformation.storeName"
                 label="店舗名/会社名"
-                filled
+                color="#0045AD"
               ></v-text-field>
             </li>
             <li>
               <v-text-field
                 v-model="contactInformation.name"
                 label="氏名"
-                filled
+                color="#0045AD"
               ></v-text-field>
             </li>
 
@@ -66,14 +66,14 @@
               <v-text-field
                 v-model="contactInformation.email"
                 label="メールアドレス"
-                filled
+                color="#0045AD"
               ></v-text-field>
             </li>
             <li>
               <v-text-field
                 v-model="contactInformation.tel"
                 label="電話番号"
-                filled
+                color="#0045AD"
               ></v-text-field>
             </li>
           </ul>
@@ -88,33 +88,43 @@
     </div>
     <div v-show="isConfirm">
       <div class="contact-cd-title">入力項目確認</div>
-      <v-card>
-        <div class="contact-ck">
-          <div>
-            <span class="span-title">お問い合わせ種類:</span
-            ><span class="span-title2">{{ contactInformation.radios }}</span>
-          </div>
-          <div>
-            <span class="span-title">お問い合わせ内容:</span
-            ><span class="span-title2">{{ contactInformation.content }}</span>
-          </div>
-          <div>
-            <span class="span-title">店舗名/会社名:</span
-            ><span class="span-title2">{{ contactInformation.Storename }}</span>
-          </div>
-          <div>
-            <span class="span-title">氏名:</span
-            ><span class="span-title2"> {{ contactInformation.name }}</span>
-          </div>
-          <div>
-            <span class="span-title">メールアドレス:</span
-            ><span class="span-title2"> {{ contactInformation.email }}</span>
-          </div>
-          <div>
-            <span class="span-title">電話番号:</span
-            ><span class="span-title2">{{ contactInformation.tel }}</span>
-          </div>
-        </div>
+      <v-card class="contact-ck-card">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td style="background-color: #fafafa; width: 150px">
+                お問い合わせ種類
+              </td>
+              <td class="stcc-sub">{{ contactInformation.radios }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #fafafa; width: 150px">
+                お問い合わせ内容
+              </td>
+              <td class="stcc-sub">{{ contactInformation.content }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #fafafa; width: 150px">
+                店舗名/会社名
+              </td>
+              <td class="stcc-sub">{{ contactInformation.storeName }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #fafafa; width: 150px">氏名</td>
+              <td class="stcc-sub">{{ contactInformation.name }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #fafafa; width: 150px">
+                メールアドレス
+              </td>
+              <td class="stcc-sub">{{ contactInformation.email }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #fafafa; width: 150px">電話番号</td>
+              <td class="stcc-sub">{{ contactInformation.tel }}</td>
+            </tr>
+          </tbody>
+        </table>
       </v-card>
       <div class="contact-btnbtn">
         <v-btn class="mainte-btn" large elevation="" href="/contact" nuxt>
@@ -149,7 +159,7 @@ export default {
       this.isConfirm = true;
     },
     submit() {
-      console.log("submit call",this.$store.state.planName);
+      console.log("submit call", this.$store.state.planName);
       const db = firebase.firestore();
       db.collection("contacts")
         .add(this.contactInformation)
@@ -170,13 +180,13 @@ li {
 }
 .contact-title {
   font-size: 35px;
-  font-weight: bold;
   padding-bottom: 24px;
 }
 .contact-sub-title {
   font-size: 25px;
   font-weight: bold;
   text-align: left;
+  
 }
 .contact-navi {
   font-size: 15px;
@@ -190,11 +200,17 @@ li {
   text-align: left;
   font-weight: bold;
   padding-bottom: 12px;
+   color:#0045AD;
+
+
 }
 .contact-im2 {
   text-align: left;
   font-weight: bold;
   padding-bottom: 12px;
+   color:#0045AD;
+
+
 }
 .contact-text-t {
   background-color: rgba(243, 243, 245, 0.788);
@@ -207,8 +223,10 @@ li {
   font-size: 25px;
   font-weight: bold;
   text-align: left;
-  padding-bottom: 24px;
+  padding: 24px 0px;
   clear: both;
+   
+
 }
 
 .contact-nr ul li {
@@ -225,20 +243,24 @@ li {
 }
 .contact-cd-title {
   font-size: 35px;
-  font-weight: bold;
+  
 }
 .pa-4ma-4 {
   padding: 24px;
-  margin: 0px 100px;
+  margin: 0px 200px;
+  
 }
 
 .span-title {
-  font-weight: bold;
   font-size: 20px;
   color: black;
 }
 
 .contact-btnbtn {
   padding: 12px;
+}
+.contact-ck-card{
+  margin:12px 200px 0px 200px;
+  padding:12px;
 }
 </style>

@@ -20,9 +20,9 @@ export default {
 <style lang="scss" scoped>
 main {
   height: 100%;
-  min-height: 180vh;
+  min-height: 150vh;
   text-align: center;
-  padding: 30px;
+  padding: 40px;
   background-color: whitesmoke;
 }
 .page-enter-active,
@@ -47,6 +47,7 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
+  
 }
 
 *,
