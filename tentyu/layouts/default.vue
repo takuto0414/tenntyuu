@@ -17,14 +17,23 @@ export default {
   },
 };
 </script>
+<style>
+@media (max-width: 480px) {
+main {
+  text-align: center;
+  background-color: whitesmoke;
+  min-height: 350vh;
+
+}}
+</style>
 <style lang="scss" scoped>
 main {
   height: 100%;
   min-height: 150vh;
   text-align: center;
-  padding: 40px;
   background-color: whitesmoke;
 }
+
 .page-enter-active,
 .page-leave-active {
   transition: 0.5s cubic-bezier(1, 0.25, 0.25, 1);

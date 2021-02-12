@@ -181,6 +181,8 @@ li {
 .contact-title {
   font-size: 35px;
   padding-bottom: 24px;
+  padding-top:12px;
+
 }
 .contact-sub-title {
   font-size: 25px;
@@ -243,7 +245,7 @@ li {
 }
 .contact-cd-title {
   font-size: 35px;
-  
+padding-top: 12px;  
 }
 .pa-4ma-4 {
   padding: 24px;

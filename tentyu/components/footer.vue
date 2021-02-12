@@ -33,6 +33,7 @@
   background-color: #3f70bb;
   color:#ffffff !important;
 }
+
 footer {
  
   border-top: solid 5px #ffffff;
@@ -91,4 +92,8 @@ footer {
   border-right-color: black;
   color:white !important;
 }
+@media (max-width: 480px) {
+.footer-color{
+    bottom: 0; /*下に固定*/
+}}
 </style>

@@ -56,24 +56,24 @@
 
           <div class="register-pran">
             <v-radio-group v-model="user.radios" >
-              <v-radio value="ベーシックプラン(冷蔵機器)">
+              <v-radio value="冷蔵庫プラン(厨房機器)">
                 <template v-slot:label >
-                  <div>ベーシックプラン(冷蔵機器)</div>
+                  <div>冷蔵庫プラン(厨房機器)</div>
                 </template>
               </v-radio>
-              <v-radio value="ベーシックプラン(エアコン)">
+              <v-radio value="エアコンプラン">
                 <template v-slot:label>
-                  <div>ベーシックプラン(エアコン)</div>
+                  <div>エアコンプラン(パッケージエアコン)</div>
+                </template>
+              </v-radio>
+              <v-radio value="セットプラン">
+                <template v-slot:label>
+                  <div>セットプラン</div>
                 </template>
               </v-radio>
               <v-radio value="プロプラン">
                 <template v-slot:label>
                   <div>プロプラン</div>
-                </template>
-              </v-radio>
-              <v-radio value="パーフェクトプラン">
-                <template v-slot:label>
-                  <div>パーフェクトプラン</div>
                 </template>
               </v-radio>
             </v-radio-group>
@@ -428,6 +428,7 @@ li {
 
 .register-title {
   font-size: 35px;
+  padding-top: 12px;
 }
 .register-text ul li {
   padding-top: 5px;
@@ -451,6 +452,7 @@ li {
 }
 .form-ck {
   font-size: 35px;
+  padding-top: 12px;
 }
 
 .form-ck-li li {

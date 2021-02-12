@@ -172,8 +172,8 @@
 }
 .rule-title {
   font-size: 35px;
-  font-weight: bold;
   text-align: center;
+  padding-top: 12px;
 }
 .rule-stitle {
   font-size: 25px;

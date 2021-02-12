@@ -21,58 +21,48 @@
         </div>
         <div>
           <v-card class="home-contents-card">
-            <v-img
-              class="home-img"
-            ></v-img>
+            <v-img class="home-img"></v-img>
             <div class="home-contents-title">厨房機器販売</div>
             <p class="home-contents-sub">
-              三行くらい文章入れる<br />あいうえお<br />アイウエオ
+              新品から中古まで各種取り扱いがあります。 <br>機種の選定からアフターフォローまでお任せ下さい！
             </p>
-          </v-card>
-          <v-card class ="home-contents-card">
-            <v-img
-              class="home-img"
-            ></v-img>
-            <div class="home-contents-title">メンテナンス、修理</div>
-            <p class="home-contents-sub">
-              三行くらい文章入れる<br />あいうえお
-            </p>
-            <div>お申し込みは<a href="/maintenance">こちら</a></div>
           </v-card>
           <v-card class="home-contents-card">
-            <v-img
-              class="home-img"
-              v-bind:src="image2"
-            ></v-img>
+            <v-img class="home-img"></v-img>
+            <div class="home-contents-title">メンテナンス、修理</div>
+            <p class="home-contents-sub">
+              メーカー問わず冷蔵機器、空調機器の<br>メンテナンスをさせて頂きます。
+            </p>
+            <div>詳細は<a href="/maintenance">こちら</a></div>
+          </v-card>
+          <v-card class="home-contents-card">
+            <v-img class="home-img" v-bind:src="image2"></v-img>
             <div class="home-contents-title">移設、廃棄、解体作業</div>
             <p class="home-contents-sub">
-              三行くらい文章入れる<br />あいうえお<br />アイウエオ
+              店舗間の移設や各種廃棄、解体作業をお受けしております。<br>
+まずは、お気軽にお見積りをご依頼下さい！
             </p>
           </v-card>
           <v-card class="home-contents-card">
             <v-img class="home-img" v-bind:src="image1"></v-img>
             <div class="home-contents-title">空調機器販売、取付</div>
             <p class="home-contents-sub">
-              三行くらい文章入れる<br />あいうえお<br />アイウエオ
+              ルームエアコンから業務用エアコンまで<br>各種メーカーを取り扱いがあります。<br>お店にあったエアコンを選定させて頂きます！
             </p>
           </v-card>
           <v-card class="home-contents-card">
-            <v-img
-              class="home-img"
-            ></v-img>
+            <v-img class="home-img"></v-img>
             <div class="home-contents-title">店舗、厨房改装企画提案</div>
             <p class="home-contents-sub">
-              三行くらい文章入れる<br />あいうえお<br />アイウエオ
+          店舗や厨房のレイアウト変更や、<br>1からの店舗作りをサポートさせて頂きます！
             </p>
           </v-card>
           <v-card class="home-contents-card">
-            <v-img
-              class="home-img"
-              v-bind:src="image3"
-            ></v-img>
+            <v-img class="home-img" v-bind:src="image3"></v-img>
             <div class="home-contents-title">中古品買取、販売</div>
             <p class="home-contents-sub">
-              三行くらい文章入れる<br />あいうえお<br />アイウエオ
+              不要になった厨房機器の買取をさせて頂いております。<br>
+また、販売もさせて頂いております。<br>お気軽にお見積りをご依頼下さい。
             </p>
           </v-card>
         </div>
@@ -98,7 +88,6 @@ export default {
       image1: require("@/assets/2264218_s.jpg"),
       image2: require("@/assets/1151779_m.jpg"),
       image3: require("@/assets/1646136_s.jpg"),
-
     };
   },
 };
@@ -108,8 +97,26 @@ export default {
 <style>
 .home-contents-card {
   float: left;
-  width: 30%;
-  margin: 3px 6px 6px 6px;
+  width: 32%;
+  margin: 6px 9px ;
+ height: 300px;
+}
+@media (max-width: 480px) {
+  .home-contents-card {
+  float: center;
+  width: 100%;
+margin-right: 6px;
+}}
+.slide{
+width: 100%  !important;
+text-align: center  !important;
+margin-top:10px;
+}
+@media (max-width: 480px) {
+.slide{
+width: 480px  !important;
+text-align: center  !important;
+}
 }
 .home-contents-title {
   font-size: 25px;
@@ -118,5 +125,8 @@ export default {
 }
 .home-img {
   height: 150px;
+}
+.home-contents-sub{
+  padding-top:12px;
 }
 </style>

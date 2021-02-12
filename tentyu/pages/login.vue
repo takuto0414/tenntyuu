@@ -103,7 +103,8 @@ export default {
 <style>
 .login-title {
   font-size: 35px;
-  font-weight: bold;
+  padding-top:12px;
+
 }
 .login-list {
   margin: 0px 24px;
