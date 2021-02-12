@@ -1,6 +1,5 @@
 <template>
   <div>
-    <main>
       <div class="home-main">
         <!--スライドショー入る-->
         <div class="slide">
@@ -33,7 +32,7 @@
             <p class="home-contents-sub">
               メーカー問わず冷蔵機器、空調機器の<br>メンテナンスをさせて頂きます。
             </p>
-            <div>詳細は<a href="/maintenance">こちら</a></div>
+            <div class="home-mainte-link">詳細は<a href="/maintenance">こちら</a></div>
           </v-card>
           <v-card class="home-contents-card">
             <v-img class="home-img" v-bind:src="image2"></v-img>
@@ -67,7 +66,6 @@
           </v-card>
         </div>
       </div>
-    </main>
   </div>
 </template>
 
@@ -105,7 +103,9 @@ export default {
   .home-contents-card {
   float: center;
   width: 100%;
-margin-right: 6px;
+margin: 6px;
+ height: 240px;
+
 }}
 .slide{
 width: 100%  !important;
@@ -114,7 +114,7 @@ margin-top:10px;
 }
 @media (max-width: 480px) {
 .slide{
-width: 480px  !important;
+width: 100%  !important;
 text-align: center  !important;
 }
 }
@@ -123,10 +123,27 @@ text-align: center  !important;
   color: #0045ad;
   border-bottom: solid 1px #c1c1c1;
 }
+@media (max-width: 480px) {
+.home-contents-title {
+  font-size: 12px;
+  color: #0045ad;
+  border-bottom: solid 1px #c1c1c1;
+  font-weight: bold;
+}}
 .home-img {
   height: 150px;
 }
 .home-contents-sub{
   padding-top:12px;
 }
+@media (max-width: 480px) {
+.home-contents-sub{
+  padding-top:6px;
+  font-size:6px;
+}}
+@media (max-width: 480px) {
+
+.home-mainte-link{
+  font-size:6px;
+}}
 </style>

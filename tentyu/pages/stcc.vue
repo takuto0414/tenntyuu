@@ -66,6 +66,14 @@
   text-align: center;
   margin: 0px 200px 0px 200px;
 }
+@media (max-width: 480px) {
+  .table-responsive {
+    text-align: center;
+    margin: 6px;
+    font-size:10px;
+  }
+}
+
 .stcc-sub {
   text-align: left;
 }

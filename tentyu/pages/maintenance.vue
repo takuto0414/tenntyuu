@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mainte-vue">
     <div class="mainte-title">メンテナンス</div>
     <v-card class="mainte-card">
       <div class="mainte-nyo">
@@ -33,7 +33,7 @@
               <div class="mainte-prb">
                 「厨房機器1台」<br />冷蔵庫各種さまざまな機械の<br />メンテナンスができます。<br />月額¥<span
                   class="mainte-spn"
-                  >2,300円</span
+                  >2,300</span
                 >(税別)
               </div></v-card
             >
@@ -44,7 +44,7 @@
               <div class="mainte-prb">
                 「パッケージエアコン1台」<br />天カセ、天吊り、床置き、壁掛け<br />※ビルトイン、マルチタイプは<br />ご相談ください。<br />月額<span
                   class="mainte-spn"
-                  >¥2,800円</span
+                  >¥2,800</span
                 >(税別)
               </div></v-card
             >
@@ -56,7 +56,7 @@
               <div class="mainte-prb">
                 「冷蔵庫プラン、エアコンプランの2台セット」<br />各種セット料金プランがあります。<br />※詳しくはご相談ください。<br />月額<span
                   class="mainte-spn"
-                  >¥4,900円</span
+                  >¥4,900</span
                 >(税別)
               </div></v-card
             >
@@ -68,14 +68,25 @@
               <div class="mainte-prb">
                 「冷蔵庫プラン3台」<br />※その他台数料金変更があるので<br />ご相談ください。<br />月額<span
                   class="mainte-spn"
-                  >¥6,700円</span
+                  >¥6,700</span
                 >(税別)
+              </div></v-card
+            >
+          </li>
+          <li>
+            <v-card class="v-color5">
+              <div class="mainte-pr">年間費でのお取り引き</div>
+              <div class="mainte-prb">
+                ・厨房機器(冷蔵庫類)年間<span class="mainte-spn"
+                  >¥25,000(税別)</span
+                ><br />・パッケージエアコン年間<span class="mainte-spn"
+                  >¥30,000(税別)</span
+                ><br />※各種セット割引がございますのでお気軽にお問い合わせください。<br />※また、年間費でのお取り引きは別途必要記入書類があります。
               </div></v-card
             >
           </li>
         </ul>
       </div>
-      <div class="mainte-g">※年間費でのお取り引きは別途必要書類がある為お問い合わせください。</div>
       <v-btn class="mainte-btn" large elevation="" to="/register">
         申し込む</v-btn
       ></v-card
@@ -91,32 +102,65 @@ li {
   font-size: 35px;
   padding-top: 12px;
 }
+@media (max-width: 480px) {
+  .mainte-title {
+    font-size: 15px;
+    padding-top: 6px;
+  }
+}
+
 .mainte-pr-title {
   font-weight: bold;
   font-size: 25px;
   text-align: left;
 }
-.mainte-card {
-  margin: 0px 300px;
+@media (max-width: 480px) {
+  .mainte-pr-title {
+    font-weight: bold;
+    font-size: 10px;
+    text-align: left;
+  }
 }
+
 .mainte-ul {
   text-align: left;
-width: 80%;}
+  width: 80%;
+}
+@media (max-width: 480px) {
+.mainte-ul {
+  text-align: left;
+  width: 100%;
+}}
 .mainte-ul li {
   padding: 5px;
-
 }
 .mainte-pr {
   font-size: 18px;
   font-weight: bold;
-  border-left:solid 2px;
-  border-bottom:solid 2px;
-  border-right:solid 2px;
+  border-left: solid 2px;
+  border-bottom: solid 2px;
+  border-right: solid 2px;
+}
+@media (max-width: 480px) {
+  .mainte-pr {
+    font-size: 8px;
+    font-weight: bold;
+    border-left: solid 2px;
+    border-bottom: solid 2px;
+    border-right: solid 2px;
+  }
 }
 .mainte-prb {
   font-size: 16px;
   padding-top: 5px;
   padding-left: 6px;
+}
+@media (max-width: 480px) {
+  .mainte-prb {
+    font-size: 6px;
+    padding-top: 5px;
+    padding-left: 6px;
+  }
 }
 .mainte-btn {
   margin-top: 10px;
@@ -129,7 +173,7 @@ width: 80%;}
 }
 @media (max-width: 480px) {
   .mainte-btn {
-    width: 90px !important;
+    width: 60px !important;
     background-color: #004fc5 !important;
     color: white !important;
     height: 25px !important;
@@ -142,32 +186,87 @@ width: 80%;}
   background-color: rgb(255, 248, 143) !important;
   height: 150px;
 }
+@media (max-width: 480px) {
+  .v-color1 {
+    background-color: rgb(255, 248, 143) !important;
+    height: 85px;
+  }
+}
 .v-color2 {
   background-color: rgb(186, 255, 146) !important;
-  height: 160px;
+  height: 170px;
+}
+@media (max-width: 480px) {
+  .v-color2 {
+    background-color: rgb(186, 255, 146) !important;
+    height: 100px;
+  }
 }
 .v-color3 {
   background-color: rgb(128, 208, 255) !important;
   height: 150px;
 }
+@media (max-width: 480px) {
+  .v-color3 {
+    background-color: rgb(128, 208, 255) !important;
+    height: 85px;
+  }
+}
 .v-color4 {
   background-color: rgb(255, 189, 151) !important;
   height: 150px;
+}
+@media (max-width: 480px) {
+  .v-color4 {
+    background-color: rgb(255, 189, 151) !important;
+    height: 85px;
+  }
+}
+.v-color5 {
+  background-color: rgb(255, 116, 116) !important;
+  height: 150px;
+}
+@media (max-width: 480px) {
+  .v-color5 {
+    background-color: rgb(255, 116, 116) !important;
+    height: 115px;
+  }
 }
 .mainte-nyo {
   text-align: left;
   font-size: 20px;
   font-weight: bold;
-  color: #0045AD;
+  color: #0045ad;
+}
+@media (max-width: 480px) {
+  .mainte-nyo {
+    text-align: left;
+    font-size: 10px;
+    font-weight: bold;
+    color: #0045ad;
+  }
 }
 .mainte-nyo p {
   font-size: 18px;
   font-weight: 100;
   color: #000;
 }
+@media (max-width: 480px) {
+  .mainte-nyo p {
+    font-size: 6px;
+    font-weight: 100;
+    color: #000;
+  }
+}
 .mainte-card {
   padding: 24px;
-  margin: 25px 200px;
+  margin: 25px 250px 5px 250px;
+}
+@media (max-width: 480px) {
+  .mainte-card {
+    padding: 12px;
+    margin: 12px 6px;
+  }
 }
 .mainte-span {
   padding-left: 24px;
@@ -175,7 +274,8 @@ width: 80%;}
 .table-mainte {
   font-size: 18px;
 }
-.mainte-g{
+
+.mainte-g {
   text-align: left;
 }
 </style>

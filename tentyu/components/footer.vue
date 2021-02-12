@@ -12,7 +12,7 @@
           </div>
           <div class="footer-btn">
             <ul>
-              <li><v-btn plain small  to="/rule" nuxt>利用規約</v-btn></li>
+              <li><v-btn plain small to="/rule" nuxt>利用規約</v-btn></li>
               <li>
                 <v-btn plain small text to="/pri" nuxt
                   >プライバシーポリシー</v-btn
@@ -31,19 +31,28 @@
 <style>
 .footer-color {
   background-color: #3f70bb;
-  color:#ffffff !important;
+  color: #ffffff !important;
 }
+@media (max-width: 480px) {
+.footer-color {
+  background-color: #3f70bb;
+  color: #ffffff !important;
+  height: 100px;
+    clear: both;
 
-footer {
- 
-  border-top: solid 5px #ffffff;
-}
-
+}}
 .footer-title {
   font-size: 35px;
-  padding-left:6px;
-  
+  padding-left: 6px;
 }
+@media (max-width: 480px) {
+  .footer-title {
+    font-size: 15px;
+    padding-left: 6px;
+    font-weight: bold;
+  }
+}
+
 .footer-list {
   list-style: none;
   text-align: center;
@@ -66,7 +75,15 @@ footer {
 .map {
   text-align: left;
   display: inline-block;
-  padding-left:6px;
+  padding-left: 6px;
+}
+@media (max-width: 480px) {
+  .map {
+    text-align: left;
+    display: inline-block;
+    padding-left: 6px;
+    font-size: 10px;
+  }
 }
 
 .map-title li {
@@ -84,16 +101,18 @@ footer {
 .footer-btn {
   overflow: hidden;
   margin-top: 15px;
-  padding-left:6px;
+  padding-left: 6px;
 }
+
 .footer-btn li {
   float: left;
   border-right: solid 0.5px;
   border-right-color: black;
-  color:white !important;
+  color: white !important;
 }
 @media (max-width: 480px) {
-.footer-color{
+  .footer-color {
     bottom: 0; /*下に固定*/
-}}
+  }
+}
 </style>

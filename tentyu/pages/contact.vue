@@ -181,20 +181,34 @@ li {
 .contact-title {
   font-size: 35px;
   padding-bottom: 24px;
-  padding-top:12px;
-
+  padding-top: 12px;
 }
+@media (max-width: 480px) {
+.contact-title {
+  font-size: 15px;
+  padding-top: 6px;
+}}
 .contact-sub-title {
   font-size: 25px;
   font-weight: bold;
   text-align: left;
-  
 }
+@media (max-width: 480px) {
+.contact-sub-title {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}}
 .contact-navi {
   font-size: 15px;
   margin: 5px 0px;
   text-align: left;
 }
+@media (max-width: 480px) {
+.contact-navi {
+  font-size: 6px !important;
+  text-align: left;
+}}
 .contact-nkm {
   margin: 5px 0px;
 }
@@ -202,18 +216,30 @@ li {
   text-align: left;
   font-weight: bold;
   padding-bottom: 12px;
-   color:#0045AD;
-
-
+  color: #0045ad;
 }
+@media (max-width: 480px) {
+.contact-im {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 6px;
+  color: #0045ad;
+  font-size:10px;
+}}
 .contact-im2 {
   text-align: left;
   font-weight: bold;
   padding-bottom: 12px;
-   color:#0045AD;
-
-
+  color: #0045ad;
 }
+@media (max-width: 480px) {
+.contact-im2 {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 6px;
+  color: #0045ad;
+  font-size:10px;
+}}
 .contact-text-t {
   background-color: rgba(243, 243, 245, 0.788);
   border: solid 1px;
@@ -221,16 +247,29 @@ li {
   height: 200px;
   float: left;
 }
+@media (max-width: 480px) {
+.contact-text-t {
+  background-color: rgba(243, 243, 245, 0.788);
+  border: solid 1px;
+  width: 60%;
+  height: 80px;
+  float: left;
+}}
 .contact-jh {
   font-size: 25px;
   font-weight: bold;
   text-align: left;
   padding: 24px 0px;
   clear: both;
-   
-
 }
-
+@media (max-width: 480px) {
+.contact-jh {
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+  padding: 24px 0px;
+  clear: both;
+}}
 .contact-nr ul li {
   text-align: left;
   height: 65px;
@@ -245,14 +284,22 @@ li {
 }
 .contact-cd-title {
   font-size: 35px;
-padding-top: 12px;  
+  padding-top: 12px;
 }
+@media (max-width: 480px) {
+.contact-cd-title {
+  font-size: 15px;
+  padding-top: 6px;
+}}
 .pa-4ma-4 {
   padding: 24px;
   margin: 0px 200px;
-  
 }
-
+@media (max-width: 480px) {
+.pa-4ma-4 {
+  padding: 12px;
+  margin: 6px;
+}}
 .span-title {
   font-size: 20px;
   color: black;
@@ -261,8 +308,14 @@ padding-top: 12px;
 .contact-btnbtn {
   padding: 12px;
 }
-.contact-ck-card{
-  margin:12px 200px 0px 200px;
-  padding:12px;
+.contact-ck-card {
+  margin: 12px 200px 0px 200px;
+  padding: 12px;
 }
+@media (max-width: 480px) {
+.contact-ck-card {
+  margin:6px;
+  padding: 6px;
+  font-size: 10px;
+}}
 </style>

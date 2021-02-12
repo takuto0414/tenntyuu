@@ -3,7 +3,7 @@
     <div v-show="!userConfirm">
       <div class="register-title">お客様情報登録</div>
       <v-card class="register--card">
-        <div class="contact-navi">
+        <div class="register-navi">
           下記にてお客様情報の登録をお願い致します。
         </div>
         <div class="register-text">
@@ -430,23 +430,41 @@ li {
   font-size: 35px;
   padding-top: 12px;
 }
+@media (max-width: 480px) {
+.register-title {
+  font-size: 15px;
+  padding-top: 6px;
+}}
 .register-text ul li {
   padding-top: 5px;
   text-align: left;
   height: 65px;
 }
+
 .register-pass {
   text-align: left;
 }
 .register-pran {
   padding: 6px 0px;
 }
+@media (max-width: 480px) {
+.register-pran {
+  padding: 6px 0px;
+  font-size:6px i !important;
+}}
 .register-prantitle {
   font-size: 25px;
   font-weight: bold;
   text-align: left;
    color:#0045AD;
 }
+@media (max-width: 480px) {
+.register-prantitle {
+  font-size: 10px;
+  font-weight: bold;
+  text-align: left;
+   color:#0045AD;
+}}
 .inquire-link {
   margin-top: 20px;
 }
@@ -454,7 +472,11 @@ li {
   font-size: 35px;
   padding-top: 12px;
 }
-
+@media (max-width: 480px) {
+.form-ck {
+  font-size: 15px;
+  padding-top: 6px;
+}}
 .form-ck-li li {
   margin: 5px 5px;
   text-align: left;
@@ -493,9 +515,16 @@ ion-row {
   padding: 24px;
   margin: 0px 200px;
 }
+
+@media (max-width: 480px) {
+.register--card {
+  padding: 24px;
+  margin:6px;
+}}
 .register-mko {
   text-align: left;
 }
+
 .span-title2 {
   text-align: left;
 }
@@ -503,4 +532,15 @@ ion-row {
   margin:0px 200px;
   padding:12px;
 }
+@media (max-width: 480px) {
+.register-card1{
+  margin:6px;
+  padding:6px;
+  font-size:10px;
+}}
+@media (max-width: 480px) {
+.register-navi {
+  font-size: 6px  ;
+  text-align: left;
+}}
 </style>

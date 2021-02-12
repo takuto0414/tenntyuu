@@ -19,12 +19,17 @@ export default {
 </script>
 <style>
 @media (max-width: 480px) {
-main {
-  text-align: center;
-  background-color: whitesmoke;
-  min-height: 350vh;
-
-}}
+  main {
+    text-align: center;
+    background-color: whitesmoke;
+    height: 100%;
+  }
+}
+@media (max-width: 480px) {
+  footer {
+    clear: both;
+  }
+}
 </style>
 <style lang="scss" scoped>
 main {
@@ -56,7 +61,6 @@ html {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
-  
 }
 
 *,

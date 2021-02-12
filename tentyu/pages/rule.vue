@@ -166,19 +166,41 @@
   margin: 0px 200px 0px 200px;
   text-align: left;
 }
+@media (max-width: 480px) {
+  .rule {
+    text-align: left;
+    margin: 6px;
+    font-size: 6px;
+  }
+}
 .rule-card {
-  padding: 12px;
-  margin-top: 12px;
+  padding: 6px;
+  margin-top: 6px;
 }
 .rule-title {
   font-size: 35px;
   text-align: center;
   padding-top: 12px;
 }
+@media (max-width: 480px) {
+  .rule-title {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 6px;
+  }
+}
+
 .rule-stitle {
   font-size: 25px;
   font-weight: bold;
 }
+@media (max-width: 480px) {
+  .rule-stitle {
+    font-size: 10px;
+    font-weight: bold;
+  }
+}
+
 .rule-h {
   padding: 12px 0px 12px 12px;
 }

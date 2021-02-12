@@ -19,7 +19,7 @@
               <v-text-field
                 v-model="user.password"
                 label="パスワード"
-              color="#0045AD"
+                color="#0045AD"
               ></v-text-field>
             </li>
           </ul>
@@ -45,11 +45,9 @@ export default {
       user: {
         email: "",
         password: "",
-
       },
       error: false,
       errorMessage: "",
-      
     };
   },
   methods: {
@@ -73,7 +71,6 @@ export default {
             console.log("Error getting document:", error);
           });
       });
-    
     },
     auth(res) {
       console.log("auth", res.user.emailVerified);
@@ -86,11 +83,11 @@ export default {
         return;
       }
       this.$store.commit("auth", {
-        planName: ''
+        planName: "プラン",
       });
       this.$router.push({ path: "/home" });
     },
-    
+
     showError() {
       this.errorMessage = "エラーが発生しました";
     },
@@ -103,21 +100,22 @@ export default {
 <style>
 .login-title {
   font-size: 35px;
-  padding-top:12px;
-
+  padding-top: 12px;
 }
+@media (max-width: 480px) {
+.login-title {
+  font-size: 15px;
+  padding-top: 6px;
+}}
 .login-list {
   margin: 0px 24px;
   padding-top: 30px;
- 
 }
-@media (max-width: 1000px) {.non-rg {
-  font-size: 20px;
-  color:red;
+@media (max-width: 480px) {
+  .non-rg {
+    font-size: 6px;
+  }
 }
-}
-
-
 
 .non-rg {
   font-size: 12px;
@@ -136,4 +134,9 @@ export default {
   height: 300px;
   margin: 20px 200px 0px 200px;
 }
+@media (max-width: 480px) {
+.login-card {
+  height: 300px;
+  margin: 6px;
+}}
 </style>
