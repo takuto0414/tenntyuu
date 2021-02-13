@@ -3,7 +3,7 @@
     <div>
       <Logo />
 
-      <NuxtLink to="/home">Home page</NuxtLink>
+      <NuxtLink to="/">Home page</NuxtLink>
       <h1 class="title">テスト</h1>
 
       <v-btn elevation="2">click</v-btn>

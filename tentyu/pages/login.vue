@@ -44,10 +44,10 @@ export default {
     return {
       user: {
         email: "",
-        password: "",
+        password: ""
       },
       error: false,
-      errorMessage: "",
+      errorMessage: ""
     };
   },
   methods: {
@@ -60,16 +60,16 @@ export default {
 
       const db = firebase.firestore();
       let user = db.collection("user");
-      user.get().then((snapshot) => {
+      user.get().then(snapshot => {
         snapshot
-          .forEach((doc) => {
+          .forEach(doc => {
             let data = doc.data();
             console.log("SUCEESS getting document:", data);
-             this.$store.commit("auth", {
-        'planName': data.radios,
-      });
+            this.$store.commit("auth", {
+              planName: data.radios
+            });
           })
-          .catch(function (error) {
+          .catch(function(error) {
             console.log("Error getting document:", error);
           });
       });
@@ -84,8 +84,8 @@ export default {
         );
         return;
       }
-     
-      this.$router.push({ path: "/home" });
+
+      this.$router.push({ path: "/" });
     },
 
     showError() {
@@ -93,8 +93,8 @@ export default {
     },
     showErrornewuser(msg) {
       this.errorMessage = msg;
-    },
-  },
+    }
+  }
 };
 </script>
 <style>
@@ -103,10 +103,11 @@ export default {
   padding-top: 12px;
 }
 @media (max-width: 480px) {
-.login-title {
-  font-size: 15px;
-  padding-top: 6px;
-}}
+  .login-title {
+    font-size: 15px;
+    padding-top: 6px;
+  }
+}
 .login-list {
   margin: 0px 24px;
   padding-top: 30px;
@@ -135,8 +136,9 @@ export default {
   margin: 20px 200px 0px 200px;
 }
 @media (max-width: 480px) {
-.login-card {
-  height: 300px;
-  margin: 6px;
-}}
+  .login-card {
+    height: 300px;
+    margin: 6px;
+  }
+}
 </style>

@@ -11,10 +11,8 @@
 
         <div class="header-right">
           {{ this.$store.state.planName }}
-         
-          <v-btn class="ainte-btn" large elevation="" to="/home" nuxt
-            >HOME</v-btn
-          >
+
+          <v-btn class="ainte-btn" large elevation="" to="/" nuxt>HOME</v-btn>
           <v-btn class="ainte-btn" large elevation="" to="/maintenance" nuxt
             >メンテナンス</v-btn
           >
@@ -103,8 +101,7 @@ header {
     text-align: left;
     float: left;
     font-weight: bold;
-  padding-top: 6px;
-
+    padding-top: 6px;
   }
 }
 .ainte-btn {
@@ -143,8 +140,8 @@ header {
     font-weight: bold;
     float: left;
     padding-left: 6px;
-  text-align:left;
-padding-top: 0%;
+    text-align: left;
+    padding-top: 0%;
   }
 }
 </style>
