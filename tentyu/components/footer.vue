@@ -34,13 +34,13 @@
   color: #ffffff !important;
 }
 @media (max-width: 480px) {
-.footer-color {
-  background-color: #3f70bb;
-  color: #ffffff !important;
-  height: 100px;
+  .footer-color {
+    background-color: #3f70bb;
+    color: #ffffff !important;
+    height: 100px;
     clear: both;
-
-}}
+  }
+}
 .footer-title {
   font-size: 35px;
   padding-left: 6px;
@@ -110,6 +110,11 @@
   border-right-color: black;
   color: white !important;
 }
+@media (max-width: 480px) {
+.footer-btn a {
+ 
+  color:white !important;
+}}
 @media (max-width: 480px) {
   .footer-color {
     bottom: 0; /*下に固定*/

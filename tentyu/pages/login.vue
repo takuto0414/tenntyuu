@@ -65,7 +65,9 @@ export default {
           .forEach((doc) => {
             let data = doc.data();
             console.log("SUCEESS getting document:", data);
-            this.user.push(data);
+             this.$store.commit("auth", {
+        'planName': data.radios,
+      });
           })
           .catch(function (error) {
             console.log("Error getting document:", error);
@@ -82,9 +84,7 @@ export default {
         );
         return;
       }
-      this.$store.commit("auth", {
-        planName: "プラン",
-      });
+     
       this.$router.push({ path: "/home" });
     },
 

@@ -11,9 +11,7 @@
 
         <div class="header-right">
           {{ this.$store.state.planName }}
-          <div v-for="(user, i) in planName" :key="i">
-            {{ user.radios }}
-          </div>
+         
           <v-btn class="ainte-btn" large elevation="" to="/home" nuxt
             >HOME</v-btn
           >

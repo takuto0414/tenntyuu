@@ -12,12 +12,10 @@ exports.createContacts = functions.region("asia-northeast1")
 
 
         const message = 'お問い合わせがありました。速やかに回答してください。\n' + messageContent;
-        await sendSlack(message, '#contact-us', 'https://hooks.slack.com/services/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');
-
+        await sendSlack(message, '#qa', 'https://hooks.slack.com/services/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');
+        //https://api.slack.com/apps/A01L0EAUQF3/incoming-webhooks?success=1
     });
-const functions = require('firebase-functions');
-const axios = require('axios');
-exports.createContacts = functions.region("asia-northeast1")
+exports.createUser = functions.region("asia-northeast1")
     .firestore.document('user/{userId}').onCreate(async(snap, _) => {
         const data = snap.data();
         const backQuote = '\n';
@@ -29,7 +27,7 @@ exports.createContacts = functions.region("asia-northeast1")
 
 
         const message = '新規会員が登録完了しました。\n' + messageContent;
-        await sendSlack(message, '#contact-us', 'https://hooks.slack.com/services/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');
+        await sendSlack(message, '#maintenance', 'https://hooks.slack.com/services/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');
 
     });
 async function sendSlack(param, channel, url) {

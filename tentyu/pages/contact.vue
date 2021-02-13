@@ -17,14 +17,14 @@
               value="ご購入頂いた商品等に関するお問い合わせ(機器の不具合、故障等)"
             >
               <template v-slot:label>
-                <div>
+                <div class="font-small">
                   ご購入頂いた商品等に関するお問い合わせ(機器の不具合、故障等)
                 </div>
               </template>
             </v-radio>
             <v-radio value="その他のお問い合わせ(商品のお見積もり依頼、質問等)">
               <template v-slot:label>
-                <div>その他のお問い合わせ(商品のお見積もり依頼、質問等)</div>
+                <div class="font-small">その他のお問い合わせ(商品のお見積もり依頼、質問等)</div>
               </template>
             </v-radio>
           </v-radio-group>
@@ -39,6 +39,7 @@
                 cols="30"
                 rows="5"
                 v-model="contactInformation.content"
+                
               ></textarea>
             </div>
           </div>
@@ -52,6 +53,7 @@
                 v-model="contactInformation.storeName"
                 label="店舗名/会社名"
                 color="#0045AD"
+                dense
               ></v-text-field>
             </li>
             <li>
@@ -59,6 +61,8 @@
                 v-model="contactInformation.name"
                 label="氏名"
                 color="#0045AD"
+                dense
+
               ></v-text-field>
             </li>
 
@@ -67,6 +71,8 @@
                 v-model="contactInformation.email"
                 label="メールアドレス"
                 color="#0045AD"
+                dense
+
               ></v-text-field>
             </li>
             <li>
@@ -74,6 +80,8 @@
                 v-model="contactInformation.tel"
                 label="電話番号"
                 color="#0045AD"
+                dense
+
               ></v-text-field>
             </li>
           </ul>
@@ -317,5 +325,7 @@ li {
   margin:6px;
   padding: 6px;
   font-size: 10px;
-}}
+}.font-small{font-size:12px;}
+}
+
 </style>
