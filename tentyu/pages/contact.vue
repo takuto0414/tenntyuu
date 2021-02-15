@@ -98,35 +98,35 @@
         <table class="table">
           <tbody>
             <tr>
-              <td style="background-color: #fafafa; width: 150px">
+              <td style="background-color: #e0e0e0; width: 150px">
                 お問い合わせ種類
               </td>
               <td class="stcc-sub">{{ contactInformation.radios }}</td>
             </tr>
             <tr>
-              <td style="background-color: #fafafa; width: 150px">
+              <td style="background-color:  #e0e0e0; width: 150px">
                 お問い合わせ内容
               </td>
               <td class="stcc-sub">{{ contactInformation.content }}</td>
             </tr>
             <tr>
-              <td style="background-color: #fafafa; width: 150px">
+              <td style="background-color:  #e0e0e0; width: 150px">
                 店舗名/会社名
               </td>
               <td class="stcc-sub">{{ contactInformation.storeName }}</td>
             </tr>
             <tr>
-              <td style="background-color: #fafafa; width: 150px">氏名</td>
+              <td style="background-color:  #e0e0e0; width: 150px">氏名</td>
               <td class="stcc-sub">{{ contactInformation.name }}</td>
             </tr>
             <tr>
-              <td style="background-color: #fafafa; width: 150px">
+              <td style="background-color:  #e0e0e0; width: 150px">
                 メールアドレス
               </td>
               <td class="stcc-sub">{{ contactInformation.email }}</td>
             </tr>
             <tr>
-              <td style="background-color: #fafafa; width: 150px">電話番号</td>
+              <td style="background-color:  #e0e0e0; width: 150px">電話番号</td>
               <td class="stcc-sub">{{ contactInformation.tel }}</td>
             </tr>
           </tbody>
@@ -188,6 +188,7 @@ li {
   font-size: 35px;
   padding-bottom: 24px;
   padding-top: 12px;
+  font-weight: bold;
 }
 @media (max-width: 480px) {
   .contact-title {
@@ -225,14 +226,14 @@ li {
   text-align: left;
   font-weight: bold;
   padding-bottom: 12px;
-  color: #0045ad;
+  color: #0D47A1;
 }
 @media (max-width: 480px) {
   .contact-im {
     text-align: left;
     font-weight: bold;
     padding-bottom: 6px;
-    color: #0045ad;
+    color: #0D47A1;
     font-size: 10px;
   }
 }
@@ -240,14 +241,14 @@ li {
   text-align: left;
   font-weight: bold;
   padding-bottom: 12px;
-  color: #0045ad;
+  color: #0D47A1;
 }
 @media (max-width: 480px) {
   .contact-im2 {
     text-align: left;
     font-weight: bold;
     padding-bottom: 6px;
-    color: #0045ad;
+    color: #0D47A1;
     font-size: 10px;
   }
 }
@@ -287,6 +288,9 @@ li {
   text-align: left;
   height: 65px;
 }
+.contact-nr {
+  padding-right: 300px;
+}
 .contact-ck {
   text-align: left;
 
@@ -298,6 +302,7 @@ li {
 .contact-cd-title {
   font-size: 35px;
   padding-top: 12px;
+  font-weight: bold;
 }
 @media (max-width: 480px) {
   .contact-cd-title {
@@ -308,6 +313,7 @@ li {
 .pa-4ma-4 {
   padding: 24px;
   margin: 0px 200px;
+  background-color: #f5f5f5 !important;
 }
 @media (max-width: 480px) {
   .pa-4ma-4 {
@@ -326,6 +332,7 @@ li {
 .contact-ck-card {
   margin: 12px 200px 0px 200px;
   padding: 12px;
+  background-color: #f5f5f5 !important;
 }
 @media (max-width: 480px) {
   .contact-ck-card {

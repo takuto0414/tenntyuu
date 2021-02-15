@@ -4,7 +4,7 @@
       <div class="register-title">お客様情報登録</div>
       <v-card class="register--card">
         <div class="register-navi">
-          下記にてお客様情報の登録をお願い致します。
+          下記にてお客様情報の登録をお願いします。
         </div>
         <div class="register-text">
           <ul class="register-list">
@@ -12,34 +12,50 @@
               <v-text-field
                 v-model="user.storeName"
                 label="店舗名/会社名"
-                 color="#0045AD"
+                color="#0045AD"
               ></v-text-field>
             </li>
             <li>
               <v-text-field
                 v-model="user.phoneTel"
                 label="電話番号"
-                 color="#0045AD"
+                color="#0045AD"
               ></v-text-field>
             </li>
             <li>
-              <v-text-field v-model="user.name" label="代表者名"  color="#0045AD"></v-text-field>
+              <v-text-field
+                v-model="user.name"
+                label="代表者名"
+                color="#0045AD"
+              ></v-text-field>
             </li>
             <li>
-              <v-text-field v-model="user.kanaName" label="かな"  color="#0045AD"></v-text-field>
+              <v-text-field
+                v-model="user.kanaName"
+                label="かな"
+                color="#0045AD"
+              ></v-text-field>
             </li>
             <li>
-              <v-text-field v-model="user.tel" label="携帯電話"  color="#0045AD"></v-text-field>
+              <v-text-field
+                v-model="user.tel"
+                label="携帯電話"
+                color="#0045AD"
+              ></v-text-field>
             </li>
             <li>
               <v-text-field
                 v-model="user.email"
                 label="メールアドレス"
-                 color="#0045AD"
+                color="#0045AD"
               ></v-text-field>
             </li>
             <li>
-              <v-text-field v-model="user.address" label="住所"  color="#0045AD"></v-text-field>
+              <v-text-field
+                v-model="user.address"
+                label="住所"
+                color="#0045AD"
+              ></v-text-field>
             </li>
           </ul>
 
@@ -47,7 +63,7 @@
             <v-text-field
               v-model="user.password"
               label="パスワード"
-               color="#0045AD"
+              color="#0045AD"
             ></v-text-field>
           </div>
         </div>
@@ -55,9 +71,9 @@
           <div class="register-prantitle">メンテナンスプラン</div>
 
           <div class="register-pran">
-            <v-radio-group v-model="user.radios" >
+            <v-radio-group v-model="user.radios">
               <v-radio value="冷蔵庫プラン(厨房機器)">
-                <template v-slot:label >
+                <template v-slot:label>
                   <div>冷蔵庫プラン(厨房機器)</div>
                 </template>
               </v-radio>
@@ -173,64 +189,58 @@
     </div>
     <div v-show="userConfirm">
       <div class="form-ck">入力項目確認</div>
-      
-        <v-card class="register-card1">
-          <table class="table">
-            <tbody>
-              <tr>
-                <td style="background-color: #fafafa; width: 150px">
-                  店舗名/会社名
-                </td>
-                <td class="stcc-sub">{{ user.storeName }}</td>
-              </tr>
-              <tr>
-                <td style="background-color: #fafafa; width: 150px">
-                  電話番号
-                </td>
-                <td class="stcc-sub">{{ user.tel }}</td>
-              </tr>
-              <tr>
-                <td style="background-color: #fafafa; width: 150px">
-                  代表者名
-                </td>
-                <td class="stcc-sub">{{ user.name }}</td>
-              </tr>
-              <tr>
-                <td style="background-color: #fafafa; width: 150px">かな</td>
-                <td class="stcc-sub">{{ user.kanaName }}</td>
-              </tr>
-              <tr>
-                <td style="background-color: #fafafa; width: 150px">
-                  携帯番号
-                </td>
-                <td class="stcc-sub">{{ user.phoneTel }}</td>
-              </tr>
-              <tr>
-                <td style="background-color: #fafafa; width: 150px">
-                  メールアドレス
-                </td>
-                <td class="stcc-sub">{{ user.email }}</td>
-              </tr>
-              <tr>
-                <td style="background-color: #fafafa; width: 150px">住所</td>
-                <td class="stcc-sub">{{ user.address }}</td>
-              </tr>
-              <tr>
-                <td style="background-color: #fafafa; width: 150px">
-                  パスワード
-                </td>
-                <td class="stcc-sub">{{ user.password }}</td>
-              </tr>
-              <tr>
-                <td style="background-color: #fafafa; width: 150px">
-                  メンテナンスプラン
-                </td>
-                <td class="stcc-sub">{{ user.radios }}</td>
-              </tr>
-            </tbody>
-          </table>
-        </v-card>
-      
+
+      <v-card class="register-card1">
+        <table class="table">
+          <tbody>
+            <tr>
+              <td style="background-color: #e0e0e0; width: 150px">
+                店舗名/会社名
+              </td>
+              <td class="stcc-sub">{{ user.storeName }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #e0e0e0; width: 150px">電話番号</td>
+              <td class="stcc-sub">{{ user.tel }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #e0e0e0; width: 150px">代表者名</td>
+              <td class="stcc-sub">{{ user.name }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #e0e0e0; width: 150px">かな</td>
+              <td class="stcc-sub">{{ user.kanaName }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #e0e0e0; width: 150px">携帯番号</td>
+              <td class="stcc-sub">{{ user.phoneTel }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #e0e0e0; width: 150px">
+                メールアドレス
+              </td>
+              <td class="stcc-sub">{{ user.email }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #e0e0e0; width: 150px">住所</td>
+              <td class="stcc-sub">{{ user.address }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #e0e0e0; width: 150px">
+                パスワード
+              </td>
+              <td class="stcc-sub">{{ user.password }}</td>
+            </tr>
+            <tr>
+              <td style="background-color: #e0e0e0; width: 150px">
+                メンテナンスプラン
+              </td>
+              <td class="stcc-sub">{{ user.radios }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </v-card>
+
       <v-btn class="mainte-btn" large @click="userConfirm = false">修正</v-btn
       >　<v-btn class="mainte-btn" large @click="submit">送信</v-btn>
     </div>
@@ -429,12 +439,16 @@ li {
 .register-title {
   font-size: 35px;
   padding-top: 12px;
+  font-weight: bold;
+  padding-bottom: 24px;
 }
-@media (max-width: 480px) {
-.register-title {
-  font-size: 15px;
-  padding-top: 6px;
-}}
+
+.register-navi {
+  text-align: left;
+}
+.register-text {
+  padding-right: 300px;
+}
 .register-text ul li {
   padding-top: 5px;
   text-align: left;
@@ -447,36 +461,24 @@ li {
 .register-pran {
   padding: 6px 0px;
 }
-@media (max-width: 480px) {
-.register-pran {
-  padding: 6px 0px;
-  font-size:6px i !important;
-}}
+
 .register-prantitle {
   font-size: 25px;
   font-weight: bold;
   text-align: left;
-   color:#0045AD;
+  color: #0d47a1;
 }
-@media (max-width: 480px) {
-.register-prantitle {
-  font-size: 10px;
-  font-weight: bold;
-  text-align: left;
-   color:#0045AD;
-}}
+
 .inquire-link {
   margin-top: 20px;
 }
 .form-ck {
   font-size: 35px;
   padding-top: 12px;
+  font-weight: bold;
+  padding-bottom: 24px;
 }
-@media (max-width: 480px) {
-.form-ck {
-  font-size: 15px;
-  padding-top: 6px;
-}}
+
 .form-ck-li li {
   margin: 5px 5px;
   text-align: left;
@@ -514,13 +516,9 @@ ion-row {
 .register--card {
   padding: 24px;
   margin: 0px 200px;
+  background-color: #f5f5f5 !important;
 }
 
-@media (max-width: 480px) {
-.register--card {
-  padding: 24px;
-  margin:6px;
-}}
 .register-mko {
   text-align: left;
 }
@@ -528,19 +526,48 @@ ion-row {
 .span-title2 {
   text-align: left;
 }
-.register-card1{
-  margin:0px 200px;
-  padding:12px;
+.register-card1 {
+  margin: 0px 400px;
+  padding: 12px;
+  background-color: #f5f5f5 !important;
 }
+
 @media (max-width: 480px) {
-.register-card1{
-  margin:6px;
-  padding:6px;
-  font-size:10px;
-}}
-@media (max-width: 480px) {
-.register-navi {
-  font-size: 6px  ;
-  text-align: left;
-}}
+  .register-title {
+    font-size: 15px;
+    padding-top: 6px;
+    padding-bottom: 12px;
+  }
+  .register-pran {
+    padding: 6px 0px;
+    font-size: 6px i !important;
+  }
+  .register-text {
+    padding-right: 50px;
+  }
+  .register-prantitle {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    color: #0d47a1;
+  }
+  .form-ck {
+    font-size: 15px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+  .register--card {
+    padding: 24px;
+    margin: 6px;
+  }
+  .register-card1 {
+    margin: 6px;
+    padding: 6px;
+    font-size: 10px;
+  }
+  .register-navi {
+    font-size: 16px;
+    text-align: left;
+  }
+}
 </style>

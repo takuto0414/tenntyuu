@@ -5,7 +5,7 @@
       <div class="mainte-nyo">
         <div>
           1:定期的メンテナンス
-          <p>半年に一回年間二回。</p>
+          <p>半年に１回の定期的な機器のメンテナンス。</p>
         </div>
         <div>
           2:充実なアフターフォロー
@@ -42,7 +42,7 @@
             <v-card class="v-color2">
               <div class="mainte-pr">エアコンプラン(パッケージエアコン)</div>
               <div class="mainte-prb">
-                「パッケージエアコン1台」<br />天カセ、天吊り、床置き、壁掛け<br />※ビルトイン、マルチタイプは<br />ご相談ください。<br />月額<span
+                「パッケージエアコン1台」<br />天カセ、天吊り、床置き、壁掛け<br />※ビルトイン、マルチタイプはご相談ください。<br />月額<span
                   class="mainte-spn"
                   >¥2,800</span
                 >(税別)
@@ -66,7 +66,7 @@
             <v-card class="v-color4">
               <div class="mainte-pr">プロプラン</div>
               <div class="mainte-prb">
-                「冷蔵庫プラン3台」<br />※その他台数料金変更があるので<br />ご相談ください。<br />月額<span
+                「冷蔵庫プラン3台」<br />各種セット料金プランがあります。<br />※その他台数料金変更があるのでご相談ください。<br />月額<span
                   class="mainte-spn"
                   >¥6,700</span
                 >(税別)
@@ -87,7 +87,7 @@
           </li>
         </ul>
       </div>
-      <v-btn class="mainte-btn" large elevation="" to="/register">
+      <v-btn class="mainte-btn" large elevation="" to="/register" nuxt>
         申し込む</v-btn
       ></v-card
     >
@@ -101,12 +101,7 @@ li {
 .mainte-title {
   font-size: 35px;
   padding-top: 12px;
-}
-@media (max-width: 480px) {
-  .mainte-title {
-    font-size: 15px;
-    padding-top: 6px;
-  }
+  font-weight: bold;
 }
 
 .mainte-pr-title {
@@ -114,23 +109,12 @@ li {
   font-size: 25px;
   text-align: left;
 }
-@media (max-width: 480px) {
-  .mainte-pr-title {
-    font-weight: bold;
-    font-size: 10px;
-    text-align: left;
-  }
-}
 
 .mainte-ul {
   text-align: left;
   width: 80%;
 }
-@media (max-width: 480px) {
-.mainte-ul {
-  text-align: left;
-  width: 100%;
-}}
+
 .mainte-ul li {
   padding: 5px;
 }
@@ -141,133 +125,70 @@ li {
   border-bottom: solid 2px;
   border-right: solid 2px;
 }
-@media (max-width: 480px) {
-  .mainte-pr {
-    font-size: 8px;
-    font-weight: bold;
-    border-left: solid 2px;
-    border-bottom: solid 2px;
-    border-right: solid 2px;
-  }
-}
+
 .mainte-prb {
-  font-size: 16px;
   padding-top: 5px;
   padding-left: 6px;
+  font-size: 18px;
 }
-@media (max-width: 480px) {
-  .mainte-prb {
-    font-size: 6px;
-    padding-top: 5px;
-    padding-left: 6px;
-  }
-}
+
 .mainte-btn {
   margin-top: 10px;
   margin-bottom: 12px;
   padding: 0px 12px;
   width: 100px !important;
-  background-color: #004fc5 !important;
+  background-color: #0d47a1 !important;
   color: white !important;
   font-weight: bold;
 }
-@media (max-width: 480px) {
-  .mainte-btn {
-    width: 60px !important;
-    background-color: #004fc5 !important;
-    color: white !important;
-    height: 25px !important;
-  }
-}
+
 .mainte-spn {
   font-weight: bold;
 }
 .v-color1 {
-  background-color: rgb(255, 248, 143) !important;
+  background-color: #eeff41 !important;
   height: 150px;
 }
-@media (max-width: 480px) {
-  .v-color1 {
-    background-color: rgb(255, 248, 143) !important;
-    height: 85px;
-  }
-}
+
 .v-color2 {
-  background-color: rgb(186, 255, 146) !important;
-  height: 170px;
+  background-color: #b2ff59 !important;
+  height: 150px;
 }
-@media (max-width: 480px) {
-  .v-color2 {
-    background-color: rgb(186, 255, 146) !important;
-    height: 100px;
-  }
-}
+
 .v-color3 {
-  background-color: rgb(128, 208, 255) !important;
+  background-color: #40c4ff !important;
   height: 150px;
 }
-@media (max-width: 480px) {
-  .v-color3 {
-    background-color: rgb(128, 208, 255) !important;
-    height: 85px;
-  }
-}
+
 .v-color4 {
-  background-color: rgb(255, 189, 151) !important;
+  background-color: #ffab40 !important;
   height: 150px;
 }
-@media (max-width: 480px) {
-  .v-color4 {
-    background-color: rgb(255, 189, 151) !important;
-    height: 85px;
-  }
-}
+
 .v-color5 {
-  background-color: rgb(255, 116, 116) !important;
+  background-color: #ff4081 !important;
   height: 150px;
 }
-@media (max-width: 480px) {
-  .v-color5 {
-    background-color: rgb(255, 116, 116) !important;
-    height: 115px;
-  }
-}
+
 .mainte-nyo {
   text-align: left;
   font-size: 20px;
   font-weight: bold;
-  color: #0045ad;
+  color: #0d47a1;
 }
-@media (max-width: 480px) {
-  .mainte-nyo {
-    text-align: left;
-    font-size: 10px;
-    font-weight: bold;
-    color: #0045ad;
-  }
-}
+
 .mainte-nyo p {
   font-size: 18px;
   font-weight: 100;
   color: #000;
 }
-@media (max-width: 480px) {
-  .mainte-nyo p {
-    font-size: 6px;
-    font-weight: 100;
-    color: #000;
-  }
-}
+
 .mainte-card {
   padding: 24px;
-  margin: 25px 250px 5px 250px;
+  margin: 25px 10px 5px 10px;
+  background-color: #f5f5f5 !important;
 }
-@media (max-width: 480px) {
-  .mainte-card {
-    padding: 12px;
-    margin: 12px 6px;
-  }
-}
+
 .mainte-span {
   padding-left: 24px;
 }
@@ -277,5 +198,70 @@ li {
 
 .mainte-g {
   text-align: left;
+}
+@media (max-width: 480px) {
+  .mainte-title {
+    font-size: 15px;
+    padding-top: 6px;
+  }
+  .mainte-pr-title {
+    font-weight: bold;
+    font-size: 10px;
+    text-align: left;
+  }
+  .mainte-ul {
+    text-align: left;
+    width: 100%;
+  }
+  .mainte-pr {
+    font-size: 8px;
+    font-weight: bold;
+    border-left: solid 2px;
+    border-bottom: solid 2px;
+    border-right: solid 2px;
+  }
+  .mainte-prb {
+    font-size: 6px;
+    padding-top: 5px;
+    padding-left: 6px;
+  }
+  .mainte-btn {
+    width: 60px !important;
+    background-color: #0d47a1 !important;
+    color: white !important;
+    height: 25px !important;
+    font-weight: 100;
+    font-size: small !important;
+  }
+  .v-color1 {
+    height: 85px;
+  }
+  .v-color2 {
+    height: 85px;
+  }
+  .v-color3 {
+    height: 85px;
+  }
+  .v-color4 {
+    height: 85px;
+  }
+  .v-color5 {
+    height: 85px;
+  }
+  .mainte-nyo {
+    text-align: left;
+    font-size: 10px;
+    font-weight: bold;
+    color: #0d47a1;
+  }
+  .mainte-nyo p {
+    font-size: 6px;
+    font-weight: 100;
+    color: #000;
+  }
+  .mainte-card {
+    padding: 12px;
+    margin: 12px 6px;
+  }
 }
 </style>

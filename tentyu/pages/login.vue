@@ -39,15 +39,17 @@
 
 <script>
 import firebase from "~/plugins/firebase.js";
+import axios from "axios";
+
 export default {
   data() {
     return {
       user: {
         email: "",
-        password: ""
+        password: "",
       },
       error: false,
-      errorMessage: ""
+      errorMessage: "",
     };
   },
   methods: {
@@ -60,16 +62,16 @@ export default {
 
       const db = firebase.firestore();
       let user = db.collection("user");
-      user.get().then(snapshot => {
+      user.get().then((snapshot) => {
         snapshot
-          .forEach(doc => {
+          .forEach((doc) => {
             let data = doc.data();
             console.log("SUCEESS getting document:", data);
             this.$store.commit("auth", {
-              planName: data.radios
+              planName: data.radios,
             });
           })
-          .catch(function(error) {
+          .catch(function (error) {
             console.log("Error getting document:", error);
           });
       });
@@ -89,33 +91,24 @@ export default {
     },
 
     showError() {
-      this.errorMessage = "エラーが発生しました";
+      this.errorMessage = "メールアドレス、またはパスワードが違います。";
     },
     showErrornewuser(msg) {
       this.errorMessage = msg;
-    }
-  }
+    },
+  },
 };
 </script>
 <style>
 .login-title {
   font-size: 35px;
   padding-top: 12px;
+  font-weight: bold;
 }
-@media (max-width: 480px) {
-  .login-title {
-    font-size: 15px;
-    padding-top: 6px;
-  }
-}
+
 .login-list {
   margin: 0px 24px;
   padding-top: 30px;
-}
-@media (max-width: 480px) {
-  .non-rg {
-    font-size: 6px;
-  }
 }
 
 .non-rg {
@@ -133,12 +126,32 @@ export default {
 }
 .login-card {
   height: 300px;
-  margin: 20px 200px 0px 200px;
+  margin: 20px 400px 0px 400px;
+  padding: 0px 40px;
+  background-color: #f5f5f5 !important;
 }
+
 @media (max-width: 480px) {
+  .login-title {
+    font-size: 15px;
+    padding-top: 6px;
+  }
+  .non-rg {
+    font-size: 6px !important;
+    color: #0d47a1;
+  }
   .login-card {
-    height: 300px;
-    margin: 6px;
+    height: 250px;
+    margin: 12px 50px 6px 50px;
+  }
+  .login-text li {
+    height: 60px;
+  }
+  .mx-4 {
+    font-size: 12px;
+  }
+  .login-bt {
+    margin-top: 20px;
   }
 }
 </style>

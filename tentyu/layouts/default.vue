@@ -17,26 +17,15 @@ export default {
   },
 };
 </script>
-<style>
-@media (max-width: 480px) {
-  main {
-    text-align: center;
-    background-color: whitesmoke;
-    height: 100%;
-  }
-}
-@media (max-width: 480px) {
-  footer {
-    clear: both;
-  }
-}
-</style>
+
 <style lang="scss" scoped>
+
 main {
   height: 100%;
   min-height: 150vh;
   text-align: center;
-  background-color: whitesmoke;
+  background-color: #E0E0E0 !important;
+  padding: 12px 0px;
 }
 
 .page-enter-active,

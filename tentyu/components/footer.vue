@@ -1,58 +1,65 @@
  <template>
-  <div>
-    <div class="footer-color">
-      <footer>
-        <div class="footerdiv">
-          <div class="footer-title">株式会社　店厨サポート</div>
-          <div class="map">
-            <ul>
-              <li>〒442-0807 愛知県豊川市谷川町中道181番地</li>
-              <li>TEL0533-00-0000</li>
-            </ul>
-          </div>
-          <div class="footer-btn">
-            <ul>
-              <li><v-btn plain small to="/rule" nuxt>利用規約</v-btn></li>
-              <li>
-                <v-btn plain small text to="/pri" nuxt
-                  >プライバシーポリシー</v-btn
-                >
-              </li>
-              <li>
-                <v-btn plain small text to="/stcc" nuxt>特定取引法表示</v-btn>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </footer>
+  <div class="footer-color">
+    <div class="footerdiv">
+      <div class="footer-title">株式会社　店厨サポート</div>
+      <div class="map">
+        <ul>
+          <li>〒442-0807 愛知県豊川市谷川町中道181番地</li>
+          <li>TEL0533-00-0000</li>
+        </ul>
+      </div>
+      <div class="footer-btn">
+        <ul>
+          <li>
+            <v-btn
+              class="footer-btn-class"
+              color="#ffffff"
+              plain
+              small
+              to="/rule"
+              nuxt
+              >利用規約</v-btn
+            >
+          </li>
+          <li>
+            <v-btn
+              class="footer-btn-class"
+              color="#ffffff"
+              plain
+              small
+              text
+              to="/pri"
+              nuxt
+              >プライバシーポリシー</v-btn
+            >
+          </li>
+          <li>
+            <v-btn
+              class="footer-btn-class"
+              color="#ffffff"
+              plain
+              small
+              text
+              to="/stcc"
+              nuxt
+              >特定取引法表示</v-btn
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 <style>
 .footer-color {
-  background-color: #3f70bb;
+  background-color: #0d47a1;
   color: #ffffff !important;
 }
-@media (max-width: 480px) {
-  .footer-color {
-    background-color: #3f70bb;
-    color: #ffffff !important;
-    height: 100px;
-    clear: both;
-  }
-}
+
 .footer-title {
   font-size: 35px;
   padding-left: 6px;
 }
-@media (max-width: 480px) {
-  .footer-title {
-    font-size: 15px;
-    padding-left: 6px;
-    font-weight: bold;
-  }
-}
-
 .footer-list {
   list-style: none;
   text-align: center;
@@ -63,7 +70,6 @@
 .footer-list li {
   width: 200px;
   text-align: center;
-  background-color: #333;
   display: inline-block;
 }
 
@@ -76,14 +82,6 @@
   text-align: left;
   display: inline-block;
   padding-left: 6px;
-}
-@media (max-width: 480px) {
-  .map {
-    text-align: left;
-    display: inline-block;
-    padding-left: 6px;
-    font-size: 10px;
-  }
 }
 
 .map-title li {
@@ -104,20 +102,50 @@
   padding-left: 6px;
 }
 
-.footer-btn li {
+.footer-btn ul li {
   float: left;
   border-right: solid 0.5px;
-  border-right-color: black;
   color: white !important;
 }
+
 @media (max-width: 480px) {
-.footer-btn a {
- 
-  color:white !important;
-}}
-@media (max-width: 480px) {
+  .footer-btn a {
+    color: white !important;
+    height: 20px !important;
+  }
+  .footer-color {
+    background-color: #0d47a1;
+    color: #ffffff !important;
+    height: 100px;
+    clear: both;
+    border-top: solid 3px;
+    padding-top: 10px;
+  }
+  .footer-title {
+    font-size: 15px;
+    padding-left: 6px;
+    font-weight: bold;
+  }
+  .map {
+    text-align: left;
+    display: inline-block;
+    padding-left: 6px;
+    font-size: 10px;
+  }
   .footer-color {
     bottom: 0; /*下に固定*/
+  }
+  .footer-btn-class {
+    font-size: 6px !important;
+  }
+  .footer-btn {
+    overflow: hidden;
+    margin-top: 3px;
+    height: 20px !important;
+    text-align: center;
+  }
+  .footer-btn ul li {
+    height: 20px;
   }
 }
 </style>

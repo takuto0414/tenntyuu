@@ -166,39 +166,22 @@
   margin: 0px 200px 0px 200px;
   text-align: left;
 }
-@media (max-width: 480px) {
-  .rule {
-    text-align: left;
-    margin: 6px;
-    font-size: 6px;
-  }
-}
+
 .rule-card {
   padding: 6px;
   margin-top: 6px;
+  background-color: #f5f5f5 !important;
 }
 .rule-title {
   font-size: 35px;
   text-align: center;
   padding-top: 12px;
-}
-@media (max-width: 480px) {
-  .rule-title {
-    font-size: 15px;
-    text-align: center;
-    padding-top: 6px;
-  }
+  font-weight: bold;
 }
 
 .rule-stitle {
   font-size: 25px;
   font-weight: bold;
-}
-@media (max-width: 480px) {
-  .rule-stitle {
-    font-size: 10px;
-    font-weight: bold;
-  }
 }
 
 .rule-h {
@@ -212,5 +195,21 @@
 }
 .pri-li {
   padding-left: 24px;
+}
+@media (max-width: 480px) {
+  .rule {
+    text-align: left;
+    margin: 6px;
+    font-size: 6px;
+  }
+  .rule-title {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 6px;
+  }
+  .rule-stitle {
+    font-size: 10px;
+    font-weight: bold;
+  }
 }
 </style>
