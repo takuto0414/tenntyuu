@@ -24,7 +24,9 @@
             </v-radio>
             <v-radio value="その他のお問い合わせ(商品のお見積もり依頼、質問等)">
               <template v-slot:label>
-                <div class="font-small">その他のお問い合わせ(商品のお見積もり依頼、質問等)</div>
+                <div class="font-small">
+                  その他のお問い合わせ(商品のお見積もり依頼、質問等)
+                </div>
               </template>
             </v-radio>
           </v-radio-group>
@@ -39,7 +41,6 @@
                 cols="30"
                 rows="5"
                 v-model="contactInformation.content"
-                
               ></textarea>
             </div>
           </div>
@@ -62,7 +63,6 @@
                 label="氏名"
                 color="#0045AD"
                 dense
-
               ></v-text-field>
             </li>
 
@@ -72,7 +72,6 @@
                 label="メールアドレス"
                 color="#0045AD"
                 dense
-
               ></v-text-field>
             </li>
             <li>
@@ -81,7 +80,6 @@
                 label="電話番号"
                 color="#0045AD"
                 dense
-
               ></v-text-field>
             </li>
           </ul>
@@ -192,31 +190,34 @@ li {
   padding-top: 12px;
 }
 @media (max-width: 480px) {
-.contact-title {
-  font-size: 15px;
-  padding-top: 6px;
-}}
+  .contact-title {
+    font-size: 15px;
+    padding-top: 6px;
+  }
+}
 .contact-sub-title {
   font-size: 25px;
   font-weight: bold;
   text-align: left;
 }
 @media (max-width: 480px) {
-.contact-sub-title {
-  font-size: 12px;
-  font-weight: bold;
-  text-align: left;
-}}
+  .contact-sub-title {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+  }
+}
 .contact-navi {
   font-size: 15px;
   margin: 5px 0px;
   text-align: left;
 }
 @media (max-width: 480px) {
-.contact-navi {
-  font-size: 6px !important;
-  text-align: left;
-}}
+  .contact-navi {
+    font-size: 6px !important;
+    text-align: left;
+  }
+}
 .contact-nkm {
   margin: 5px 0px;
 }
@@ -227,13 +228,14 @@ li {
   color: #0045ad;
 }
 @media (max-width: 480px) {
-.contact-im {
-  text-align: left;
-  font-weight: bold;
-  padding-bottom: 6px;
-  color: #0045ad;
-  font-size:10px;
-}}
+  .contact-im {
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 6px;
+    color: #0045ad;
+    font-size: 10px;
+  }
+}
 .contact-im2 {
   text-align: left;
   font-weight: bold;
@@ -241,13 +243,14 @@ li {
   color: #0045ad;
 }
 @media (max-width: 480px) {
-.contact-im2 {
-  text-align: left;
-  font-weight: bold;
-  padding-bottom: 6px;
-  color: #0045ad;
-  font-size:10px;
-}}
+  .contact-im2 {
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 6px;
+    color: #0045ad;
+    font-size: 10px;
+  }
+}
 .contact-text-t {
   background-color: rgba(243, 243, 245, 0.788);
   border: solid 1px;
@@ -256,13 +259,14 @@ li {
   float: left;
 }
 @media (max-width: 480px) {
-.contact-text-t {
-  background-color: rgba(243, 243, 245, 0.788);
-  border: solid 1px;
-  width: 60%;
-  height: 80px;
-  float: left;
-}}
+  .contact-text-t {
+    background-color: rgba(243, 243, 245, 0.788);
+    border: solid 1px;
+    width: 60%;
+    height: 80px;
+    float: left;
+  }
+}
 .contact-jh {
   font-size: 25px;
   font-weight: bold;
@@ -271,13 +275,14 @@ li {
   clear: both;
 }
 @media (max-width: 480px) {
-.contact-jh {
-  font-size: 12px;
-  font-weight: bold;
-  text-align: left;
-  padding: 24px 0px;
-  clear: both;
-}}
+  .contact-jh {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    padding: 24px 0px;
+    clear: both;
+  }
+}
 .contact-nr ul li {
   text-align: left;
   height: 65px;
@@ -295,19 +300,21 @@ li {
   padding-top: 12px;
 }
 @media (max-width: 480px) {
-.contact-cd-title {
-  font-size: 15px;
-  padding-top: 6px;
-}}
+  .contact-cd-title {
+    font-size: 15px;
+    padding-top: 6px;
+  }
+}
 .pa-4ma-4 {
   padding: 24px;
   margin: 0px 200px;
 }
 @media (max-width: 480px) {
-.pa-4ma-4 {
-  padding: 12px;
-  margin: 6px;
-}}
+  .pa-4ma-4 {
+    padding: 12px;
+    margin: 6px;
+  }
+}
 .span-title {
   font-size: 20px;
   color: black;
@@ -321,11 +328,13 @@ li {
   padding: 12px;
 }
 @media (max-width: 480px) {
-.contact-ck-card {
-  margin:6px;
-  padding: 6px;
-  font-size: 10px;
-}.font-small{font-size:12px;}
+  .contact-ck-card {
+    margin: 6px;
+    padding: 6px;
+    font-size: 10px;
+  }
+  .font-small {
+    font-size: 12px;
+  }
 }
-
 </style>
