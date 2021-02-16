@@ -104,29 +104,29 @@
               <td class="stcc-sub">{{ contactInformation.radios }}</td>
             </tr>
             <tr>
-              <td style="background-color:  #e0e0e0; width: 150px">
+              <td style="background-color: #e0e0e0; width: 150px">
                 お問い合わせ内容
               </td>
               <td class="stcc-sub">{{ contactInformation.content }}</td>
             </tr>
             <tr>
-              <td style="background-color:  #e0e0e0; width: 150px">
+              <td style="background-color: #e0e0e0; width: 150px">
                 店舗名/会社名
               </td>
               <td class="stcc-sub">{{ contactInformation.storeName }}</td>
             </tr>
             <tr>
-              <td style="background-color:  #e0e0e0; width: 150px">氏名</td>
+              <td style="background-color: #e0e0e0; width: 150px">氏名</td>
               <td class="stcc-sub">{{ contactInformation.name }}</td>
             </tr>
             <tr>
-              <td style="background-color:  #e0e0e0; width: 150px">
+              <td style="background-color: #e0e0e0; width: 150px">
                 メールアドレス
               </td>
               <td class="stcc-sub">{{ contactInformation.email }}</td>
             </tr>
             <tr>
-              <td style="background-color:  #e0e0e0; width: 150px">電話番号</td>
+              <td style="background-color: #e0e0e0; width: 150px">電話番号</td>
               <td class="stcc-sub">{{ contactInformation.tel }}</td>
             </tr>
           </tbody>
@@ -190,35 +190,19 @@ li {
   padding-top: 12px;
   font-weight: bold;
 }
-@media (max-width: 480px) {
-  .contact-title {
-    font-size: 15px;
-    padding-top: 6px;
-  }
-}
+
 .contact-sub-title {
   font-size: 25px;
   font-weight: bold;
   text-align: left;
 }
-@media (max-width: 480px) {
-  .contact-sub-title {
-    font-size: 12px;
-    font-weight: bold;
-    text-align: left;
-  }
-}
+
 .contact-navi {
   font-size: 15px;
   margin: 5px 0px;
   text-align: left;
 }
-@media (max-width: 480px) {
-  .contact-navi {
-    font-size: 6px !important;
-    text-align: left;
-  }
-}
+
 .contact-nkm {
   margin: 5px 0px;
 }
@@ -226,32 +210,16 @@ li {
   text-align: left;
   font-weight: bold;
   padding-bottom: 12px;
-  color: #0D47A1;
+  color: #0d47a1;
 }
-@media (max-width: 480px) {
-  .contact-im {
-    text-align: left;
-    font-weight: bold;
-    padding-bottom: 6px;
-    color: #0D47A1;
-    font-size: 10px;
-  }
-}
+
 .contact-im2 {
   text-align: left;
   font-weight: bold;
   padding-bottom: 12px;
-  color: #0D47A1;
+  color: #0d47a1;
 }
-@media (max-width: 480px) {
-  .contact-im2 {
-    text-align: left;
-    font-weight: bold;
-    padding-bottom: 6px;
-    color: #0D47A1;
-    font-size: 10px;
-  }
-}
+
 .contact-text-t {
   background-color: rgba(243, 243, 245, 0.788);
   border: solid 1px;
@@ -259,15 +227,7 @@ li {
   height: 200px;
   float: left;
 }
-@media (max-width: 480px) {
-  .contact-text-t {
-    background-color: rgba(243, 243, 245, 0.788);
-    border: solid 1px;
-    width: 60%;
-    height: 80px;
-    float: left;
-  }
-}
+
 .contact-jh {
   font-size: 25px;
   font-weight: bold;
@@ -275,15 +235,7 @@ li {
   padding: 24px 0px;
   clear: both;
 }
-@media (max-width: 480px) {
-  .contact-jh {
-    font-size: 12px;
-    font-weight: bold;
-    text-align: left;
-    padding: 24px 0px;
-    clear: both;
-  }
-}
+
 .contact-nr ul li {
   text-align: left;
   height: 65px;
@@ -304,23 +256,13 @@ li {
   padding-top: 12px;
   font-weight: bold;
 }
-@media (max-width: 480px) {
-  .contact-cd-title {
-    font-size: 15px;
-    padding-top: 6px;
-  }
-}
+
 .pa-4ma-4 {
   padding: 24px;
   margin: 0px 200px;
   background-color: #f5f5f5 !important;
 }
-@media (max-width: 480px) {
-  .pa-4ma-4 {
-    padding: 12px;
-    margin: 6px;
-  }
-}
+
 .span-title {
   font-size: 20px;
   color: black;
@@ -335,13 +277,80 @@ li {
   background-color: #f5f5f5 !important;
 }
 @media (max-width: 480px) {
+  .contact-title {
+    font-size: 15px;
+    padding-top: 6px;
+    padding-bottom: 0px;
+  }
   .contact-ck-card {
     margin: 6px;
     padding: 6px;
     font-size: 10px;
   }
   .font-small {
+    font-size: 10px;
+  }
+  .v-icon {
+    font-size: 12px !important;
+  }
+  .contact-nr {
+    padding-right: 50px;
+    height: 180px;
+  }
+  .contact-nr ul li {
+    height: 40px;
+  }
+  .v-label {
+    font-size: 10px;
+  }
+  .v-input {
+    font-size: 10px;
+  }
+  .contact-sub-title {
     font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+  }
+  .contact-navi {
+    font-size: 6px !important;
+    text-align: left;
+  }
+  .contact-im {
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 6px;
+    color: #0d47a1;
+    font-size: 10px;
+  }
+  .contact-im2 {
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 6px;
+    color: #0d47a1;
+    font-size: 10px;
+  }
+  .contact-text-t {
+    background-color: rgba(243, 243, 245, 0.788);
+    border: solid 1px;
+    width: 60%;
+    height: 80px;
+    float: left;
+    font-size: 10px;
+  }
+  .contact-jh {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    padding: 24px 0px;
+    clear: both;
+  }
+  .contact-cd-title {
+    font-size: 15px;
+    padding-top: 6px;
+  }
+  .pa-4ma-4 {
+    padding: 12px;
+    margin: 6px;
   }
 }
 </style>

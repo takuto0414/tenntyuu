@@ -4,7 +4,7 @@
       <div class="register-title">お客様情報登録</div>
       <v-card class="register--card">
         <div class="register-navi">
-          下記にてお客様情報の登録をお願いします。
+          メンテナンスにご加入のお客様は、<br />下記にてお客様情報、メンテナンスプランの登録をお願いします。
         </div>
         <div class="register-text">
           <ul class="register-list">
@@ -74,22 +74,22 @@
             <v-radio-group v-model="user.radios">
               <v-radio value="冷蔵庫プラン(厨房機器)">
                 <template v-slot:label>
-                  <div>冷蔵庫プラン(厨房機器)</div>
+                  <p class="register-pran-pran">冷蔵庫プラン(厨房機器)</p>
                 </template>
               </v-radio>
               <v-radio value="エアコンプラン">
                 <template v-slot:label>
-                  <div>エアコンプラン(パッケージエアコン)</div>
+                  <p>エアコンプラン(パッケージエアコン)</p>
                 </template>
               </v-radio>
               <v-radio value="セットプラン">
                 <template v-slot:label>
-                  <div>セットプラン</div>
+                  <p>セットプラン</p>
                 </template>
               </v-radio>
               <v-radio value="プロプラン">
                 <template v-slot:label>
-                  <div>プロプラン</div>
+                  <p>プロプラン</p>
                 </template>
               </v-radio>
             </v-radio-group>
@@ -268,6 +268,7 @@ export default {
         password: "",
         radios: "",
       },
+
       checkbox: false,
       // for stripe
       title: "決済フォーム",
@@ -445,6 +446,7 @@ li {
 
 .register-navi {
   text-align: left;
+  font-size: 15px;
 }
 .register-text {
   padding-right: 300px;
@@ -466,7 +468,6 @@ li {
   font-size: 25px;
   font-weight: bold;
   text-align: left;
-  color: #0d47a1;
 }
 
 .inquire-link {
@@ -540,16 +541,26 @@ ion-row {
   }
   .register-pran {
     padding: 6px 0px;
+  }
+  .register-pran p {
+    font-size: 12px;
+  }
+  .register-pran-pran {
     font-size: 6px i !important;
   }
   .register-text {
     padding-right: 50px;
+    height: 400px;
+  }
+
+  .register-text ul li {
+    height: 45px;
+    font-size: x-small;
   }
   .register-prantitle {
-    font-size: 20px;
+    font-size: 12px;
     font-weight: bold;
-    text-align: left;
-    color: #0d47a1;
+    text-align: center;
   }
   .form-ck {
     font-size: 15px;
@@ -566,8 +577,14 @@ ion-row {
     font-size: 10px;
   }
   .register-navi {
-    font-size: 16px;
-    text-align: left;
+    font-size: 6px;
+    text-align: center;
+  }
+  .register-mko a {
+    font-size: 10px;
+  }
+  .v-icon {
+    font-size: 10px !important;
   }
 }
 </style>

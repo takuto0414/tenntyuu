@@ -4,10 +4,11 @@
       <div class="login-title">ログイン</div>
       <v-card class="login-card">
         <div class="login-text">
+          <v-row align="center" class="mx-4">
+            <span class="white--text mb-4">{{ errorMessage }}</span>
+          </v-row>
+
           <ul class="login-list">
-            <v-row align="center" class="mx-4">
-              <span class="white--text mb-4">{{ errorMessage }}</span>
-            </v-row>
             <li>
               <v-text-field
                 v-model="user.email"
@@ -141,17 +142,26 @@ export default {
     color: #0d47a1;
   }
   .login-card {
-    height: 250px;
-    margin: 12px 50px 6px 50px;
+    height: 220px;
+    margin: 18px 40px 6px 40px;
   }
   .login-text li {
-    height: 60px;
+    height: 40px;
   }
   .mx-4 {
     font-size: 12px;
+    padding-top: 20px;
   }
   .login-bt {
-    margin-top: 20px;
+    margin-top: 25px !important;
+  }
+  .v-text-field {
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+  }
+  .login-list {
+    margin: 0px 24px;
+    padding-top: 0px !important;
   }
 }
 </style>

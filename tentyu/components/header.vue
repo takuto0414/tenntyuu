@@ -5,10 +5,15 @@
         <div class="header-title">
           <div class="header-sub">
             店舗厨房販売サービス<br />
-            <span class="homelink">株式会社　店厨サポート</span>
+            <span class="homelink">株式会社　店厨サポート</span
+            ><a href="/test">test</a>
           </div>
         </div>
-        <div class="header-pran">プラン：{{ this.$store.state.planName }}</div>
+        <div class="header-pran">
+          <v-icon dark small> mdi-wrench </v-icon>：{{
+            this.$store.state.planName
+          }}
+        </div>
         <div class="header-right">
           <v-btn class="ainte-btn" large elevation="" to="/" nuxt>HOME</v-btn>
           <v-btn class="ainte-btn" large elevation="" to="/maintenance" nuxt

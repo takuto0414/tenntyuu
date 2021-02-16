@@ -1,5 +1,19 @@
 <template>
   <div class="mainte-vue">
+    <div class="mainte-slide">
+      <v-carousel
+        cycle
+        height="350"
+        hide-delimiter-background
+        show-arrows-on-hover
+      >
+        <v-carousel-item v-for="(slide, i) in slides" :key="i" :src="items.src">
+          <v-sheet :item="items[i]" height="100%">
+            <div class="display-3">{{ slide }} Slide</div>
+          </v-sheet>
+        </v-carousel-item>
+      </v-carousel>
+    </div>
     <div class="mainte-title">メンテナンス</div>
     <v-card class="mainte-card">
       <div class="mainte-nyo">
@@ -28,8 +42,8 @@
       <div>
         <ul class="mainte-ul">
           <li>
-            <v-card class="v-color1"
-              ><div class="mainte-pr">冷蔵庫プラン(厨房機器)</div>
+            <v-card class="v-color"
+              ><div class="mainte-pr1">冷蔵庫プラン(厨房機器)</div>
               <div class="mainte-prb">
                 「厨房機器1台」<br />冷蔵庫各種さまざまな機械の<br />メンテナンスができます。<br />月額¥<span
                   class="mainte-spn"
@@ -39,8 +53,8 @@
             >
           </li>
           <li>
-            <v-card class="v-color2">
-              <div class="mainte-pr">エアコンプラン(パッケージエアコン)</div>
+            <v-card class="v-color">
+              <div class="mainte-pr2">エアコンプラン(パッケージエアコン)</div>
               <div class="mainte-prb">
                 「パッケージエアコン1台」<br />天カセ、天吊り、床置き、壁掛け<br />※ビルトイン、マルチタイプはご相談ください。<br />月額<span
                   class="mainte-spn"
@@ -51,8 +65,8 @@
           </li>
 
           <li>
-            <v-card class="v-color3">
-              <div class="mainte-pr">セットプラン</div>
+            <v-card class="v-color">
+              <div class="mainte-pr3">セットプラン</div>
               <div class="mainte-prb">
                 「冷蔵庫プラン、エアコンプランの2台セット」<br />各種セット料金プランがあります。<br />※詳しくはご相談ください。<br />月額<span
                   class="mainte-spn"
@@ -63,8 +77,8 @@
           </li>
 
           <li>
-            <v-card class="v-color4">
-              <div class="mainte-pr">プロプラン</div>
+            <v-card class="v-color">
+              <div class="mainte-pr4">プロプラン</div>
               <div class="mainte-prb">
                 「冷蔵庫プラン3台」<br />各種セット料金プランがあります。<br />※その他台数料金変更があるのでご相談ください。<br />月額<span
                   class="mainte-spn"
@@ -74,8 +88,8 @@
             >
           </li>
           <li>
-            <v-card class="v-color5">
-              <div class="mainte-pr">年間費でのお取り引き</div>
+            <v-card class="v-color">
+              <div class="mainte-pr5">年間費でのお取り引き</div>
               <div class="mainte-prb">
                 ・厨房機器(冷蔵庫類)年間<span class="mainte-spn"
                   >¥25,000(税別)</span
@@ -93,7 +107,29 @@
     >
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      items: [
+        {
+          src: require("@/assets/4020177_m.jpg"),
+        },
+        {
+          src: "https://cdn.vuetifyjs.com/images/carousel/sky.jpg",
+        },
+        {
+          src: "https://cdn.vuetifyjs.com/images/carousel/bird.jpg",
+        },
+        {
+          src: "https://cdn.vuetifyjs.com/images/carousel/planet.jpg",
+        },
+      ],
+      slides: ["First", "Second", "Third", "Fourth"],
+    };
+  },
+};
+</script>
 <style>
 li {
   list-style: none;
@@ -118,14 +154,36 @@ li {
 .mainte-ul li {
   padding: 5px;
 }
-.mainte-pr {
+.mainte-pr1 {
   font-size: 18px;
   font-weight: bold;
-  border-left: solid 2px;
   border-bottom: solid 2px;
-  border-right: solid 2px;
+  background-color: #d4e157 !important;
 }
-
+.mainte-pr2 {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: solid 2px;
+  background-color: #26a69a !important;
+}
+.mainte-pr3 {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: solid 2px;
+  background-color: #5c6bc0 !important;
+}
+.mainte-pr4 {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: solid 2px;
+  background-color: #ffa726 !important;
+}
+.mainte-pr5 {
+  font-size: 18px;
+  font-weight: bold;
+  border-bottom: solid 2px;
+  background-color: #ef5350 !important;
+}
 .mainte-prb {
   padding-top: 5px;
   padding-left: 6px;
@@ -145,29 +203,10 @@ li {
 .mainte-spn {
   font-weight: bold;
 }
-.v-color1 {
-  background-color: #eeff41 !important;
+.v-color {
   height: 150px;
-}
-
-.v-color2 {
-  background-color: #b2ff59 !important;
-  height: 150px;
-}
-
-.v-color3 {
-  background-color: #40c4ff !important;
-  height: 150px;
-}
-
-.v-color4 {
-  background-color: #ffab40 !important;
-  height: 150px;
-}
-
-.v-color5 {
-  background-color: #ff4081 !important;
-  height: 150px;
+  background-color: #f5f5f5 !important;
+  border: solid 2px black !important ;
 }
 
 .mainte-nyo {
@@ -206,19 +245,37 @@ li {
   }
   .mainte-pr-title {
     font-weight: bold;
-    font-size: 10px;
-    text-align: left;
+    font-size: 12px;
+    text-align: center;
   }
   .mainte-ul {
     text-align: left;
     width: 100%;
   }
-  .mainte-pr {
+  .mainte-pr1 {
     font-size: 8px;
     font-weight: bold;
-    border-left: solid 2px;
-    border-bottom: solid 2px;
-    border-right: solid 2px;
+    border-bottom: solid 1px;
+  }
+  .mainte-pr2 {
+    font-size: 8px;
+    font-weight: bold;
+    border-bottom: solid 1px;
+  }
+  .mainte-pr3 {
+    font-size: 8px;
+    font-weight: bold;
+    border-bottom: solid 1px;
+  }
+  .mainte-pr4 {
+    font-size: 8px;
+    font-weight: bold;
+    border-bottom: solid 1px;
+  }
+  .mainte-pr5 {
+    font-size: 8px;
+    font-weight: bold;
+    border-bottom: solid 1px;
   }
   .mainte-prb {
     font-size: 6px;
@@ -233,21 +290,11 @@ li {
     font-weight: 100;
     font-size: small !important;
   }
-  .v-color1 {
+  .v-color {
     height: 85px;
+    border: solid 1px black !important;
   }
-  .v-color2 {
-    height: 85px;
-  }
-  .v-color3 {
-    height: 85px;
-  }
-  .v-color4 {
-    height: 85px;
-  }
-  .v-color5 {
-    height: 85px;
-  }
+
   .mainte-nyo {
     text-align: left;
     font-size: 10px;

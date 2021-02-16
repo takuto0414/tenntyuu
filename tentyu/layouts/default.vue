@@ -19,15 +19,44 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$pc: 1024px; // PC
+$tab: 680px; // タブレット
+$sp: 480px; // スマホ
 
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
 main {
   height: 100%;
   min-height: 150vh;
   text-align: center;
-  background-color: #E0E0E0 !important;
+  background-color: #e0e0e0 !important;
   padding: 12px 0px;
+  @include sp {
+    background-color: yellow;
+    min-height: 0;
+  }
 }
-
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+main {
+  flex: 1;
+}
 .page-enter-active,
 .page-leave-active {
   transition: 0.5s cubic-bezier(1, 0.25, 0.25, 1);

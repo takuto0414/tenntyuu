@@ -137,7 +137,7 @@ export default {
   .home-contents-title {
     font-size: 12px;
     color: #0045ad;
-  border-bottom: solid 1px #000000;
+    border-bottom: solid 1px #000000;
     font-weight: bold;
   }
   .home-contents-sub {
@@ -148,7 +148,7 @@ export default {
     font-size: 6px;
   }
   .home-main {
-    background-color: #E0E0E0 !important;
+    background-color: #e0e0e0 !important;
   }
 }
 </style>
