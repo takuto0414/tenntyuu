@@ -5,7 +5,7 @@
       <div class="map">
         <ul>
           <li>〒442-0807 愛知県豊川市谷川町中道181番地</li>
-          <li>TEL0533-00-0000</li>
+          <li>TEL：0533-00-0000</li>
         </ul>
       </div>
       <div class="footer-btn">

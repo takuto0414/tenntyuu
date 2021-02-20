@@ -9,13 +9,14 @@
             ><a href="/test">test</a>
           </div>
         </div>
-        <div class="header-pran">
+        <div v-if=" this.$store.state.planName" class="header-pran">
+
           <v-icon dark small> mdi-wrench </v-icon>：{{
             this.$store.state.planName
           }}
         </div>
         <div class="header-right">
-          <v-btn class="ainte-btn" large elevation="" to="/" nuxt>HOME</v-btn>
+          <v-btn class="ainte-btn" large elevation="" to="/" nuxt  >HOME</v-btn>
           <v-btn class="ainte-btn" large elevation="" to="/maintenance" nuxt
             >メンテナンス</v-btn
           >
@@ -25,40 +26,24 @@
           <v-btn class="ainte-btn" large elevation="" to="/contact" nuxt>
             お問い合わせ</v-btn
           >
+          
+
         </div>
 
         <div class="header-info">
           <div>お気軽にお問い合わせください</div>
-          <p class="header-tel">TEL　0532-00-0000</p>
-          <p>9:00~18:00(定休日/土、日、祝日)</p>
+          <p class="header-tel">TEL：0532-00-0000</p>
+          <p>9:00~18:00　(定休日/土、日、祝日)</p>
         </div>
       </header>
     </div>
   </div>
 </template>
 <script>
-import firebase from "~/plugins/firebase.js";
 
-export default {
-  methods: {
-    logout() {
-      firebase
-        .auth()
-        .signOut()
-        .then(() => {
-          // Sign-out successful.
-        })
-        .catch(() => {
-          // An error happened.
-        });
-
-      console.log("ahhhhh");
-      this.$router.push({ path: "/" });
-    },
-  },
-};
 </script>
 <style>
+
 header {
   height: 170px;
   border-bottom: solid 3px white;

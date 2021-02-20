@@ -27,7 +27,12 @@
         </div>
         <div class="login-bt">
           <a class="inquire-link" @click="login">
-            <v-btn class="mainte-btn" large elevation="" nuxt> ログイン</v-btn>
+            <v-btn class="mainte-btn" large depressed nuxt> ログイン</v-btn>
+          </a>
+          <a class="inquire-link" @click="logoutUser">
+            <v-btn class="mainte-btn" large elevation="" nuxt>
+              ログアウト</v-btn
+            >
           </a>
         </div>
         <div>
@@ -54,28 +59,18 @@ export default {
     };
   },
   methods: {
+    logoutUser() {
+      firebase.auth().signOut();
+      this.$store.commit("auth", {
+        planName: null,
+      });
+    },
     login() {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.user.email, this.user.password)
         .then(this.auth)
         .catch(this.showError);
-
-      const db = firebase.firestore();
-      let user = db.collection("user");
-      user.get().then((snapshot) => {
-        snapshot
-          .forEach((doc) => {
-            let data = doc.data();
-            console.log("SUCEESS getting document:", data);
-            this.$store.commit("auth", {
-              planName: data.radios,
-            });
-          })
-          .catch(function (error) {
-            console.log("Error getting document:", error);
-          });
-      });
     },
     auth(res) {
       console.log("auth", res.user.emailVerified);
@@ -87,7 +82,31 @@ export default {
         );
         return;
       }
+      // ログイン成功後の処理
+      console.log(res);
+      const db = firebase.firestore();
+      let user = db.collection("user");
+      user.get().then((snapshot) => {
+        snapshot
+          .forEach((doc) => {
+            // ログイン成功したメールアドレスと一致するユーザーのプラン情報を送る
+              if (this.user.email, this.user.password===user) {
+                console.log("ユーザーがログインしています。");
+              } else {
+                // ユーザーはログインしていません。
+              }
+            
+            let data = doc.data();
+            console.log("SUCEESS getting document:", data);
+            this.$store.commit("auth", {
+              planName: data.radios,
+            });
+          })
 
+          .catch(function (error) {
+            console.log("Error getting document:", error);
+          });
+      });
       this.$router.push({ path: "/" });
     },
 

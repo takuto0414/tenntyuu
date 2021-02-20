@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <Header />
     <main>
       <nuxt />
@@ -39,14 +39,15 @@ $sp: 480px; // スマホ
   }
 }
 main {
-  height: 100%;
   min-height: 150vh;
   text-align: center;
-  background-color: #e0e0e0 !important;
+    background-color: #e0e0e0 !important;
   padding: 12px 0px;
+  flex: 1;
+
   @include sp {
-    background-color: yellow;
     min-height: 0;
+
   }
 }
 body {
@@ -54,9 +55,7 @@ body {
   flex-flow: column;
   min-height: 100vh;
 }
-main {
-  flex: 1;
-}
+
 .page-enter-active,
 .page-leave-active {
   transition: 0.5s cubic-bezier(1, 0.25, 0.25, 1);
@@ -65,6 +64,9 @@ main {
 .page-leave-active {
   opacity: 0;
   transform: translate(0, 30px);
+}
+.page{
+  background-color: #e0e0e0;
 }
 </style>
 
