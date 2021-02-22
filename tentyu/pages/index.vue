@@ -1,6 +1,6 @@
 <template>
   <div class="home-main">
-    <v-card class="home-contents-card">
+    <v-card class="home-contents-card" flat>
       <v-img class="home-img"></v-img>
       <div class="home-contents-title">厨房機器販売</div>
       <p class="home-contents-sub">
@@ -8,7 +8,7 @@
         <br />機種の選定からアフターフォローまでお任せ下さい！
       </p>
     </v-card>
-    <v-card class="home-contents-card">
+    <v-card class="home-contents-card" flat>
       <v-img class="home-img"></v-img>
       <div class="home-contents-title">メンテナンス、修理</div>
       <p class="home-contents-sub">
@@ -17,7 +17,7 @@
       </p>
       <div class="home-mainte-link"></div>
     </v-card>
-    <v-card class="home-contents-card">
+    <v-card class="home-contents-card" flat>
       <v-img class="home-img" v-bind:src="image2"></v-img>
       <div class="home-contents-title">移設、廃棄、解体作業</div>
       <p class="home-contents-sub">
@@ -25,21 +25,21 @@
         まずは、お気軽にお見積りをご依頼下さい！
       </p>
     </v-card>
-    <v-card class="home-contents-card">
+    <v-card class="home-contents-card" flat>
       <v-img class="home-img" v-bind:src="image1"></v-img>
       <div class="home-contents-title">空調機器販売、取付</div>
       <p class="home-contents-sub">
         ルームエアコンから業務用エアコンまで<br />各種メーカーを取り扱いがあります。<br />お店にあったエアコンを選定させて頂きます！
       </p>
     </v-card>
-    <v-card class="home-contents-card">
+    <v-card class="home-contents-card" flat>
       <v-img class="home-img"></v-img>
       <div class="home-contents-title">店舗、厨房改装企画提案</div>
       <p class="home-contents-sub">
         店舗や厨房のレイアウト変更や、<br />1からの店舗作りをサポートさせて頂きます！
       </p>
     </v-card>
-    <v-card class="home-contents-card">
+    <v-card class="home-contents-card" flat>
       <v-img class="home-img" v-bind:src="image3"></v-img>
       <div class="home-contents-title">中古品買取、販売</div>
       <p class="home-contents-sub">

@@ -1,45 +1,41 @@
 <template>
-  <div>
-    <div>
-      <div class="login-title">ログイン</div>
-      <v-card class="login-card">
-        <div class="login-text">
-          <v-row align="center" class="mx-4">
-            <span class="white--text mb-4">{{ errorMessage }}</span>
-          </v-row>
+  <div class="login-vue">
+    <div class="login-title">ログイン</div>
+    <v-card class="login-card" flat>
+      <div class="login-text">
+        <v-row align="center" class="mx-4">
+          <span class="white--text mb-4">{{ errorMessage }}</span>
+        </v-row>
 
-          <ul class="login-list">
-            <li>
-              <v-text-field
-                v-model="user.email"
-                label="メールアドレス"
-                color="#0045AD"
-              ></v-text-field>
-            </li>
-            <li>
-              <v-text-field
-                v-model="user.password"
-                label="パスワード"
-                color="#0045AD"
-              ></v-text-field>
-            </li>
-          </ul>
-        </div>
-        <div class="login-bt">
-          <a class="inquire-link" @click="login">
-            <v-btn class="mainte-btn" large depressed nuxt> ログイン</v-btn>
-          </a>
-          <a class="inquire-link" @click="logoutUser">
-            <v-btn class="mainte-btn" large elevation="" nuxt>
-              ログアウト</v-btn
-            >
-          </a>
-        </div>
-        <div>
-          <a class="non-rg" href="/register">お客様情報登録がお済みでない方</a>
-        </div>
-      </v-card>
-    </div>
+        <ul class="login-list">
+          <li>
+            <v-text-field
+              v-model="user.email"
+              label="メールアドレス"
+              color="#0045AD"
+            ></v-text-field>
+          </li>
+          <li>
+            <v-text-field
+              v-model="user.password"
+              label="パスワード"
+              color="#0045AD"
+            ></v-text-field>
+          </li>
+        </ul>
+      </div>
+      <div class="login-bt">
+        <a class="inquire-link" @click="login">
+          <v-btn class="mainte-btn" large depressed nuxt> ログイン</v-btn>
+        </a>
+        <a class="inquire-link" @click="logoutUser">
+          <v-btn class="mainte-btn" large depressed nuxt> ログアウト</v-btn>
+        </a>
+      </div>
+      <div class="login-register">
+        <a class="non-rg" href="/register">お客様情報登録がお済みでない方</a>
+      </div>
+    </v-card>
   </div>
 </template>
 
@@ -90,12 +86,12 @@ export default {
         snapshot
           .forEach((doc) => {
             // ログイン成功したメールアドレスと一致するユーザーのプラン情報を送る
-              if (this.user.email, this.user.password===user) {
-                console.log("ユーザーがログインしています。");
-              } else {
-                // ユーザーはログインしていません。
-              }
-            
+            if ((this.user.email, this.user.password === user)) {
+              console.log("ユーザーがログインしています。");
+            } else {
+              // ユーザーはログインしていません。
+            }
+
             let data = doc.data();
             console.log("SUCEESS getting document:", data);
             this.$store.commit("auth", {
@@ -126,16 +122,10 @@ export default {
   font-weight: bold;
 }
 
-.login-list {
-  margin: 0px 24px;
-  padding-top: 30px;
-}
-
 .non-rg {
   font-size: 12px;
 }
 .login-text li {
-  padding-top: 30px;
   height: 65px;
 }
 .white--text {
@@ -147,40 +137,52 @@ export default {
 .login-card {
   height: 300px;
   margin: 20px 400px 0px 400px;
-  padding: 0px 40px;
+  padding: 16px;
   background-color: #f5f5f5 !important;
+}
+.theme--light.v-icon {
+  color: #0d47a1  !important;
 }
 
 @media (max-width: 480px) {
   .login-title {
-    font-size: 15px;
-    padding-top: 6px;
+    font-size: 20px;
+    padding-bottom: 12px;
+    text-align: left;
+    opacity: 0.8;
   }
   .non-rg {
     font-size: 6px !important;
     color: #0d47a1;
   }
   .login-card {
-    height: 220px;
-    margin: 18px 40px 6px 40px;
+    height: auto;
+    margin: 6px 0px 6px 0px;
   }
   .login-text li {
     height: 40px;
+    text-align: left !important;
   }
   .mx-4 {
     font-size: 12px;
-    padding-top: 20px;
+    padding: 16px;
   }
   .login-bt {
-    margin-top: 25px !important;
+    margin-top: 0px !important;
+    text-align: center;
   }
   .v-text-field {
     margin-top: 0px !important;
     padding-top: 0px !important;
   }
   .login-list {
-    margin: 0px 24px;
-    padding-top: 0px !important;
+    padding-top: 16px !important;
+  }
+  .login-vue {
+    padding: 0px 30px;
+  }
+  .v-input--selection-controls__ripple {
+    height: 0px !important;
   }
 }
 </style>

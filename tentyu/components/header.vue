@@ -6,7 +6,7 @@
           <div class="header-sub">
             店舗厨房販売サービス<br />
             <span class="homelink">株式会社　店厨サポート</span
-            ><a href="/test">test</a>
+            >
           </div>
         </div>
         <div v-if=" this.$store.state.planName" class="header-pran">
@@ -16,14 +16,14 @@
           }}
         </div>
         <div class="header-right">
-          <v-btn class="ainte-btn" large elevation="" to="/" nuxt  >HOME</v-btn>
-          <v-btn class="ainte-btn" large elevation="" to="/maintenance" nuxt
+          <v-btn class="ainte-btn" large depressed to="/" nuxt  >HOME</v-btn>
+          <v-btn class="ainte-btn" large depressed to="/maintenance" nuxt
             >メンテナンス</v-btn
           >
-          <v-btn class="ainte-btn" large elevation="" to="/login" nuxt
+          <v-btn class="ainte-btn" large depressed to="/login" nuxt
             >ログイン</v-btn
           >
-          <v-btn class="ainte-btn" large elevation="" to="/contact" nuxt>
+          <v-btn class="ainte-btn" large depressed to="/contact" nuxt>
             お問い合わせ</v-btn
           >
           

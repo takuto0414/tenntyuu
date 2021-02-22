@@ -1,8 +1,9 @@
 <template>
-  <div>
+<div>
+  <div class="register-all">
     <div v-show="!userConfirm">
       <div class="register-title">お客様情報登録</div>
-      <v-card class="register--card">
+      <v-card flat class="register--card">
         <div class="register-navi">
           メンテナンスにご加入のお客様は、<br />下記にてお客様情報、メンテナンスプランの登録をお願いします。
         </div>
@@ -79,7 +80,7 @@
               </v-radio>
               <v-radio value="エアコンプラン">
                 <template v-slot:label>
-                  <p>エアコンプラン(パッケージエアコン)</p>
+                  <p>エアコンプラン</p>
                 </template>
               </v-radio>
               <v-radio value="セットプラン">
@@ -182,7 +183,7 @@
 
         <div class="register-btn">
           <a @click="showConfirm">
-            <v-btn class="mainte-btn" large elevation=""> 確認</v-btn></a
+            <v-btn class="mainte-btn" large depressed> 確認</v-btn></a
           >
         </div>
       </v-card>
@@ -190,7 +191,7 @@
     <div v-show="userConfirm">
       <div class="form-ck">入力項目確認</div>
 
-      <v-card class="register-card1">
+      <v-card class="register-card1" flat>
         <table class="table">
           <tbody>
             <tr>
@@ -244,6 +245,7 @@
       <v-btn class="mainte-btn" large @click="userConfirm = false">修正</v-btn
       >　<v-btn class="mainte-btn" large @click="submit">送信</v-btn>
     </div>
+  </div>
   </div>
 </template>
 <script>
@@ -449,7 +451,7 @@ li {
   font-size: 15px;
 }
 .register-text {
-  padding-right: 300px;
+  padding-right: 0px  !important;
 }
 .register-text ul li {
   padding-top: 5px;
@@ -515,7 +517,7 @@ ion-row {
   border-bottom: 1px solid #ddd;
 }
 .register--card {
-  padding: 24px;
+  padding: 16px;
   margin: 0px 200px;
   background-color: #f5f5f5 !important;
 }
@@ -529,15 +531,16 @@ ion-row {
 }
 .register-card1 {
   margin: 0px 400px;
-  padding: 12px;
+  padding: 16px;
   background-color: #f5f5f5 !important;
 }
 
 @media (max-width: 480px) {
   .register-title {
-    font-size: 15px;
-    padding-top: 6px;
+   font-size: 20px;
     padding-bottom: 12px;
+    text-align: left;
+    opacity: 0.8;
   }
   .register-pran {
     padding: 6px 0px;
@@ -555,12 +558,13 @@ ion-row {
 
   .register-text ul li {
     height: 45px;
-    font-size: x-small;
+    width: 100%  !important;
   }
   .register-prantitle {
-    font-size: 12px;
+    font-size: 18px;
     font-weight: bold;
-    text-align: center;
+    text-align: left;
+    opacity: .8;
   }
   .form-ck {
     font-size: 15px;
@@ -568,23 +572,27 @@ ion-row {
     padding-bottom: 0px;
   }
   .register--card {
-    padding: 24px;
-    margin: 6px;
-  }
+    padding: 16px  !important;
+margin: 0px;  }
   .register-card1 {
-    margin: 6px;
-    padding: 6px;
-    font-size: 10px;
+     padding: 16px;
+margin: 0px; 
+    font-size: 12px;
   }
   .register-navi {
-    font-size: 6px;
-    text-align: center;
+    font-size: 10px !important;
+    text-align: left;
+    padding-bottom:12px ;
+    opacity: .8;
   }
   .register-mko a {
     font-size: 10px;
   }
   .v-icon {
     font-size: 10px !important;
+  }
+  .register-all{
+    padding: 0px 30px;
   }
 }
 </style>
