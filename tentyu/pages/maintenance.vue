@@ -24,7 +24,7 @@
       <br />
 
       <div>
-        4:月額または年会費でお客様の負担を軽減
+        4:月額、年会費でお客様の負担を軽減
         <p>お客様自身にプランを選択をしていただき、費用の負担を軽減します。</p>
       </div>
     </v-card>
@@ -91,7 +91,7 @@
               <div>
               <div class="mainte-pr1">プロプラン</div>
               <div class="mainte-prb">
-                「冷蔵庫プラン3台」<br />各種セット料金プランがあります。<br />※その他台数料金変更があるのでご相談ください。<br />月額¥<span
+                「冷蔵庫プラン3台」<br />各種セット料金プランがあります。<br />※その他料金変更等あるのでご相談ください。<br />月額¥<span
                   class="mainte-spn"
                   >6,700</span
                 >(税別)
@@ -107,7 +107,7 @@
               <div>
               <div class="mainte-pr1">年間費でのお取り引き</div>
               <div class="mainte-prb">
-                厨房機器類：年間¥25,000(税別)<br />パッケージエアコン：年間¥30,000(税別)<br />※各種セット割引があるのでご相談ください。<br />※ご契約の際は別途必要記入書類があります。
+                厨房機器類：年間¥25,000(税別)<br />パッケージエアコン：年間¥30,000(税別)<br />※各種セット割引があるのでご相談ください。<br />※ご際は別途必要記入書類があります。
             </div>
             </div>
             </v-row>
@@ -201,7 +201,7 @@ li {
 
 .mainte-nyo {
   text-align: left;
-  font-size: 20px;
+  font-size: 16px  !important;
   font-weight: bold;
   color: #0d47a1;
 }
@@ -275,33 +275,35 @@ li {
     font-weight: bold;
   }
   .mainte-prb {
-    font-size: 12px;
+    font-size: 11px  !important;
     padding-top: 5px;
     padding-left: 6px;
     opacity: .8;
   }
   .mainte-btn {
-    width: 60px !important;
+    width: 80px !important;
     background-color: #0d47a1 !important;
     color: white !important;
-    height: 25px !important;
-    font-weight: 100;
+    height: 30px !important;
+    font-weight: bold !important;
     font-size: small !important;
   }
   
 
   .mainte-nyo {
     text-align: left;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     color: #0d47a1 !important;
     background-color: #f5f5f5 !important;
     padding: 16px;
+    opacity: .8;
   }
   .mainte-nyo p {
-    font-size: 6px;
+    font-size: 12px;
     font-weight: 100;
     color: #000;
+    opacity: .8;
   }
   .mainte-card {
     padding: 12px;

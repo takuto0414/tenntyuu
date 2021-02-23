@@ -2,7 +2,7 @@
   <div>
     <div class="rule">
       <div class="rule-title">利用規約</div>
-      <v-card class="rule-card">
+      <v-card class="rule-card" flat>
         <div class="rule-h">
           この利用規約（以下、「本規約」といいます。）は、株式会社　店厨サポート（以下、「当社」といいます。）がこのウェブサイト上で提供するメンテナンスサービス（以下、「本サービス」といいます。）の利用条件を定めるものです。登録ユーザーの皆さま（以下、「ユーザー」といいます。）には、本規約に従って、本サービスをご利用いただきます。
         </div>
@@ -174,7 +174,7 @@
 }
 .rule-title {
   font-size: 35px;
-  text-align: center;
+  text-align: left;
   padding-top: 12px;
   font-weight: bold;
 }
@@ -199,17 +199,43 @@
 @media (max-width: 480px) {
   .rule {
     text-align: left;
-    margin: 6px;
+    padding: 0px 30px !important;
     font-size: 6px;
+    margin: 0px;
   }
   .rule-title {
-    font-size: 15px;
-    text-align: center;
-    padding-top: 6px;
+    font-size: 20px;
+    text-align: left;
+    padding: 12px 0px;
+    opacity: 0.8;
   }
   .rule-stitle {
-    font-size: 10px;
+    font-size: 16px;
     font-weight: bold;
+    opacity: 0.8;
+    padding: 6px !important;
+    margin: 16px !important;
+  }
+  .rule-h {
+    font-size: 12px;
+    margin: 16px;
+    padding-top: 6px;
+    opacity: 0.8;
+    text-align: left;
+  }
+  .rule ul li {
+    font-size: 12px;
+    margin: 16px;
+    padding-top: 6px;
+    opacity: 0.8;
+    text-align: left;
+  }
+  .rule-r {
+    text-align: right;
+    font-size: 12px;
+    margin: 16px;
+    padding-top: 6px;
+    opacity: 0.8;
   }
 }
 </style>
