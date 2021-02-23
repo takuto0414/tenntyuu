@@ -57,6 +57,8 @@ li{
 .footer-color {
   background-color: #0d47a1;
   color: #ffffff !important;
+    opacity: .9;
+
 }
 
 .footer-title {
@@ -111,7 +113,7 @@ li{
   color: white !important;
 }
 .v-btn--plain:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover) .v-btn__content {
-     opacity: 0.62; 
+     opacity: 1.0; 
 }
 @media (max-width: 480px) {
   .footer-btn a {

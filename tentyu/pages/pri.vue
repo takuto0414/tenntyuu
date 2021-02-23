@@ -2,7 +2,7 @@
   <div>
     <div class="rule">
       <div class="rule-title">プライバシーポリシー</div>
-      <v-card class="rule-card">
+      <v-card flat class="rule-card">
         <div class="rule-h">
           株式会社　店厨サポート（以下、「当社」といいます。）は、本ウェブサイト上で提供するサービス（以下、「本サービス」といいます。）における、ユーザーの個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下、「本ポリシー」といいます。）を定めます。
         </div>

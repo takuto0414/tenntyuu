@@ -41,13 +41,12 @@ $sp: 480px; // スマホ
 main {
   min-height: 150vh;
   text-align: center;
-    background-color: #e0e0e0 !important;
+  background-color: #eeeeee !important;
   padding: 12px 0px;
   flex: 1;
 
   @include sp {
     min-height: 0;
-
   }
 }
 body {
@@ -65,8 +64,8 @@ body {
   opacity: 0;
   transform: translate(0, 30px);
 }
-.page{
-  background-color: #e0e0e0;
+.page {
+  background-color: #eeeeee;
 }
 </style>
 

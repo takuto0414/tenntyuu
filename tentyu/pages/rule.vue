@@ -162,42 +162,51 @@
   </div>
 </template>
 <style>
-.rule {
-  margin: 0px 200px 0px 200px;
-  text-align: left;
+.pri-li {
+  padding-left: 24px;
 }
-
 .rule-card {
-  background-color: #f5f5f5 !important;
+  padding: 16px;
+}
+.rule {
+  text-align: left;
+  margin:0px 50px;
 }
 .rule-title {
-  font-size: 35px;
+  font-size: 30px;
   text-align: left;
-  padding-top: 12px;
+  padding: 12px 0px !important;
+  opacity: 0.8;
   font-weight: bold;
 }
-
 .rule-stitle {
-  font-size: 25px;
+  font-size: 20px;
   font-weight: bold;
+  opacity: 0.8;
+  padding: 6px 0px;
 }
-
 .rule-h {
-  padding: 12px 0px 12px 12px;
+  font-size: 18px;
+  opacity: 0.6;
+  text-align: left;
+  padding-right: 6px;
+  padding: 18px 6px 12px 12px;
 }
 .rule ul li {
-  padding: 6px 0px 6px 24px;
+  font-size: 18px;
+  opacity: 0.6;
+  text-align: left;
+  padding: 12px 6px 6px 24px;
 }
 .rule-r {
   text-align: right;
-}
-.pri-li {
-  padding-left: 24px;
+  font-size: 18px;
+  padding-top: 6px;
+  opacity: 0.6;
 }
 @media (max-width: 480px) {
   .rule-card {
     padding: 16px;
-    background-color: #f5f5f5 !important;
   }
   .rule {
     text-align: left;
@@ -218,14 +227,14 @@
   .rule-h {
     font-size: 12px;
     padding-top: 6px;
-    opacity: 0.8;
+    opacity: 0.6;
     text-align: left;
     padding-right: 6px;
   }
   .rule ul li {
     font-size: 12px;
     padding-top: 6px;
-    opacity: 0.8;
+    opacity: 0.6;
     text-align: left;
     padding-right: 6px;
   }
@@ -233,7 +242,7 @@
     text-align: right;
     font-size: 12px;
     padding-top: 6px;
-    opacity: 0.8;
+    opacity: 0.6;
   }
 }
 </style>

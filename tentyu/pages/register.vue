@@ -58,15 +58,14 @@
                   color="#0045AD"
                 ></v-text-field>
               </li>
+              <li>
+                <v-text-field
+                  v-model="user.password"
+                  label="パスワード"
+                  color="#0045AD"
+                ></v-text-field>
+              </li>
             </ul>
-
-            <div class="register-pass">
-              <v-text-field
-                v-model="user.password"
-                label="パスワード"
-                color="#0045AD"
-              ></v-text-field>
-            </div>
           </div>
           <div class="register-card">
             <div class="register-prantitle">メンテナンスプラン</div>
@@ -80,17 +79,17 @@
                 </v-radio>
                 <v-radio value="エアコンプラン">
                   <template v-slot:label>
-                    <p>エアコンプラン</p>
+                    <p class="register-pran-pran">エアコンプラン</p>
                   </template>
                 </v-radio>
                 <v-radio value="セットプラン">
                   <template v-slot:label>
-                    <p>セットプラン</p>
+                    <p class="register-pran-pran">セットプラン</p>
                   </template>
                 </v-radio>
                 <v-radio value="プロプラン">
                   <template v-slot:label>
-                    <p>プロプラン</p>
+                    <p class="register-pran-pran">プロプラン</p>
                   </template>
                 </v-radio>
               </v-radio-group>
@@ -119,7 +118,7 @@
       <div id="card-cvc" class="input empty"></div> -->
 
           <!-- for stripe -->
-          <div class="container">
+          <div class="container-">
             <h1 class="title" v-text="title" />
             <div class="card">
               <p class="image-area">
@@ -169,7 +168,7 @@
                         <a target="_blank" href="/rule">利用規約</a>、<a
                           target="_blank"
                           href="/pri"
-                          >プライバシーポリシー<br /></a
+                          >プライバシーポリシー</a
                         >について同意する。
                       </a>
                     </template>
@@ -183,7 +182,7 @@
 
           <div class="register-btn">
             <a @click="showConfirm">
-              <v-btn class="mainte-btn" large depressed> 確認</v-btn></a
+              <v-btn class="mainte-btn-re" large depressed> 確認</v-btn></a
             >
           </div>
         </v-card>
@@ -195,61 +194,50 @@
           <table class="table">
             <tbody>
               <tr>
-                <td style="opacity:.6;">
-                  店舗名/会社名
-                </td>
+                <td style="opacity: 0.6">店舗名/会社名</td>
                 <td class="stcc-sub">{{ user.storeName }}</td>
               </tr>
               <tr>
-                <td style="opacity:.6;">
-                  電話番号
-                </td>
+                <td style="opacity: 0.6">電話番号</td>
                 <td class="stcc-sub">{{ user.tel }}</td>
               </tr>
               <tr>
-                <td style="opacity:.6;">
-                  代表者名
-                </td>
+                <td style="opacity: 0.6">代表者名</td>
                 <td class="stcc-sub">{{ user.name }}</td>
               </tr>
               <tr>
-                <td style="opacity:.6;">かな</td>
+                <td style="opacity: 0.6">かな</td>
                 <td class="stcc-sub">{{ user.kanaName }}</td>
               </tr>
               <tr>
-                <td style="opacity:.6;">
-                  携帯番号
-                </td>
+                <td style="opacity: 0.6">携帯番号</td>
                 <td class="stcc-sub">{{ user.phoneTel }}</td>
               </tr>
               <tr>
-                <td style="opacity:.6;">
-                  メールアドレス
-                </td>
+                <td style="opacity: 0.6">メールアドレス</td>
                 <td class="stcc-sub">{{ user.email }}</td>
               </tr>
               <tr>
-                <td style="opacity:.6;">住所</td>
+                <td style="opacity: 0.6">住所</td>
                 <td class="stcc-sub">{{ user.address }}</td>
               </tr>
               <tr>
-                <td style="opacity:.6;">
-                  パスワード
-                </td>
+                <td style="opacity: 0.6">パスワード</td>
                 <td class="stcc-sub">{{ user.password }}</td>
               </tr>
               <tr>
-                <td style="opacity:.6;">
-                  メンテナンスプラン
-                </td>
+                <td style="opacity: 0.6">メンテナンスプラン</td>
                 <td class="stcc-sub">{{ user.radios }}</td>
               </tr>
             </tbody>
           </table>
         </v-card>
 
-        <v-btn class="mainte-btn" large depressed @click="userConfirm = false">修正</v-btn
-        >　<v-btn class="mainte-btn" large depressed @click="submit">送信</v-btn>
+        <v-btn class="mainte-btn-re" large depressed @click="userConfirm = false"
+          >修正</v-btn
+        >　<v-btn class="mainte-btn-re" large depressed @click="submit"
+          >送信</v-btn
+        >
       </div>
     </div>
   </div>
@@ -429,12 +417,9 @@ export default {
         .then(this.register_success)
         .catch(function (error) {
           console.log("error", error);
-
         });
       this.$router.push({ path: "/login-comp" });
-
     },
-    
   },
   head() {
     return {
@@ -448,61 +433,15 @@ export default {
 li {
   list-style: none;
 }
-
-.register-title {
-  font-size: 35px;
-  padding-top: 12px;
+.mainte-btn-re {
+  margin-top: 10px;
+  margin-bottom: 12px;
+  padding: 0px 12px;
+  width: 80px !important;
   font-weight: bold;
-  padding-bottom: 24px;
+  background-color: #0d47a1 !important;
+  color: white !important;
 }
-
-.register-navi {
-  text-align: left;
-  font-size: 15px;
-}
-.register-text {
-  padding-right: 0px !important;
-}
-.register-text ul li {
-  padding-top: 5px;
-  text-align: left;
-  height: 65px;
-}
-
-.register-pass {
-  text-align: left;
-}
-.register-pran {
-  padding: 6px 0px;
-}
-
-.register-prantitle {
-  font-size: 25px;
-  font-weight: bold;
-  text-align: left;
-}
-
-.inquire-link {
-  margin-top: 20px;
-}
-.form-ck {
-  font-size: 35px;
-  padding-top: 12px;
-  font-weight: bold;
-  padding-bottom: 24px;
-}
-
-.form-ck-li li {
-  margin: 5px 5px;
-  text-align: left;
-  padding: 2px;
-}
-.form-ck-li2 li {
-  margin: 5px 5px;
-  text-align: left;
-  padding: 2px;
-}
-
 .card-label-container {
   height: 1.5em;
   width: 100%;
@@ -526,11 +465,6 @@ ion-row {
   padding: 5px 0 6px 0;
   border-bottom: 1px solid #ddd;
 }
-.register--card {
-  padding: 16px;
-  margin: 0px 200px;
-  background-color: #f5f5f5 !important;
-}
 
 .register-mko {
   text-align: left;
@@ -542,7 +476,88 @@ ion-row {
 .register-card1 {
   margin: 0px 400px;
   padding: 16px;
-  background-color: #f5f5f5 !important;
+}
+
+.register-title {
+  font-size: 30px;
+  padding-top: 12px;
+  font-weight: bold;
+  padding-bottom: 12px;
+  text-align: left;
+  opacity: 0.8;
+}
+
+.register-pran {
+  padding: 6px 0px;
+}
+
+.register-pran-pran {
+  font-size: 18px;
+  padding: 12px 0px 12px 12px;
+}
+.register-text {
+  height: 650px;
+}
+.register-text ul li {
+  padding-top: 10px;
+  text-align: left;
+  height: 70px;
+  width: 100% !important;
+}
+
+.register-prantitle {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  opacity: 0.8;
+}
+.form-ck-li li {
+  margin: 5px 5px;
+  text-align: left;
+  padding: 2px;
+}
+
+.form-ck {
+  font-size: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.register--card {
+  padding: 16px;
+  margin: 12px 6px;
+}
+.register-card1 {
+  padding: 16px;
+  margin: 12px 6px;
+  text-align: left;
+}
+
+.register-navi {
+  font-size: 18px !important;
+  text-align: left;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  opacity: 0.6;
+}
+.register-mko a {
+  font-size: 18px;
+  padding: 12px 0px;
+}
+.v-icon {
+  font-size: 16px !important;
+}
+.v-label {
+  font-size: 16px  !important;
+}
+.v-input {
+  font-size: 16px  !important;
+}
+.register-all {
+  padding: 0px 50px;
 }
 
 @media (max-width: 480px) {
@@ -555,11 +570,9 @@ ion-row {
   .register-pran {
     padding: 6px 0px;
   }
-  .register-pran p {
-    font-size: 12px;
-  }
+  
   .register-pran-pran {
-    font-size: 6px i !important;
+    font-size: 12px;
   }
   .register-text {
     padding-right: 50px;
@@ -582,7 +595,7 @@ ion-row {
     padding-bottom: 12px;
     text-align: left;
     font-weight: bold;
-    opacity: .8;
+    opacity: 0.8;
   }
   .register--card {
     padding: 16px !important;
@@ -603,10 +616,20 @@ ion-row {
     font-size: 12px;
   }
   .v-icon {
-    font-size: 10px !important;
-  }
+  font-size: 10px  !important;
+}
+.v-label {
+  font-size: 12px  !important;
+}
+.v-input {
+  font-size: 12px  !important;
+}
   .register-all {
     padding: 0px 30px;
+  }
+ 
+  .container {
+    padding: 0px;
   }
 }
 </style>

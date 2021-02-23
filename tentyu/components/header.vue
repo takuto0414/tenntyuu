@@ -5,18 +5,16 @@
         <div class="header-title">
           <div class="header-sub">
             店舗厨房販売サービス<br />
-            <span class="homelink">株式会社　店厨サポート</span
-            >
+            <span class="homelink">株式会社　店厨サポート</span>
           </div>
         </div>
-        <div v-if=" this.$store.state.planName" class="header-pran">
-
+        <div v-if="this.$store.state.planName" class="header-pran">
           <v-icon dark small> mdi-wrench </v-icon>：{{
             this.$store.state.planName
           }}
         </div>
         <div class="header-right">
-          <v-btn class="ainte-btn" large depressed to="/" nuxt  >HOME</v-btn>
+          <v-btn class="ainte-btn" large depressed to="/" nuxt>HOME</v-btn>
           <v-btn class="ainte-btn" large depressed to="/maintenance" nuxt
             >メンテナンス</v-btn
           >
@@ -26,8 +24,6 @@
           <v-btn class="ainte-btn" large depressed to="/contact" nuxt>
             お問い合わせ</v-btn
           >
-          
-
         </div>
 
         <div class="header-info">
@@ -40,33 +36,31 @@
   </div>
 </template>
 <script>
-
 </script>
 <style>
-
 header {
-  height: 170px;
+  height: 190px;
   border-bottom: solid 3px white;
   padding: 0px 6px;
   background-color: #0d47a1;
+  opacity: 0.9;
 }
 
 .homelink {
   text-decoration-line: none;
   text-align: left;
   float: left;
-  font-size: 45px;
+  font-size: 40px;
   font-weight: 100;
 }
 
 .header-title {
   padding-left: 6px;
   color: white !important;
-  
 }
 
 .header-right {
-  padding: 0px 6px 0px 6px;
+  padding: 6px 6px 0px 6px;
   text-align: right;
 }
 
@@ -93,8 +87,8 @@ header {
 .header-info {
   float: right;
   font-size: 18px;
-  text-align: center;
-  padding-right: 30px;
+  text-align: right;
+  padding-right: 10px;
   color: #ffffff;
   font-weight: bold;
   padding-top: 6px;
@@ -106,7 +100,7 @@ header {
   color: #ffffff;
   text-align: right;
   font-weight: bold;
-  padding-top: 6px;
+  padding-top: 10px;
 }
 @media (max-width: 480px) {
   header {
@@ -114,7 +108,7 @@ header {
     border-bottom: solid 2px #ffffff;
     padding: 0px 6px;
     background-color: #0d47a1;
-    opacity: .9;
+    opacity: 0.9;
   }
   .homelink {
     text-decoration-line: none;

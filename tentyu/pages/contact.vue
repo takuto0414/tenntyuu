@@ -6,7 +6,6 @@
         <div class="contact-navi">
           ご相談、お見積り、ご質問までお気軽にご連絡ください。<br />項目を記入後確認ボタンを押してください。
         </div>
-        <div class="contact-sub-title">お問い合わせ入力</div>
 
         <div class="contact-nkm">
           <v-radio-group v-model="contactInformation.radios">
@@ -18,14 +17,14 @@
             >
               <template v-slot:label>
                 <div class="font-small">
-                  ご購入頂いた商品等に関するお問い合わせ<br>(機器の不具合、故障等)
+                  ご購入頂いた商品等に関するお問い合わせ<br />(機器の不具合、故障等)
                 </div>
               </template>
             </v-radio>
             <v-radio value="その他のお問い合わせ(商品のお見積もり依頼、質問等)">
               <template v-slot:label>
                 <div class="font-small">
-                  その他のお問い合わせ<br>(商品のお見積もり依頼、質問等)
+                  その他のお問い合わせ<br />(商品のお見積もり依頼、質問等)
                 </div>
               </template>
             </v-radio>
@@ -33,7 +32,7 @@
 
           <div class="contact-text">
             <div class="contact-im2">お問い合わせ内容</div>
-            <div>
+            <div class="contact-field">
               <textarea
                 class="contact-text-t"
                 name="mail"
@@ -85,8 +84,8 @@
           </ul>
         </div>
 
-        <div>
-          <v-btn class="mainte-btn" large depressed @click="showConfirm" nuxt 
+        <div class="imoimo">
+          <v-btn class="mainte-btn" large depressed @click="showConfirm" nuxt
             >確認</v-btn
           >
         </div>
@@ -98,35 +97,27 @@
         <table class="table">
           <tbody>
             <tr>
-              <td style="opacity:.6;">
-                お問い合わせ種類
-              </td>
+              <td style="opacity: 0.6">お問い合わせ種類</td>
               <td class="stcc-sub">{{ contactInformation.radios }}</td>
             </tr>
             <tr>
-              <td style="opacity:.6;">
-                お問い合わせ内容
-              </td>
+              <td style="opacity: 0.6">お問い合わせ内容</td>
               <td class="stcc-sub">{{ contactInformation.content }}</td>
             </tr>
             <tr>
-              <td style="opacity:.6;">
-                店舗名/会社名
-              </td>
+              <td style="opacity: 0.6">店舗名/会社名</td>
               <td class="stcc-sub">{{ contactInformation.storeName }}</td>
             </tr>
             <tr>
-              <td style="opacity:.6;">氏名</td>
+              <td style="opacity: 0.6">氏名</td>
               <td class="stcc-sub">{{ contactInformation.name }}</td>
             </tr>
             <tr>
-              <td style="opacity:.6;">
-                メールアドレス
-              </td>
+              <td style="opacity: 0.6">メールアドレス</td>
               <td class="stcc-sub">{{ contactInformation.email }}</td>
             </tr>
             <tr>
-              <td style="opacity:.6;">電話番号</td>
+              <td style="opacity: 0.6">電話番号</td>
               <td class="stcc-sub">{{ contactInformation.tel }}</td>
             </tr>
           </tbody>
@@ -175,10 +166,8 @@ export default {
         })
         .catch(function (error) {
           console.log("Error register document:", error);
-
         });
       this.$router.push({ path: "/contact-comp" });
-
     },
   },
 };
@@ -187,81 +176,21 @@ export default {
 li {
   list-style: none;
 }
-.contact-title {
-  font-size: 35px;
-  padding-bottom: 24px;
-  padding-top: 12px;
-  font-weight: bold;
+.contact-field {
+  padding: 12px 0px;
 }
-
-.contact-sub-title {
-  font-size: 25px;
-  font-weight: bold;
+.stcc-sub {
   text-align: left;
-}
-
-.contact-navi {
-  font-size: 15px;
-  margin: 5px 0px;
-  text-align: left;
+  padding: 12px 0px 12px 24px;
+  opacity: 0.9;
 }
 
 .contact-nkm {
   margin: 5px 0px;
 }
-.contact-im {
-  text-align: left;
-  font-weight: bold;
-  padding-bottom: 12px;
-  color: #0d47a1;
-}
 
-.contact-im2 {
-  text-align: left;
-  font-weight: bold;
-  padding-bottom: 12px;
-  color: #0d47a1;
-}
-
-.contact-text-t {
-  background-color: rgba(243, 243, 245, 0.788);
-  border: solid 1px;
-  width: 60%;
-  height: 200px;
-  float: left;
-}
-
-.contact-jh {
-  font-size: 25px;
-  font-weight: bold;
-  text-align: left;
-  padding: 24px 0px;
-  clear: both;
-}
-
-.contact-nr ul li {
-  text-align: left;
-  height: 65px;
-}
-
-.contact-ck {
-  text-align: left;
-
-  padding: 15px;
-}
 .contact-ul {
   text-align: left;
-}
-.contact-cd-title {
-  font-size: 35px;
-  padding-top: 12px;
-  font-weight: bold;
-}
-
-.pa-4ma-4 {
-  padding: 24px;
-  margin: 0px 200px;
-  background-color: #f5f5f5 !important;
 }
 
 .span-title {
@@ -272,30 +201,128 @@ li {
 .contact-btnbtn {
   padding: 12px;
 }
+
+.contact-title {
+  font-size: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  opacity: 0.8;
+  font-weight: bold;
+  text-align: left;
+}
 .contact-ck-card {
-  margin: 12px 200px 0px 200px;
+  padding: 16px;
+  margin: 0px;
+  font-size: 18px;
+  text-align: left;
+}
+.font-small {
+  font-size: 16px;
+  padding: 12px 0px 12px 12px;
+}
+.v-icon {
+  font-size: 16px;
+}
+.contact-nr {
+  height: 180px;
+}
+.contact-nr ul li {
+  text-align: left;
+  height: 65px;
+  padding: 12px 0px;
+}
+
+.v-label {
+  font-size: 16px;
+}
+.v-input {
+  font-size: 16px;
+}
+
+.contact-navi {
+  font-size: 18px !important;
+  text-align: left;
+  opacity: 0.6;
+  padding-top: 12px;
+}
+
+.contact-im {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  color: #0d47a1;
+  font-size: 18px;
+}
+
+.contact-im2 {
+  text-align: left;
+  font-weight: bold;
+  padding-bottom: 12px;
+  color: #0d47a1;
+  padding-top: 12px;
+
+  font-size: 18px;
+}
+
+.contact-text-t {
+  background-color: rgba(243, 243, 245, 0.788);
+  border: solid 1px;
+  width: 100%;
+  height: 200px;
+  float: left;
+  font-size: 18px;
   padding: 12px;
-  background-color: #f5f5f5 !important;
+}
+
+.contact-jh {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  padding: 24px 0px;
+  clear: both;
+  color: #0d47a1;
+}
+
+.contact-cd-title {
+  font-size: 30px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-weight: bold;
+  opacity: 0.8;
+  text-align: left;
+}
+
+.pa-4ma-4 {
+  padding: 16px !important;
+  margin: 0px;
+}
+.imoimo {
+  padding-top: 80px;
 }
 @media (max-width: 480px) {
+  .imoimo {
+    padding-top: 0px;
+  }
   .contact-title {
     font-size: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
-    opacity: .8;
+    opacity: 0.8;
     font-weight: bold;
     text-align: left;
   }
   .contact-ck-card {
-   padding: 16px;
+    padding: 16px;
     margin: 0px;
     font-size: 12px;
   }
   .font-small {
-    font-size: 10px;
+    font-size: 12px;
+    padding: 6px 0px 6px 6px;
   }
   .v-icon {
-    font-size: 12px !important;
+    font-size: 12px;
   }
   .contact-nr {
     height: 180px;
@@ -304,36 +331,30 @@ li {
     height: 40px;
   }
   .v-label {
-    font-size: 10px;
+    font-size: 12px;
   }
   .v-input {
-    font-size: 10px;
+    font-size: 12px;
   }
-  .contact-sub-title {
-    font-size: 16px;
-    font-weight: bold;
-    text-align: left;
-    opacity: .8;
-    padding-top: 12px;
-  }
+
   .contact-navi {
     font-size: 12px !important;
     text-align: left;
-    opacity: .8;
+    opacity: 0.8;
   }
   .contact-im {
     text-align: left;
     font-weight: bold;
     padding-bottom: 6px;
     color: #0d47a1;
-    font-size: 12px;
+    font-size: 16px;
   }
   .contact-im2 {
     text-align: left;
     font-weight: bold;
     padding-bottom: 12px;
     color: #0d47a1;
-    font-size: 12px;
+    font-size: 16px;
   }
   .contact-text-t {
     background-color: rgba(243, 243, 245, 0.788);
@@ -342,26 +363,26 @@ li {
     height: 80px;
     float: left;
     font-size: 10px;
+    padding: 6px;
   }
   .contact-jh {
     font-size: 16px;
     font-weight: bold;
     text-align: left;
-    padding: 24px 0px;
+    padding: 12px 0px;
     clear: both;
-    opacity: .8;
   }
   .contact-cd-title {
     font-size: 20px;
     padding-top: 12px;
     padding-bottom: 12px;
     font-weight: bold;
-    opacity: .8;
+    opacity: 0.8;
     text-align: left;
   }
   .pa-4ma-4 {
-    padding: 16px  !important;
-margin: 0px; 
+    padding: 16px !important;
+    margin: 0px;
   }
 }
 </style>

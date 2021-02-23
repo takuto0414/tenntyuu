@@ -26,10 +26,10 @@
       </div>
       <div class="login-bt">
         <a class="inquire-link" @click="login">
-          <v-btn class="mainte-btn" large depressed nuxt> ログイン</v-btn>
+          <v-btn class="mainte-btn-login" large depressed nuxt> ログイン</v-btn>
         </a>
         <a class="inquire-link" @click="logoutUser">
-          <v-btn class="mainte-btn" large depressed nuxt> ログアウト</v-btn>
+          <v-btn class="mainte-btn-login" large depressed nuxt> ログアウト</v-btn>
         </a>
       </div>
       <div class="login-register">
@@ -116,34 +116,70 @@ export default {
 };
 </script>
 <style>
-.login-title {
-  font-size: 35px;
-  padding-top: 12px;
-  font-weight: bold;
-}
-
-.non-rg {
-  font-size: 12px;
-}
-.login-text li {
-  height: 65px;
-}
 .white--text {
   color: red;
 }
-.login-bt {
-  margin-top: 50px;
+.mainte-btn-login{
+  margin-top: 10px;
+  margin-bottom: 12px;
+  padding: 0px 12px;
+  width: 100px !important;
+  font-weight: bold;
+  background-color: #0d47a1 !important;
+  color: white !important;
+  height: 35px  !important;
 }
-.login-card {
-  height: 300px;
-  margin: 20px 400px 0px 400px;
-  padding: 16px;
-  background-color: #f5f5f5 !important;
-}
+
 .theme--light.v-icon {
   color: #0d47a1 !important;
 }
 
+.login-title {
+  font-size: 30px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+  font-weight: bold;
+  text-align: left;
+  opacity: 0.8;
+}
+.non-rg {
+  font-size: 18px ;
+  color: #0d47a1;
+}
+.login-card {
+  height: auto;
+padding: 12px;
+  margin: 12px 6px;
+}
+
+.login-text li {
+  text-align: left !important;
+}
+.mx-4 {
+  font-size: 18px;
+  padding: 16px;
+  margin-top: 16px;
+}
+.login-bt {
+  margin-top: 80px;
+}
+.login-bt {
+  margin-top: 0px !important;
+  text-align: center;
+}
+
+.login-list {
+  padding-top: 16px !important;
+}
+.login-vue {
+  margin: 0px 50px;
+}
+.v-input--selection-controls__ripple {
+  height: 0px !important;
+}
+.inquire-link {
+  margin-top: 20px;
+}
 @media (max-width: 480px) {
   .login-title {
     font-size: 20px;
@@ -166,9 +202,10 @@ export default {
   .mx-4 {
     font-size: 12px;
     padding: 16px;
+    margin: 0px;
   }
   .login-bt {
-    margin-top: 0px !important;
+    margin-top: 0px ;
     text-align: center;
   }
   .v-text-field {
@@ -179,10 +216,20 @@ export default {
     padding-top: 16px !important;
   }
   .login-vue {
-    padding: 0px 30px;
+  margin: 0px 30px;
   }
   .v-input--selection-controls__ripple {
     height: 0px !important;
   }
+  .mainte-btn-login{
+  margin-top: 10px;
+  margin-bottom: 12px;
+  padding: 0px 12px;
+  width: 80px !important;
+  font-weight: bold;
+  background-color: #0d47a1 !important;
+  color: white !important;
+  height: 28px  !important;
+}
 }
 </style>

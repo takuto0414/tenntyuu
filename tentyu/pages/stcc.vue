@@ -1,7 +1,7 @@
 <template>
   <div class="rule">
     <div class="rule-title">特定取引法表示</div>
-    <v-card class="rule-card">
+    <v-card flat class="rule-card">
       <table class="table">
         <tbody>
           <tr>
@@ -33,8 +33,8 @@
             <td class="stcc-sub">メンテナンスページをご参照ください。</td>
           </tr>
           <tr>
-            <td style="opacity: 0.6">商品代金以外の必要料金</td>
-            <td class="stcc-sub">・消費税</td>
+            <td style="opacity: 0.6">プラン代金以外の必要料金</td>
+            <td class="stcc-sub">なし</td>
           </tr>
           <tr>
             <td style="opacity: 0.6">サービス開始時期</td>
@@ -60,10 +60,16 @@
   </div>
 </template>
 <style>
-.table-responsive {
-  text-align: center;
-  margin: 0px 200px 0px 200px;
-}
+  .table {
+    font-size: 18px;
+  }
+
+  .stcc-sub {
+    text-align: left;
+    padding: 12px 0px 12px 24px;
+    opacity: 0.9;
+  }
+
 @media (max-width: 480px) {
   .table {
     font-size: 12px;

@@ -68,35 +68,48 @@ export default {
 
 <style>
 .home-contents-card {
-  float: left;
-  width: 33%;
-  height: auto;
-}
-
-.slide {
-  width: 100% !important;
-  text-align: center !important;
-  margin-top: 6px;
-}
-
-.home-contents-title {
-  font-size: 25px;
-  color: #0d47a1;
-}
-
-.home-img {
-  height: 300px;
-}
-.home-contents-sub {
-  padding-top: 12px;
-}
-
+    float: center;
+    width: 100%;
+    margin: 50px 50px 50px 0px;
+    height: auto;
+    background-color: white;
+  }
+  .slide {
+    width: 100% !important;
+    text-align: center !important;
+  }
+  .home-contents-title {
+    font-size: 25px;
+    color: #0045ad;
+    font-weight: bold;
+    text-align: left;
+    margin: 16px;
+  }
+  .home-contents-sub {
+    padding: 16px 0px;
+    font-size: 18px;
+    opacity: 0.8;
+    text-align: left;
+    margin: 16px;
+  }
+  .home-mainte-link {
+    font-size: 6px;
+  }
+  .home-main {
+    background-color: #eeeeee !important;
+    margin: 50px;
+  }
+  .home-img {
+    height: 500px;
+  }
 @media (max-width: 480px) {
   .home-contents-card {
     float: center;
     width: 100%;
     margin: 6px 6px 6px 0px;
     height: auto;
+    background-color: white;
+
   }
   .slide {
     width: 100% !important;
@@ -111,8 +124,8 @@ export default {
   }
   .home-contents-sub {
     padding-top: 6px;
-    font-size: 12px;
-    opacity: 0.8;
+    font-size: 16px;
+    opacity: 0.6;
     text-align: left;
     margin: 16px;
   }
@@ -120,7 +133,7 @@ export default {
     font-size: 6px;
   }
   .home-main {
-    background-color: #e0e0e0 !important;
+    background-color: #eeeeee !important;
     margin: 20px;
   }
   .home-img {
