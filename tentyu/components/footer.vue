@@ -130,13 +130,13 @@
     text-align: left;
     display: inline-block;
     padding-left: 6px;
-    font-size: 10px;
+    font-size: 12px;
   }
   .footer-color {
     bottom: 0; /*下に固定*/
   }
   .footer-btn-class {
-    font-size: 6px !important;
+    font-size: 10px !important;
   }
   .footer-btn {
     overflow: hidden;

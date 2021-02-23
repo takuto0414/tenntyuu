@@ -62,6 +62,7 @@ header {
 .header-title {
   padding-left: 6px;
   color: white !important;
+  
 }
 
 .header-right {
@@ -109,7 +110,7 @@ header {
 }
 @media (max-width: 480px) {
   header {
-    height: 150px;
+    height: 155px;
     border-bottom: solid 2px #ffffff;
     padding: 0px 6px;
     background-color: #0d47a1;
@@ -134,16 +135,17 @@ header {
     text-align: left;
     float: left;
     padding-top: 6px;
+    font-weight: bold;
   }
   .ainte-btn {
     width: 30px !important;
     background-color: #ffffff !important;
     color: #0d47a1 !important;
     height: 20px !important;
-    font-size: 6px !important;
+    font-size: 12px !important;
   }
   .header-info {
-    font-size: 6px !important;
+    font-size: 12px !important;
     color: #ffffff;
     float: left;
     padding-left: 6px;

@@ -168,8 +168,7 @@
 }
 
 .rule-card {
-  padding: 6px;
-  margin-top: 6px;
+  
   background-color: #f5f5f5 !important;
 }
 .rule-title {
@@ -197,35 +196,34 @@
   padding-left: 24px;
 }
 @media (max-width: 480px) {
+  .rule-card {
+  padding: 16px;
+  background-color: #f5f5f5 !important;
+}
   .rule {
     text-align: left;
     padding: 0px 30px !important;
-    font-size: 6px;
     margin: 0px;
   }
   .rule-title {
     font-size: 20px;
     text-align: left;
-    padding: 12px 0px;
+    padding: 12px 0px  !important;
     opacity: 0.8;
   }
   .rule-stitle {
     font-size: 16px;
     font-weight: bold;
     opacity: 0.8;
-    padding: 6px !important;
-    margin: 16px !important;
   }
   .rule-h {
     font-size: 12px;
-    margin: 16px;
     padding-top: 6px;
     opacity: 0.8;
     text-align: left;
   }
   .rule ul li {
     font-size: 12px;
-    margin: 16px;
     padding-top: 6px;
     opacity: 0.8;
     text-align: left;
@@ -233,7 +231,6 @@
   .rule-r {
     text-align: right;
     font-size: 12px;
-    margin: 16px;
     padding-top: 6px;
     opacity: 0.8;
   }
