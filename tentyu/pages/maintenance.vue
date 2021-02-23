@@ -193,7 +193,6 @@ li {
   font-weight: bold;
 }
 .v-color {
-  height: 150px;
   background-color: #f5f5f5 !important;
   margin-bottom: 30px;
 
@@ -297,7 +296,6 @@ li {
     color: #0d47a1 !important;
     background-color: #f5f5f5 !important;
     padding: 16px;
-    opacity: .8;
   }
   .mainte-nyo p {
     font-size: 12px;

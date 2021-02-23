@@ -51,6 +51,9 @@
   </div>
 </template>
 <style>
+li{
+  list-style: none;
+}
 .footer-color {
   background-color: #0d47a1;
   color: #ffffff !important;
@@ -107,7 +110,9 @@
   border-right: solid 0.5px;
   color: white !important;
 }
-
+.v-btn--plain:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover) .v-btn__content {
+     opacity: 0.62; 
+}
 @media (max-width: 480px) {
   .footer-btn a {
     color: white !important;
@@ -120,6 +125,7 @@
     clear: both;
     border-top: solid 3px;
     padding-top: 10px;
+    opacity: .9;
   }
   .footer-title {
     font-size: 15px;
@@ -143,6 +149,7 @@
     margin-top: 3px;
     height: 20px !important;
     text-align: center;
+    opacity: 1.0 !important;
   }
   .footer-btn ul li {
     height: 20px;

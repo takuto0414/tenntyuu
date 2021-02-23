@@ -114,6 +114,7 @@ header {
     border-bottom: solid 2px #ffffff;
     padding: 0px 6px;
     background-color: #0d47a1;
+    opacity: .9;
   }
   .homelink {
     text-decoration-line: none;

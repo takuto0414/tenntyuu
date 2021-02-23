@@ -6,14 +6,14 @@
       <div>メールまたはお電話でお返事させていただきます。</div>
     </div>
     <div>
-      <v-btn class="mainte-btn" large elevation="" to="/" nuxt>
-        TOPへ戻る</v-btn
-      >
+      
     </div>
   </div>
 </template>
 <style>
-.contact-comp-font {
-  color: #bdc1c6;
+.contact-comp-font{
+  font-size:16px;
+  opacity: .8;
+  margin: 200px 0px;
 }
 </style>

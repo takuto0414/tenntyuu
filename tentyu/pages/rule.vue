@@ -168,7 +168,6 @@
 }
 
 .rule-card {
-  
   background-color: #f5f5f5 !important;
 }
 .rule-title {
@@ -197,9 +196,9 @@
 }
 @media (max-width: 480px) {
   .rule-card {
-  padding: 16px;
-  background-color: #f5f5f5 !important;
-}
+    padding: 16px;
+    background-color: #f5f5f5 !important;
+  }
   .rule {
     text-align: left;
     padding: 0px 30px !important;
@@ -208,7 +207,7 @@
   .rule-title {
     font-size: 20px;
     text-align: left;
-    padding: 12px 0px  !important;
+    padding: 12px 0px !important;
     opacity: 0.8;
   }
   .rule-stitle {
@@ -221,12 +220,14 @@
     padding-top: 6px;
     opacity: 0.8;
     text-align: left;
+    padding-right: 6px;
   }
   .rule ul li {
     font-size: 12px;
     padding-top: 6px;
     opacity: 0.8;
     text-align: left;
+    padding-right: 6px;
   }
   .rule-r {
     text-align: right;

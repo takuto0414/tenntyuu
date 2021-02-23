@@ -141,7 +141,7 @@ export default {
   background-color: #f5f5f5 !important;
 }
 .theme--light.v-icon {
-  color: #0d47a1  !important;
+  color: #0d47a1 !important;
 }
 
 @media (max-width: 480px) {
@@ -152,7 +152,7 @@ export default {
     opacity: 0.8;
   }
   .non-rg {
-    font-size: 6px !important;
+    font-size: 12px !important;
     color: #0d47a1;
   }
   .login-card {

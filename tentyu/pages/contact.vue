@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div class="mainte-vue">
     <div v-show="!isConfirm">
       <div class="contact-title">お問い合わせ</div>
-      <v-card class="pa-4ma-4">
+      <v-card class="pa-4ma-4" flat>
         <div class="contact-navi">
           ご相談、お見積り、ご質問までお気軽にご連絡ください。<br />項目を記入後確認ボタンを押してください。
         </div>
@@ -18,14 +18,14 @@
             >
               <template v-slot:label>
                 <div class="font-small">
-                  ご購入頂いた商品等に関するお問い合わせ(機器の不具合、故障等)
+                  ご購入頂いた商品等に関するお問い合わせ<br>(機器の不具合、故障等)
                 </div>
               </template>
             </v-radio>
             <v-radio value="その他のお問い合わせ(商品のお見積もり依頼、質問等)">
               <template v-slot:label>
                 <div class="font-small">
-                  その他のお問い合わせ(商品のお見積もり依頼、質問等)
+                  その他のお問い合わせ<br>(商品のお見積もり依頼、質問等)
                 </div>
               </template>
             </v-radio>
@@ -86,7 +86,7 @@
         </div>
 
         <div>
-          <v-btn class="mainte-btn" large elevation="" @click="showConfirm" nuxt
+          <v-btn class="mainte-btn" large depressed @click="showConfirm" nuxt 
             >確認</v-btn
           >
         </div>
@@ -94,49 +94,49 @@
     </div>
     <div v-show="isConfirm">
       <div class="contact-cd-title">入力項目確認</div>
-      <v-card class="contact-ck-card">
+      <v-card flat class="contact-ck-card">
         <table class="table">
           <tbody>
             <tr>
-              <td style="background-color: #e0e0e0; width: 150px">
+              <td style="opacity:.6;">
                 お問い合わせ種類
               </td>
               <td class="stcc-sub">{{ contactInformation.radios }}</td>
             </tr>
             <tr>
-              <td style="background-color: #e0e0e0; width: 150px">
+              <td style="opacity:.6;">
                 お問い合わせ内容
               </td>
               <td class="stcc-sub">{{ contactInformation.content }}</td>
             </tr>
             <tr>
-              <td style="background-color: #e0e0e0; width: 150px">
+              <td style="opacity:.6;">
                 店舗名/会社名
               </td>
               <td class="stcc-sub">{{ contactInformation.storeName }}</td>
             </tr>
             <tr>
-              <td style="background-color: #e0e0e0; width: 150px">氏名</td>
+              <td style="opacity:.6;">氏名</td>
               <td class="stcc-sub">{{ contactInformation.name }}</td>
             </tr>
             <tr>
-              <td style="background-color: #e0e0e0; width: 150px">
+              <td style="opacity:.6;">
                 メールアドレス
               </td>
               <td class="stcc-sub">{{ contactInformation.email }}</td>
             </tr>
             <tr>
-              <td style="background-color: #e0e0e0; width: 150px">電話番号</td>
+              <td style="opacity:.6;">電話番号</td>
               <td class="stcc-sub">{{ contactInformation.tel }}</td>
             </tr>
           </tbody>
         </table>
       </v-card>
       <div class="contact-btnbtn">
-        <v-btn class="mainte-btn" large elevation="" href="/contact" nuxt>
+        <v-btn class="mainte-btn" large depressed href="/contact" nuxt>
           修正</v-btn
         >
-        　<v-btn class="mainte-btn" large elevation="" @click="submit" nuxt
+        　<v-btn class="mainte-btn" large depressed @click="submit" nuxt
           >送信</v-btn
         >
       </div>
@@ -175,7 +175,10 @@ export default {
         })
         .catch(function (error) {
           console.log("Error register document:", error);
+
         });
+      this.$router.push({ path: "/contact-comp" });
+
     },
   },
 };
@@ -240,9 +243,7 @@ li {
   text-align: left;
   height: 65px;
 }
-.contact-nr {
-  padding-right: 300px;
-}
+
 .contact-ck {
   text-align: left;
 
@@ -278,14 +279,17 @@ li {
 }
 @media (max-width: 480px) {
   .contact-title {
-    font-size: 15px;
-    padding-top: 6px;
-    padding-bottom: 0px;
+    font-size: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    opacity: .8;
+    font-weight: bold;
+    text-align: left;
   }
   .contact-ck-card {
-    margin: 6px;
-    padding: 6px;
-    font-size: 10px;
+   padding: 16px;
+    margin: 0px;
+    font-size: 12px;
   }
   .font-small {
     font-size: 10px;
@@ -294,7 +298,6 @@ li {
     font-size: 12px !important;
   }
   .contact-nr {
-    padding-right: 50px;
     height: 180px;
   }
   .contact-nr ul li {
@@ -307,50 +310,58 @@ li {
     font-size: 10px;
   }
   .contact-sub-title {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
     text-align: left;
+    opacity: .8;
+    padding-top: 12px;
   }
   .contact-navi {
-    font-size: 6px !important;
+    font-size: 12px !important;
     text-align: left;
+    opacity: .8;
   }
   .contact-im {
     text-align: left;
     font-weight: bold;
     padding-bottom: 6px;
     color: #0d47a1;
-    font-size: 10px;
+    font-size: 12px;
   }
   .contact-im2 {
     text-align: left;
     font-weight: bold;
-    padding-bottom: 6px;
+    padding-bottom: 12px;
     color: #0d47a1;
-    font-size: 10px;
+    font-size: 12px;
   }
   .contact-text-t {
     background-color: rgba(243, 243, 245, 0.788);
     border: solid 1px;
-    width: 60%;
+    width: 100%;
     height: 80px;
     float: left;
     font-size: 10px;
   }
   .contact-jh {
-    font-size: 12px;
+    font-size: 16px;
     font-weight: bold;
     text-align: left;
     padding: 24px 0px;
     clear: both;
+    opacity: .8;
   }
   .contact-cd-title {
-    font-size: 15px;
-    padding-top: 6px;
+    font-size: 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-weight: bold;
+    opacity: .8;
+    text-align: left;
   }
   .pa-4ma-4 {
-    padding: 12px;
-    margin: 6px;
+    padding: 16px  !important;
+margin: 0px; 
   }
 }
 </style>
