@@ -74,7 +74,7 @@ header {
 }
 
 .ainte-btn {
-  margin-top: 10px;
+  margin-top: 24px;
   margin-bottom: 12px;
   padding: 0px 12px;
   width: 100px !important;
@@ -90,7 +90,6 @@ header {
   text-align: right;
   padding-right: 10px;
   color: #ffffff;
-  font-weight: bold;
   padding-top: 6px;
   margin-bottom: 6px;
 }
@@ -100,7 +99,6 @@ header {
   color: #ffffff;
   text-align: right;
   font-weight: bold;
-  padding-top: 10px;
 }
 @media (max-width: 480px) {
   header {
@@ -138,6 +136,7 @@ header {
     color: #0d47a1 !important;
     height: 20px !important;
     font-size: 12px !important;
+    margin-top: 10px;
   }
   .header-info {
     font-size: 12px !important;

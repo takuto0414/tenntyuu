@@ -34,7 +34,7 @@
         <v-card class="v-color" flat>
           <v-row class="row-avatar" justify="space-around">
             <v-avatar class="avatar" color="#3F51B5" size="48">
-              <v-icon dark> mdi-account-circle </v-icon>
+              <v-icon dark> mdi-thumb-up-outline </v-icon>
               <!--https://pictogrammers.github.io/@mdi/font/2.0.46/ -->
             </v-avatar>
             <div>
@@ -51,7 +51,7 @@
         <v-card class="v-color" flat>
           <v-row class="row-avatar" justify="space-around">
             <v-avatar class="avatar" color="#3F51B5" size="48">
-              <v-icon dark> mdi-account-circle </v-icon>
+              <v-icon dark> mdi-thumb-up-outline</v-icon>
             </v-avatar>
             <div>
               <div class="mainte-pr1">エアコンプラン</div>
@@ -66,7 +66,7 @@
         ><v-card class="v-color" flat>
           <v-row class="row-avatar" justify="space-around">
             <v-avatar class="avatar" color="#3F51B5" size="48">
-              <v-icon dark> mdi-account-circle </v-icon>
+              <v-icon dark>mdi-thumb-up-outline </v-icon>
             </v-avatar>
             <div>
               <div class="mainte-pr1">セットプラン</div>
@@ -81,7 +81,7 @@
         ><v-card class="v-color" flat>
           <v-row class="row-avatar" justify="space-around">
             <v-avatar class="avatar" color="#3F51B5" size="48">
-              <v-icon dark> mdi-account-circle </v-icon>
+              <v-icon dark> mdi-thumb-up-outline </v-icon>
             </v-avatar>
             <div>
               <div class="mainte-pr1">プロプラン</div>
@@ -96,7 +96,7 @@
         ><v-card class="v-color" flat>
           <v-row class="row-avatar" justify="space-around">
             <v-avatar class="avatar" color="#3F51B5" size="48">
-              <v-icon dark> mdi-account-circle </v-icon>
+              <v-icon dark> mdi-thumb-up-outline </v-icon>
             </v-avatar>
             <div>
               <div class="mainte-pr1">年間費でのお取り引き</div>

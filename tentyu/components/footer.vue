@@ -58,7 +58,6 @@ li{
   background-color: #0d47a1;
   color: #ffffff !important;
     opacity: .9;
-
 }
 
 .footer-title {
@@ -86,7 +85,7 @@ li{
 .map {
   text-align: left;
   display: inline-block;
-  padding-left: 6px;
+  padding: 12px 0px 6px 6px;
 }
 
 .map-title li {
@@ -100,11 +99,12 @@ li{
 }
 .map li {
   list-style: none;
+  padding: 3px 0px;
 }
 .footer-btn {
   overflow: hidden;
   margin-top: 15px;
-  padding-left: 6px;
+  padding: 0px 0px 6px 6px;
 }
 
 .footer-btn ul li {
@@ -123,7 +123,7 @@ li{
   .footer-color {
     background-color: #0d47a1;
     color: #ffffff !important;
-    height: 100px;
+    height: 130px;
     clear: both;
     border-top: solid 3px;
     padding-top: 10px;
@@ -137,7 +137,7 @@ li{
   .map {
     text-align: left;
     display: inline-block;
-    padding-left: 6px;
+  padding: 6px 0px 0px 6px;
     font-size: 12px;
   }
   .footer-color {
@@ -148,10 +148,11 @@ li{
   }
   .footer-btn {
     overflow: hidden;
-    margin-top: 3px;
     height: 20px !important;
     text-align: center;
     opacity: 1.0 !important;
+  padding: 0px 0px 3px 6px;
+
   }
   .footer-btn ul li {
     height: 20px;
