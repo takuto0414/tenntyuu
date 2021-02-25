@@ -86,22 +86,18 @@ export default {
         snapshot
           .forEach((doc) => {
             // ログイン成功したメールアドレスと一致するユーザーのプラン情報を送る
-            if ((this.user.email, this.user.password === user)) {
+            if (doc.email===res.email) {
               console.log("ユーザーがログインしています。");
-            } else {
-              // ユーザーはログインしていません。
-            }
-
+            };
+          
             let data = doc.data();
             console.log("SUCEESS getting document:", data);
             this.$store.commit("auth", {
               planName: data.radios,
-            });
+            })
           })
 
-          .catch(function (error) {
-            console.log("Error getting document:", error);
-          });
+         
       });
       this.$router.push({ path: "/" });
     },
