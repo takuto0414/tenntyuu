@@ -18,17 +18,29 @@
           <v-btn class="ainte-btn" large depressed to="/maintenance" nuxt
             >メンテナンス</v-btn
           >
-          <v-btn class="ainte-btn" large depressed to="/login" nuxt
-            >ログイン</v-btn
-          >
+
           <v-btn class="ainte-btn" large depressed to="/contact" nuxt>
             お問い合わせ</v-btn
+          >
+          <v-btn
+            class="ainte-btn"
+            large
+            depressed
+            nuxt
+            v-if="this.$store.state.planName"
+            @click="logoutUser"
+            >ログアウト</v-btn
+          >
+            
+          <v-btn class="ainte-btn" large depressed  nuxt v-else to="login"
+            >ログイン</v-btn
           >
         </div>
 
         <div class="header-info">
           <div>お気軽にお問い合わせください</div>
           <p class="header-tel">TEL：0532-00-0000</p>
+          <a href="tel:000-1234-5678">000-1234-5678</a>
           <p>9:00~18:00　(定休日/土、日、祝日)</p>
         </div>
       </header>
@@ -36,6 +48,18 @@
   </div>
 </template>
 <script>
+import firebase from "~/plugins/firebase.js";
+
+export default {
+  methods: {
+    logoutUser() {
+      firebase.auth().signOut();
+      this.$store.commit("auth", {
+        planName: null,
+      });
+    },
+  },
+};
 </script>
 <style>
 header {

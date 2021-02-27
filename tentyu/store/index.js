@@ -1,5 +1,5 @@
 export const state = () => ({
-    planName: "",
+    planName: null,
 })
 
 export const mutations = {

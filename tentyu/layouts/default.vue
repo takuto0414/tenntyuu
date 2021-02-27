@@ -39,14 +39,14 @@ $sp: 480px; // スマホ
   }
 }
 main {
-  min-height: 150vh;
+  min-height: 100vh;
   text-align: center;
   background-color: #eeeeee !important;
   padding: 12px 0px;
   flex: 1;
 
   @include sp {
-    min-height: 0;
+    min-height: 70vh;
   }
 }
 body {

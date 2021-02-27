@@ -28,9 +28,7 @@
         <a class="inquire-link" @click="login">
           <v-btn class="mainte-btn-login" large depressed nuxt> ログイン</v-btn>
         </a>
-        <a class="inquire-link" @click="logoutUser">
-          <v-btn class="mainte-btn-login" large depressed nuxt> ログアウト</v-btn>
-        </a>
+       
       </div>
       <div class="login-register">
         <a class="non-rg" href="/register">お客様情報登録がお済みでない方</a>
@@ -69,8 +67,9 @@ export default {
         .catch(this.showError);
     },
     auth(res) {
-      console.log("auth", res.user.emailVerified);
-      console.log("auth", res);
+      console.log("auth emailVerified=", res.user.emailVerified);
+      console.log("auth res=", res);
+      console.log("res.user.email", res.user.email);
       if (res.user.emailVerified == false) {
         console.log("emailVerified error");
         this.showErrornewuser(
@@ -79,25 +78,18 @@ export default {
         return;
       }
       // ログイン成功後の処理
-      console.log(res);
       const db = firebase.firestore();
       let user = db.collection("user");
       user.get().then((snapshot) => {
-        snapshot
-          .forEach((doc) => {
-            // ログイン成功したメールアドレスと一致するユーザーのプラン情報を送る
-            if (doc.email===res.email) {
-              console.log("ユーザーがログインしています。");
-            };
-          
-            let data = doc.data();
-            console.log("SUCEESS getting document:", data);
+        snapshot.forEach((doc) => {
+          // ログイン成功したメールアドレスと一致するユーザーのプラン情報を送る
+          let data = doc.data();
+          if (data.email === res.user.email) {
             this.$store.commit("auth", {
               planName: data.radios,
-            })
-          })
-
-         
+            });
+          }
+        });
       });
       this.$router.push({ path: "/" });
     },
@@ -115,7 +107,7 @@ export default {
 .white--text {
   color: red;
 }
-.mainte-btn-login{
+.mainte-btn-login {
   margin-top: 10px;
   margin-bottom: 12px;
   padding: 0px 12px;
@@ -123,7 +115,7 @@ export default {
   font-weight: bold;
   background-color: #0d47a1 !important;
   color: white !important;
-  height: 35px  !important;
+  height: 35px !important;
 }
 
 .theme--light.v-icon {
@@ -139,12 +131,12 @@ export default {
   opacity: 0.8;
 }
 .non-rg {
-  font-size: 18px ;
+  font-size: 18px;
   color: #0d47a1;
 }
 .login-card {
   height: auto;
-padding: 12px;
+  padding: 12px;
   margin: 12px 6px;
 }
 
@@ -201,7 +193,7 @@ padding: 12px;
     margin: 0px;
   }
   .login-bt {
-    margin-top: 0px ;
+    margin-top: 0px;
     text-align: center;
   }
   .v-text-field {
@@ -212,20 +204,20 @@ padding: 12px;
     padding-top: 16px !important;
   }
   .login-vue {
-  margin: 0px 30px;
+    margin: 0px 30px;
   }
   .v-input--selection-controls__ripple {
     height: 0px !important;
   }
-  .mainte-btn-login{
-  margin-top: 10px;
-  margin-bottom: 12px;
-  padding: 0px 12px;
-  width: 80px !important;
-  font-weight: bold;
-  background-color: #0d47a1 !important;
-  color: white !important;
-  height: 28px  !important;
-}
+  .mainte-btn-login {
+    margin-top: 10px;
+    margin-bottom: 12px;
+    padding: 0px 12px;
+    width: 80px !important;
+    font-weight: bold;
+    background-color: #0d47a1 !important;
+    color: white !important;
+    height: 28px !important;
+  }
 }
 </style>
