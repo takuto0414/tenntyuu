@@ -11,7 +11,9 @@
       <br />
       <div>
         2:充実なアフターフォロー
-        <p>修理受付時の優先訪問、出張費、工賃の無料。<br>※部品代のみの請求。</p>
+        <p>
+          修理受付時の優先訪問、出張費、工賃の無料。<br />※部品代のみの請求。
+        </p>
       </div>
       <br />
 
@@ -143,7 +145,7 @@ li {
 }
 .avatar {
   margin: 24px;
-  size: 80  !important;
+  size: 80 !important;
 }
 .mainte-title {
   font-size: 30px;
@@ -284,11 +286,20 @@ li {
     padding: 0px 30px;
   }
   .row-avatar {
-  align-items: center;
-  padding: 12px;
-}
-.avatar {
-  margin: 12px;
-}
+    align-items: center;
+    padding: 12px;
+  }
+  .avatar {
+    margin: 12px;
+  }
+  .v-icon.v-icon {
+    font-size: 18px;
+  }
+  .v-icon.v-icon::before {
+    font-size: 18px;
+  }
+  .v-icon.v-icon::after {
+    font-size: 18px;
+  }
 }
 </style>
