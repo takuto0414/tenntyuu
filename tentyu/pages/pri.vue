@@ -137,9 +137,9 @@
         </div>
         <div>
           <ul>
-            <li>住所：</li>
+            <li>住所：愛知県豊川市谷川町中道181番地</li>
             <li>社名：株式会社　店厨サポート</li>
-            <li>メールアドレス：</li>
+            <li>メールアドレス：s1234567a0530@gmail.com</li>
           </ul>
         </div>
         <div class="rule-r">以上</div>

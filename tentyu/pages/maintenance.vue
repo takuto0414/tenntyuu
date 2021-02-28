@@ -33,7 +33,7 @@
       <ul class="mainte-ul">
         <v-card class="v-color" flat>
           <v-row class="row-avatar" justify="space-around">
-            <v-avatar class="avatar" color="#3F51B5" size="48">
+            <v-avatar class="avatar" color="#2196F3" size="48">
               <v-icon dark> mdi-thumb-up-outline </v-icon>
               <!--https://pictogrammers.github.io/@mdi/font/2.0.46/ -->
             </v-avatar>
@@ -50,7 +50,7 @@
         </v-card>
         <v-card class="v-color" flat>
           <v-row class="row-avatar" justify="space-around">
-            <v-avatar class="avatar" color="#3F51B5" size="48">
+            <v-avatar class="avatar" color="#1E88E5" size="48">
               <v-icon dark> mdi-thumb-up-outline</v-icon>
             </v-avatar>
             <div>
@@ -65,7 +65,7 @@
           </v-row> </v-card
         ><v-card class="v-color" flat>
           <v-row class="row-avatar" justify="space-around">
-            <v-avatar class="avatar" color="#3F51B5" size="48">
+            <v-avatar class="avatar" color="#1976D2" size="48">
               <v-icon dark>mdi-thumb-up-outline </v-icon>
             </v-avatar>
             <div>
@@ -80,7 +80,7 @@
           </v-row> </v-card
         ><v-card class="v-color" flat>
           <v-row class="row-avatar" justify="space-around">
-            <v-avatar class="avatar" color="#3F51B5" size="48">
+            <v-avatar class="avatar" color="#1565C0" size="48">
               <v-icon dark> mdi-thumb-up-outline </v-icon>
             </v-avatar>
             <div>
@@ -95,7 +95,7 @@
           </v-row> </v-card
         ><v-card class="v-color" flat>
           <v-row class="row-avatar" justify="space-around">
-            <v-avatar class="avatar" color="#3F51B5" size="48">
+            <v-avatar class="avatar" color="#0D47A1" size="48">
               <v-icon dark> mdi-thumb-up-outline </v-icon>
             </v-avatar>
             <div>

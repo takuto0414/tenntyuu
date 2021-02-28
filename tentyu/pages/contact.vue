@@ -10,7 +10,7 @@
         <div class="contact-nkm">
           <v-radio-group v-model="contactInformation.radios">
             <template>
-              <div class="contact-im">お問い合わせ種類</div>
+              <div class="contact-im">お問い合わせ項目の選択</div>
             </template>
             <v-radio
               value="ご購入頂いた商品等に関するお問い合わせ(機器の不具合、故障等)"
@@ -44,7 +44,7 @@
             </div>
           </div>
         </div>
-        <div class="contact-jh">お客様情報入力</div>
+        <div class="contact-jh">お客様情報</div>
 
         <div class="contact-nr">
           <ul>
@@ -83,7 +83,26 @@
             </li>
           </ul>
         </div>
-
+ <div class="register-mk">
+            <v-container fluid>
+              <v-checkbox v-model="checkbox">
+                <template v-slot:label>
+                  <v-tooltip bottom>
+                    <template v-slot:activator="{ on }">
+                      <a target="_blank" @click.stop v-on="on">
+                        <a target="_blank" href="/rule">利用規約</a>、<a
+                          target="_blank"
+                          href="/pri"
+                          >プライバシーポリシー</a
+                        >
+                      </a>
+                    </template>
+                    Opens in new window
+                  </v-tooltip>
+                </template>
+              </v-checkbox>
+            </v-container>
+          </div>
         <div class="imoimo">
           <v-btn class="mainte-btn" large depressed @click="showConfirm" nuxt
             >確認</v-btn
@@ -276,7 +295,7 @@ li {
 }
 
 .contact-jh {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   text-align: left;
   padding: 24px 0px;
@@ -300,6 +319,10 @@ li {
 .imoimo {
   padding-top: 80px;
 }
+.register-mk{
+  padding-top: 100px;
+}
+
 @media (max-width: 480px) {
   .imoimo {
     padding-top: 0px;
@@ -384,5 +407,8 @@ li {
     padding: 16px !important;
     margin: 0px;
   }
+  .register-mk{
+  padding-top: 10px;
+}
 }
 </style>

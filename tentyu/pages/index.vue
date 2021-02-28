@@ -34,7 +34,7 @@
         <v-img class="home-img" v-bind:src="image1"></v-img>
         <div class="home-contents-title">空調機器販売、取付</div>
         <p class="home-contents-sub">
-          ルームエアコンから業務用エアコンまで<br />各種メーカーを取り扱いがあります。<br />お店にあったエアコンを選定させて頂きます！
+          ルームエアコンから業務用エアコンまで<br />各種メーカーを取り扱いがあります。<br />お店に合ったエアコンを選定させて頂きます！
         </p>
       </v-card>
       <v-card class="home-contents-card" flat>

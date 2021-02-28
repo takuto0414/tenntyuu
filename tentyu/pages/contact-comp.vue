@@ -12,7 +12,7 @@
 </template>
 <style>
 .contact-comp-font{
-  font-size:16px;
+  font-size:12px;
   opacity: .8;
   margin: 200px 0px;
 }

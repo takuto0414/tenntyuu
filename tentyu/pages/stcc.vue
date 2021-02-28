@@ -10,11 +10,11 @@
           </tr>
           <tr>
             <td style="opacity: 0.6">所在地</td>
-            <td class="stcc-sub">北海道札幌市中央区南1条西16丁目1-323</td>
+            <td class="stcc-sub">愛知県豊川市谷川町中道181番地</td>
           </tr>
           <tr>
             <td style="opacity: 0.6">電話番号</td>
-            <td class="stcc-sub">080-4040-6676</td>
+            <td class="stcc-sub">080-2649-1610</td>
           </tr>
           <tr>
             <td style="opacity: 0.6">受付時間</td>
@@ -22,11 +22,7 @@
           </tr>
           <tr>
             <td style="opacity: 0.6">メールアドレス</td>
-            <td class="stcc-sub">mail@01blog.org</td>
-          </tr>
-          <tr>
-            <td style="opacity: 0.6">ホームページURL</td>
-            <td class="stcc-sub">https://01blog.org/</td>
+            <td class="stcc-sub">s1234567a0530@gmail.com</td>
           </tr>
           <tr>
             <td style="opacity: 0.6">プラン価格</td>
@@ -48,11 +44,11 @@
           </tr>
           <tr>
             <td style="opacity: 0.6">キャンセル・退会</td>
-            <td class="stcc-sub">購入から２週間以内なら可能。</td>
+            <td class="stcc-sub">利用規約、プライバシーポリシーをご参照ください。</td>
           </tr>
           <tr>
             <td style="opacity: 0.6">返金期限</td>
-            <td class="stcc-sub">商品購入より２週間以内にご連絡下さい。</td>
+            <td class="stcc-sub">プラン登録より２週間以内にご連絡下さい。</td>
           </tr>
         </tbody>
       </table>

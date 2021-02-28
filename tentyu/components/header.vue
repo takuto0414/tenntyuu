@@ -39,9 +39,9 @@
 
         <div class="header-info">
           <div>お気軽にお問い合わせください</div>
-          <p class="header-tel">TEL：0532-00-0000</p>
-          <a href="tel:000-1234-5678">000-1234-5678</a>
-          <p>9:00~18:00　(定休日/土、日、祝日)</p>
+          <span class="spanclass">TEL：</span>
+          <a href="tel:080-2649-1610" class="tel-number">080-2649-1610</a>
+          <p>受付時間　9:00~18:00　(定休日/土、日、祝日)</p>
         </div>
       </header>
     </div>
@@ -124,6 +124,10 @@ header {
   text-align: right;
   font-weight: bold;
 }
+.tel-number{
+  color:white;
+}
+
 @media (max-width: 480px) {
   header {
     height: 155px;

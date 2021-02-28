@@ -5,7 +5,10 @@
       <div class="map">
         <ul>
           <li>〒442-0807 愛知県豊川市谷川町中道181番地</li>
-          <li>TEL：0533-00-0000</li>
+          <li>
+            <span class="spanclass">TEL：</span>
+            <a href="tel:080-2649-1610" class="tel-number">080-2649-1610</a>
+          </li>
         </ul>
       </div>
       <div class="footer-btn">
@@ -51,13 +54,13 @@
   </div>
 </template>
 <style>
-li{
+li {
   list-style: none;
 }
 .footer-color {
   background-color: #0d47a1;
   color: #ffffff !important;
-    opacity: .9;
+  opacity: 0.9;
 }
 
 .footer-title {
@@ -112,8 +115,9 @@ li{
   border-right: solid 0.5px;
   color: white !important;
 }
-.v-btn--plain:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover) .v-btn__content {
-     opacity: 1.0; 
+.v-btn--plain:not(.v-btn--active):not(.v-btn--loading):not(:focus):not(:hover)
+  .v-btn__content {
+  opacity: 1;
 }
 @media (max-width: 480px) {
   .footer-btn a {
@@ -127,7 +131,7 @@ li{
     clear: both;
     border-top: solid 3px;
     padding-top: 10px;
-    opacity: .9;
+    opacity: 0.9;
   }
   .footer-title {
     font-size: 15px;
@@ -137,7 +141,7 @@ li{
   .map {
     text-align: left;
     display: inline-block;
-  padding: 6px 0px 0px 6px;
+    padding: 6px 0px 0px 6px;
     font-size: 12px;
   }
   .footer-color {
@@ -150,9 +154,8 @@ li{
     overflow: hidden;
     height: 20px !important;
     text-align: center;
-    opacity: 1.0 !important;
-  padding: 0px 0px 3px 6px;
-
+    opacity: 1 !important;
+    padding: 0px 0px 3px 6px;
   }
   .footer-btn ul li {
     height: 20px;
