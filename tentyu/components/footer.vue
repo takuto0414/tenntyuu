@@ -1,7 +1,7 @@
  <template>
   <div class="footer-color">
     <div class="footerdiv">
-      <div class="footer-title">株式会社　店厨サポート</div>
+      <div class="footer-title">店厨supportヒラマツ</div>
       <div class="map">
         <ul>
           <li>〒442-0807 愛知県豊川市谷川町中道181番地</li>

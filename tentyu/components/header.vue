@@ -5,7 +5,7 @@
         <div class="header-title">
           <div class="header-sub">
             店舗厨房販売サービス<br />
-            <span class="homelink">株式会社　店厨サポート</span>
+            <span class="homelink">店厨<span class="support">support</span>ヒラマツ</span>
           </div>
         </div>
         <div v-if="this.$store.state.planName" class="header-pran">
@@ -77,7 +77,9 @@ header {
   font-size: 40px;
   font-weight: 100;
 }
-
+.support{
+  font-weight: 500;
+}
 .header-title {
   padding-left: 6px;
   color: white !important;
