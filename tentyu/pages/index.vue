@@ -1,8 +1,13 @@
 <template>
   <div>
     <div>
-      <v-img class="home-img-top" v-bind:src="image5"></v-img>
-      <div></div>
+      <v-img class="home-img-top" v-bind:src="image5">
+        
+      </v-img>
+      <div class="anime">会社、自己紹介アニメーション<p>
+        <a class="youtube" href="https://youtu.be/JbmjpYTQRFE"
+          >https://youtu.be/JbmjpYTQRFE</a
+        ></p></div>
     </div>
     <div class="home-main">
       <v-card class="home-contents-card" flat>
@@ -38,7 +43,7 @@
         </p>
       </v-card>
       <v-card class="home-contents-card" flat>
-        <v-img class="home-img"></v-img>
+        <v-img class="home-img" v-bind:src="image7"></v-img>
         <div class="home-contents-title">店舗、厨房改装企画提案</div>
         <p class="home-contents-sub">
           店舗や厨房のレイアウト変更や、<br />1からの店舗作りをサポートさせて頂きます！
@@ -67,9 +72,9 @@ export default {
       image2: require("@/assets/1151779_m.jpg"),
       image3: require("@/assets/1646136_s.jpg"),
       image4: require("@/assets/2045433_s.jpg"),
-      image5: require("@/assets/S__13729841.jpg"),
+      image5: require("@/assets/top.jpg"),
       image6: require("@/assets/S__13729840.jpg"),
-
+      image7: require("@/assets/kikaku4.jpg"),
     };
   },
 };
@@ -116,6 +121,17 @@ export default {
 .home-img {
   height: 550px;
 }
+.anime{
+    text-align: left;
+    padding-left:50px;
+    padding-bottom:12px;
+    opacity: .8;
+    font-size:25px;
+  }
+  .youtube{
+    color: #0045ad;
+
+  }
 @media (max-width: 480px) {
   .home-contents-card {
     float: center;
@@ -151,6 +167,19 @@ export default {
   }
   .home-img {
     height: auto;
+  }
+  
+  .anime{
+    text-align: left;
+    padding-left:20px;
+    padding-bottom:12px;
+    font-size:16px;
+
+    opacity: .6;
+  }
+  .youtube{
+    color: #0045ad;
+
   }
 }
 </style>
