@@ -120,42 +120,36 @@
           <!-- for stripe -->
           <div class="container-">
             <h1 class="title" v-text="title" />
-            <div class="card">
-              <p class="image-area">
-                <img :src="product.image" :alt="product.name" class="image" />
-              </p>
-              <div class="info-area">
-                <h2 class="name" v-text="product.name" />
-                <p class="desc" v-text="product.desc" />
-                <p
-                  class="amount"
-                  v-text="'¥' + product.amount.toLocaleString() + '-'"
-                />
-                <client-only>
-                  <p class="stripe-area">
-                    <card
-                      :options="stripeOptions"
-                      :stripe="stripePK"
-                      class="stripe"
-                      @change="isEntered = $event.complete"
-                    />
-                  </p>
-                </client-only>
-                <div class="message" v-text="message" />
-                <p class="button-area">
-                  <button
-                    class="button"
-                    :class="{ active: isEntered }"
-                    aria-label="決済する"
-                    @click="pay"
-                    v-text="'決済する'"
-                  />
-                </p>
-              </div>
-              <div class="complete" :class="{ active: isComplete }">
-                <p class="message" v-text="'Thank you!'" />
-              </div>
+
+            <div class="credit-card-inputs" :class="{ complete }">
+              <card-number
+                class="stripe-element card-number"
+                ref="cardNumber"
+                :stripe="stripeKey"
+                :options="stripeOptions"
+                @change="number = $event.complete"
+              />
+              <card-expiry
+                class="stripe-element card-expiry"
+                ref="cardExpiry"
+                :stripe="stripeKey"
+                :options="stripeOptions"
+                @change="expiry = $event.complete"
+              />
+              <card-cvc
+                class="stripe-element card-cvc"
+                ref="cardCvc"
+                :stripe="stripeKey"
+                :options="stripeOptions"
+                @change="cvc = $event.complete"
+              />
             </div>
+
+            <!-- <button class="pay-with-stripe" @click="pay" :disabled="!complete"> -->
+            <!-- TOOD 検証用 本番では上をつかう。-->
+            <button class="pay-with-stripe" @click="pay">
+              Pay with credit card
+            </button>
           </div>
 
           <div class="register-mko">
@@ -233,9 +227,14 @@
           </table>
         </v-card>
 
-        <v-btn class="mainte-btn-re" large depressed @click="userConfirm = false"
+        <v-btn
+          class="mainte-btn-re"
+          large
+          depressed
+          @click="userConfirm = false"
           >修正</v-btn
-        >　<v-btn class="mainte-btn-re" large depressed @click="submit"
+        >
+        <v-btn class="mainte-btn-re" large depressed @click="submit"
           >送信</v-btn
         >
       </div>
@@ -245,10 +244,16 @@
 <script>
 import firebase from "~/plugins/firebase.js";
 import axios from "axios";
+import { stripeKey, stripeOptions } from "~/stripeConfig.js";
+import { CardNumber, CardExpiry, CardCvc } from "vue-stripe-elements-plus";
+
 import { Card, createToken } from "vue-stripe-elements-plus";
 export default {
   components: {
     Card,
+    CardNumber,
+    CardExpiry,
+    CardCvc
   },
   data() {
     return {
@@ -262,28 +267,61 @@ export default {
         email: "",
         address: "",
         password: "",
-        radios: "",
+        radios: ""
       },
-
+      complete: false,
+      number: false,
+      expiry: false,
+      cvc: false,
       checkbox: false,
       // for stripe
       title: "決済フォーム",
+      stripeOptions: stripeOptions,
+      stripeKey: stripeKey,
       product: {
         name: "サンプル腕時計",
         desc:
           "こちらは決済フォームのサンプルのためご購入はできません。また、カード番号を入力しても請求されることはありません。ご理解いただいた上でお進みください。カード番号は「4242 4242 4242 4242」をご入力ください。※年月,CVCは任意の値で結構です。",
         amount: 12345,
-        image: "watch.jpg",
+        image: "watch.jpg"
       },
-      stripeOptions: { hidePostalCode: true },
-      stripePK:
-        "pk_test_51IDhq6Fk7j81mLsOOmqflYPapCG1Osj5uxvTm7z58XdfKJaZJaq2WWqLeWnE86zhBNhu6ZxffsKuAidQJFeCD9xD002jmzXUsb",
       message: "",
       isEntered: false,
-      isComplete: false,
+      isComplete: false
     };
   },
+  watch: {
+    number() {
+      this.update();
+    },
+    expiry() {
+      this.update();
+    },
+    cvc() {
+      this.update();
+    }
+  },
   methods: {
+    update() {
+      this.complete = this.number && this.expiry && this.cvc;
+
+      // field completed, find field to focus next
+      if (this.number) {
+        if (!this.expiry) {
+          this.$refs.cardExpiry.focus();
+        } else if (!this.cvc) {
+          this.$refs.cardCvc.focus();
+        }
+      } else if (this.expiry) {
+        if (!this.cvc) {
+          this.$refs.cardCvc.focus();
+        } else if (!this.number) {
+          this.$refs.cardNumber.focus();
+        }
+      }
+      // no focus magic for the CVC field as it gets complete with three
+      // numbers, but can also have four
+    },
     async pay() {
       // 決済用トークン発行
       const tokenResult = await createToken();
@@ -339,7 +377,7 @@ export default {
         {
           email: "test@gmail.com",
           description: "description",
-          source: tokenResult.token.id,
+          source: tokenResult.token.id
         },
         (err, customer) => {
           console.log("決済結果確認", err, customer);
@@ -349,7 +387,7 @@ export default {
             stripe.subscriptions.create(
               {
                 customer: customer.id,
-                plan: "prod_Ir1bTMddSnZhto",
+                plan: "prod_Ir1bTMddSnZhto"
               },
               (err, subscription) => {
                 console.log("決済結果 ", err, subscription);
@@ -388,10 +426,10 @@ export default {
       const db = firebase.firestore();
       db.collection("user")
         .add(this.user)
-        .then(function (res) {
+        .then(function(res) {
           console.log("user create success", res);
         })
-        .catch(function (error) {
+        .catch(function(error) {
           console.log("error", error);
         });
     },
@@ -404,7 +442,7 @@ export default {
       res.user
         .sendEmailVerification()
         .then(this.createUser)
-        .catch(function (error) {
+        .catch(function(error) {
           console.log(error);
           // An error happened.
         });
@@ -415,18 +453,18 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(this.user.email, this.user.password)
         .then(this.register_success)
-        .catch(function (error) {
+        .catch(function(error) {
           console.log("error", error);
         });
       this.$router.push({ path: "/login-comp" });
-    },
+    }
   },
   head() {
     return {
       title: this.title,
-      script: [{ src: "//js.stripe.com/v3/" }],
+      script: [{ src: "//js.stripe.com/v3/" }]
     };
-  },
+  }
 };
 </script>
 <style>
@@ -551,10 +589,10 @@ ion-row {
   font-size: 16px !important;
 }
 .v-label {
-  font-size: 16px  !important;
+  font-size: 16px !important;
 }
 .v-input {
-  font-size: 16px  !important;
+  font-size: 16px !important;
 }
 .register-all {
   padding: 0px 50px;
@@ -570,7 +608,7 @@ ion-row {
   .register-pran {
     padding: 6px 0px;
   }
-  
+
   .register-pran-pran {
     font-size: 12px;
   }
@@ -616,18 +654,18 @@ ion-row {
     font-size: 12px;
   }
   .v-icon {
-  font-size: 10px  !important;
-}
-.v-label {
-  font-size: 12px  !important;
-}
-.v-input {
-  font-size: 12px  !important;
-}
+    font-size: 10px !important;
+  }
+  .v-label {
+    font-size: 12px !important;
+  }
+  .v-input {
+    font-size: 12px !important;
+  }
   .register-all {
     padding: 0px 30px;
   }
- 
+
   .container {
     padding: 0px;
   }
