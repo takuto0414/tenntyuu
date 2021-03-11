@@ -119,37 +119,7 @@
 
           <!-- for stripe -->
           <div class="container-">
-            <h1 class="title" v-text="title" />
-
-            <div class="credit-card-inputs" :class="{ complete }">
-              <card-number
-                class="stripe-element card-number"
-                ref="cardNumber"
-                :stripe="stripeKey"
-                :options="stripeOptions"
-                @change="number = $event.complete"
-              />
-              <card-expiry
-                class="stripe-element card-expiry"
-                ref="cardExpiry"
-                :stripe="stripeKey"
-                :options="stripeOptions"
-                @change="expiry = $event.complete"
-              />
-              <card-cvc
-                class="stripe-element card-cvc"
-                ref="cardCvc"
-                :stripe="stripeKey"
-                :options="stripeOptions"
-                @change="cvc = $event.complete"
-              />
-            </div>
-
-            <!-- <button class="pay-with-stripe" @click="pay" :disabled="!complete"> -->
-            <!-- TOOD 検証用 本番では上をつかう。-->
-            <button class="pay-with-stripe" @click="pay">
-              Pay with credit card
-            </button>
+            <stripe></stripe>
           </div>
 
           <div class="register-mko">
@@ -274,32 +244,10 @@ export default {
       expiry: false,
       cvc: false,
       checkbox: false,
-      // for stripe
-      title: "決済フォーム",
-      stripeOptions: stripeOptions,
-      stripeKey: stripeKey,
-      product: {
-        name: "サンプル腕時計",
-        desc:
-          "こちらは決済フォームのサンプルのためご購入はできません。また、カード番号を入力しても請求されることはありません。ご理解いただいた上でお進みください。カード番号は「4242 4242 4242 4242」をご入力ください。※年月,CVCは任意の値で結構です。",
-        amount: 12345,
-        image: "watch.jpg"
-      },
       message: "",
       isEntered: false,
       isComplete: false
     };
-  },
-  watch: {
-    number() {
-      this.update();
-    },
-    expiry() {
-      this.update();
-    },
-    cvc() {
-      this.update();
-    }
   },
   methods: {
     update() {
@@ -324,15 +272,34 @@ export default {
     },
     async pay() {
       // 決済用トークン発行
-      const tokenResult = await createToken();
-      if (
-        !tokenResult ||
-        !tokenResult.token ||
-        !tokenResult.token.id ||
-        tokenResult.token.id === ""
-      ) {
-        throw new Error("トークン発行エラー");
-      }
+
+      // createToken().then(data => console.log(data.token));
+
+      // const tokenResult = await createToken();
+      // if (
+      //   !tokenResult ||
+      //   !tokenResult.token ||
+      //   !tokenResult.token.id ||
+      //   tokenResult.token.id === ""
+      // ) {
+      //   throw new Error("トークン発行エラー");
+      // }
+
+      const self = this;
+      self.show_result = false;
+      this.stripe.createToken(this.card).then(result => {
+        console.log("result: " + JSON.stringify(result));
+        // エラーの場合
+        if (result.error) {
+          self.show_result = true;
+          self.result_message = result.error.message;
+          // 成功の場合
+        } else {
+          self.show_result = true;
+          self.result_message = "token_id: " + result.token.id;
+        }
+      });
+
       console.log("決済用トークン発行 ");
       // // 決済処理
       // // const chargeResult = await axios.post(
