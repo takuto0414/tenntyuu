@@ -43,7 +43,9 @@
 import axios from "axios";
 import { Card, createToken } from "vue-stripe-elements-plus";
 import { stripeKey, stripeOptions } from "~/stripeConfig.js";
-
+const stripe = require("stripe")(
+  "sk_test_51IDhq6Fk7j81mLsOglLQSHKyFLrAHkq70rnkEXJ5vaAsuwQPiWOLgmeOzs5y9JAgsBFeIwcEkVXXRcbYf1hRFcmU00iG3HExoB"
+);
 // テストカード
 // https://stripe.com/docs/testing
 
@@ -83,20 +85,77 @@ export default {
           throw new Error("トークン発行エラー");
         }
 
-        // 決済処理
-        const chargeResult = await axios.post(
-          `${process.env.FUNCTION_URL}/.netlify/functions/charge`,
+        console.log("トークン: ", tokenResult);
+
+        // // 決済処理
+        // const chargeResult = await axios.post(
+        //   `${process.env.FUNCTION_URL}/.netlify/functions/charge`,
+        //   {
+        //     amount: this.product.amount,
+        //     token: tokenResult.token.id
+        //   }
+        // );
+        // if (!chargeResult || chargeResult.data !== "NORMAL") {
+        //   throw new Error("決済エラー");
+        // }
+        // this.isComplete = true;
+
+        const customers = {
+          email: "customer1@example.com",
+          source: tokenResult.token.id
+        };
+
+        stripe.customers.create(customers, function(err, customer) {
+          if (err) {
+            console.log("error", err);
+          }
+          console.log("customer.id", customer.id);
+        });
+
+        stripe.customers.create(customers).then(customer => {
+          context.log("starting the stripe charges");
+          stripe.charges.create({
+            amount: req.body.stripeAmt,
+            description: "Sample Charge",
+            currency: "usd",
+            customer: customer.id
+          });
+        });
+
+        await stripe.customers.create(
           {
-            amount: this.product.amount,
-            token: tokenResult.token.id
+            email: "test@gmail.com",
+            description: "description",
+            source: tokenResult.token.id
+          },
+          (err, customer) => {
+            console.log("決済結果確認", err, customer);
+
+            if (!err && customer) {
+              // 定期支払い（Subscription）を作成する
+              stripe.subscriptions.create(
+                {
+                  customer: customer.id,
+                  plan: "prod_Ir1bTMddSnZhto"
+                },
+                (err, subscription) => {
+                  console.log("決済結果 ", err, subscription);
+
+                  if (!err && subscription) {
+                    return done(null, { my_msg: "OK" });
+                  } else {
+                    return done(null, {
+                      message: JSON.stringify(err, null, 2)
+                    });
+                  }
+                }
+              );
+            } else {
+              console.log("決済結果エラー ", err);
+            }
           }
         );
-        if (!chargeResult || chargeResult.data !== "NORMAL") {
-          throw new Error("決済エラー");
-        }
-        this.isComplete = true;
       } catch (error) {
-        console.log("error", error);
         this.message = error.message + "が発生しました。";
       }
     }
