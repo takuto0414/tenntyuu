@@ -214,17 +214,7 @@
 <script>
 import firebase from "~/plugins/firebase.js";
 import axios from "axios";
-import { stripeKey, stripeOptions } from "~/stripeConfig.js";
-import { CardNumber, CardExpiry, CardCvc } from "vue-stripe-elements-plus";
-
-import { Card, createToken } from "vue-stripe-elements-plus";
 export default {
-  components: {
-    Card,
-    CardNumber,
-    CardExpiry,
-    CardCvc
-  },
   data() {
     return {
       userConfirm: false,
@@ -250,130 +240,6 @@ export default {
     };
   },
   methods: {
-    update() {
-      this.complete = this.number && this.expiry && this.cvc;
-
-      // field completed, find field to focus next
-      if (this.number) {
-        if (!this.expiry) {
-          this.$refs.cardExpiry.focus();
-        } else if (!this.cvc) {
-          this.$refs.cardCvc.focus();
-        }
-      } else if (this.expiry) {
-        if (!this.cvc) {
-          this.$refs.cardCvc.focus();
-        } else if (!this.number) {
-          this.$refs.cardNumber.focus();
-        }
-      }
-      // no focus magic for the CVC field as it gets complete with three
-      // numbers, but can also have four
-    },
-    async pay() {
-      // 決済用トークン発行
-
-      // createToken().then(data => console.log(data.token));
-
-      // const tokenResult = await createToken();
-      // if (
-      //   !tokenResult ||
-      //   !tokenResult.token ||
-      //   !tokenResult.token.id ||
-      //   tokenResult.token.id === ""
-      // ) {
-      //   throw new Error("トークン発行エラー");
-      // }
-
-      const self = this;
-      self.show_result = false;
-      this.stripe.createToken(this.card).then(result => {
-        console.log("result: " + JSON.stringify(result));
-        // エラーの場合
-        if (result.error) {
-          self.show_result = true;
-          self.result_message = result.error.message;
-          // 成功の場合
-        } else {
-          self.show_result = true;
-          self.result_message = "token_id: " + result.token.id;
-        }
-      });
-
-      console.log("決済用トークン発行 ");
-      // // 決済処理
-      // // const chargeResult = await axios.post(
-      // //   `${process.env.FUNCTION_URL}/.netlify/functions/charge`,
-      // //   {
-      // //     amount: this.product.amount,
-      // //     token: tokenResult.token.id
-      // //   }
-      // // )
-      // // exports.handler = async function(event) {
-      const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-      // const data = {
-      //   amount: this.product.amount,
-      //   token: tokenResult.token.id,
-      // };
-      // console.log("決済リクエスト　トークンID: " + tokenResult.token.id);
-      // console.log("決済リクエスト　トークン: " + tokenResult.token);
-      // let result = false;
-      // const res = await stripe.charges
-      //   .create({
-      //     amount: parseInt(this.product.amount),
-      //     currency: "jpy",
-      //     source: tokenResult.token.id,
-      //   })
-      //   .then(function (result) {
-      //     result = true;
-      //     console.log("決済リクエスト結果: " + result);
-      //   })
-      //   .catch(function (error) {
-      //     // eslint-disable-next-line no-console
-      //     console.log(error.message);
-      //   });
-      // // TODO error handling
-      // // if (!chargeResult || chargeResult.data !== 'NORMAL') {
-      // //   throw new Error('決済エラー')
-      // // }
-      // console.log("決済結果: " + result);
-      // this.isComplete = true;
-
-      // Customer 情報を作成する
-      const res = await stripe.customers.create(
-        {
-          email: "test@gmail.com",
-          description: "description",
-          source: tokenResult.token.id
-        },
-        (err, customer) => {
-          console.log("決済結果確認", err, customer);
-
-          if (!err && customer) {
-            // 定期支払い（Subscription）を作成する
-            stripe.subscriptions.create(
-              {
-                customer: customer.id,
-                plan: "prod_Ir1bTMddSnZhto"
-              },
-              (err, subscription) => {
-                console.log("決済結果 ", err, subscription);
-
-                if (!err && subscription) {
-                  return done(null, { my_msg: "OK" });
-                } else {
-                  return done(null, { message: JSON.stringify(err, null, 2) });
-                }
-              }
-            );
-          } else {
-            console.log("決済結果エラー ", err);
-          }
-        }
-      );
-
-      console.log("決済結果処理終了", res);
-    },
     showConfirm() {
       this.userConfirm = true;
     },
