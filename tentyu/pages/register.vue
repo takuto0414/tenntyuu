@@ -119,43 +119,7 @@
 
           <!-- for stripe -->
           <div class="container-">
-            <h1 class="title" v-text="title" />
-            <div class="card">
-              <p class="image-area">
-                <img :src="product.image" :alt="product.name" class="image" />
-              </p>
-              <div class="info-area">
-                <h2 class="name" v-text="product.name" />
-                <p class="desc" v-text="product.desc" />
-                <p
-                  class="amount"
-                  v-text="'¥' + product.amount.toLocaleString() + '-'"
-                />
-                <client-only>
-                  <p class="stripe-area">
-                    <card
-                      :options="stripeOptions"
-                      :stripe="stripePK"
-                      class="stripe"
-                      @change="isEntered = $event.complete"
-                    />
-                  </p>
-                </client-only>
-                <div class="message" v-text="message" />
-                <p class="button-area">
-                  <button
-                    class="button"
-                    :class="{ active: isEntered }"
-                    aria-label="決済する"
-                    @click="pay"
-                    v-text="'決済する'"
-                  />
-                </p>
-              </div>
-              <div class="complete" :class="{ active: isComplete }">
-                <p class="message" v-text="'Thank you!'" />
-              </div>
-            </div>
+            <stripe></stripe>
           </div>
 
           <div class="register-mko">
@@ -233,9 +197,14 @@
           </table>
         </v-card>
 
-        <v-btn class="mainte-btn-re" large depressed @click="userConfirm = false"
+        <v-btn
+          class="mainte-btn-re"
+          large
+          depressed
+          @click="userConfirm = false"
           >修正</v-btn
-        >　<v-btn class="mainte-btn-re" large depressed @click="submit"
+        >
+        <v-btn class="mainte-btn-re" large depressed @click="submit"
           >送信</v-btn
         >
       </div>
@@ -245,11 +214,7 @@
 <script>
 import firebase from "~/plugins/firebase.js";
 import axios from "axios";
-import { Card, createToken } from "vue-stripe-elements-plus";
 export default {
-  components: {
-    Card,
-  },
   data() {
     return {
       userConfirm: false,
@@ -262,113 +227,19 @@ export default {
         email: "",
         address: "",
         password: "",
-        radios: "",
+        radios: ""
       },
-
+      complete: false,
+      number: false,
+      expiry: false,
+      cvc: false,
       checkbox: false,
-      // for stripe
-      title: "決済フォーム",
-      product: {
-        name: "サンプル腕時計",
-        desc:
-          "こちらは決済フォームのサンプルのためご購入はできません。また、カード番号を入力しても請求されることはありません。ご理解いただいた上でお進みください。カード番号は「4242 4242 4242 4242」をご入力ください。※年月,CVCは任意の値で結構です。",
-        amount: 12345,
-        image: "watch.jpg",
-      },
-      stripeOptions: { hidePostalCode: true },
-      stripePK:
-        "pk_test_51IDhq6Fk7j81mLsOOmqflYPapCG1Osj5uxvTm7z58XdfKJaZJaq2WWqLeWnE86zhBNhu6ZxffsKuAidQJFeCD9xD002jmzXUsb",
       message: "",
       isEntered: false,
-      isComplete: false,
+      isComplete: false
     };
   },
   methods: {
-    async pay() {
-      // 決済用トークン発行
-      const tokenResult = await createToken();
-      if (
-        !tokenResult ||
-        !tokenResult.token ||
-        !tokenResult.token.id ||
-        tokenResult.token.id === ""
-      ) {
-        throw new Error("トークン発行エラー");
-      }
-      console.log("決済用トークン発行 ");
-      // // 決済処理
-      // // const chargeResult = await axios.post(
-      // //   `${process.env.FUNCTION_URL}/.netlify/functions/charge`,
-      // //   {
-      // //     amount: this.product.amount,
-      // //     token: tokenResult.token.id
-      // //   }
-      // // )
-      // // exports.handler = async function(event) {
-      const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-      // const data = {
-      //   amount: this.product.amount,
-      //   token: tokenResult.token.id,
-      // };
-      // console.log("決済リクエスト　トークンID: " + tokenResult.token.id);
-      // console.log("決済リクエスト　トークン: " + tokenResult.token);
-      // let result = false;
-      // const res = await stripe.charges
-      //   .create({
-      //     amount: parseInt(this.product.amount),
-      //     currency: "jpy",
-      //     source: tokenResult.token.id,
-      //   })
-      //   .then(function (result) {
-      //     result = true;
-      //     console.log("決済リクエスト結果: " + result);
-      //   })
-      //   .catch(function (error) {
-      //     // eslint-disable-next-line no-console
-      //     console.log(error.message);
-      //   });
-      // // TODO error handling
-      // // if (!chargeResult || chargeResult.data !== 'NORMAL') {
-      // //   throw new Error('決済エラー')
-      // // }
-      // console.log("決済結果: " + result);
-      // this.isComplete = true;
-
-      // Customer 情報を作成する
-      const res = await stripe.customers.create(
-        {
-          email: "test@gmail.com",
-          description: "description",
-          source: tokenResult.token.id,
-        },
-        (err, customer) => {
-          console.log("決済結果確認", err, customer);
-
-          if (!err && customer) {
-            // 定期支払い（Subscription）を作成する
-            stripe.subscriptions.create(
-              {
-                customer: customer.id,
-                plan: "prod_Ir1bTMddSnZhto",
-              },
-              (err, subscription) => {
-                console.log("決済結果 ", err, subscription);
-
-                if (!err && subscription) {
-                  return done(null, { my_msg: "OK" });
-                } else {
-                  return done(null, { message: JSON.stringify(err, null, 2) });
-                }
-              }
-            );
-          } else {
-            console.log("決済結果エラー ", err);
-          }
-        }
-      );
-
-      console.log("決済結果処理終了", res);
-    },
     showConfirm() {
       this.userConfirm = true;
     },
@@ -388,10 +259,10 @@ export default {
       const db = firebase.firestore();
       db.collection("user")
         .add(this.user)
-        .then(function (res) {
+        .then(function(res) {
           console.log("user create success", res);
         })
-        .catch(function (error) {
+        .catch(function(error) {
           console.log("error", error);
         });
     },
@@ -404,7 +275,7 @@ export default {
       res.user
         .sendEmailVerification()
         .then(this.createUser)
-        .catch(function (error) {
+        .catch(function(error) {
           console.log(error);
           // An error happened.
         });
@@ -415,18 +286,18 @@ export default {
         .auth()
         .createUserWithEmailAndPassword(this.user.email, this.user.password)
         .then(this.register_success)
-        .catch(function (error) {
+        .catch(function(error) {
           console.log("error", error);
         });
       this.$router.push({ path: "/login-comp" });
-    },
+    }
   },
   head() {
     return {
       title: this.title,
-      script: [{ src: "//js.stripe.com/v3/" }],
+      script: [{ src: "//js.stripe.com/v3/" }]
     };
-  },
+  }
 };
 </script>
 <style>
@@ -551,10 +422,10 @@ ion-row {
   font-size: 16px !important;
 }
 .v-label {
-  font-size: 16px  !important;
+  font-size: 16px !important;
 }
 .v-input {
-  font-size: 16px  !important;
+  font-size: 16px !important;
 }
 .register-all {
   padding: 0px 50px;
@@ -570,7 +441,7 @@ ion-row {
   .register-pran {
     padding: 6px 0px;
   }
-  
+
   .register-pran-pran {
     font-size: 12px;
   }
@@ -616,18 +487,18 @@ ion-row {
     font-size: 12px;
   }
   .v-icon {
-  font-size: 10px  !important;
-}
-.v-label {
-  font-size: 12px  !important;
-}
-.v-input {
-  font-size: 12px  !important;
-}
+    font-size: 10px !important;
+  }
+  .v-label {
+    font-size: 12px !important;
+  }
+  .v-input {
+    font-size: 12px !important;
+  }
   .register-all {
     padding: 0px 30px;
   }
- 
+
   .container {
     padding: 0px;
   }
