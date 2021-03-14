@@ -3,12 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-<<<<<<< HEAD
-        "dev": "netlify-lambda serve functions/api & nuxt && nuxt",
         "build": "netlify-lambda build functions/api && nuxt generate && nuxt build",
-=======
-        "build": "nuxt build",
->>>>>>> 63837959c712a162b1fe91b15dadb29b7a057916
         "start": "nuxt build && nuxt start",
         "dev": "netlify-lambda serve functions/api --config webpack.functions.js & nuxt",
         "generate": "netlify-lambda build functions/api & nuxt generate"
