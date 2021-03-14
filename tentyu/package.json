@@ -5,8 +5,9 @@
     "scripts": {
         "build": "netlify-lambda build functions/api && nuxt generate && nuxt build",
         "start": "nuxt build && nuxt start",
-        "dev": "netlify-lambda serve functions/api --config webpack.functions.js & nuxt",
+        "dev": "netlify-lambda serve functions/api & nuxt && nuxt",
         "generate": "netlify-lambda build functions/api & nuxt generate"
+
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.13.1",

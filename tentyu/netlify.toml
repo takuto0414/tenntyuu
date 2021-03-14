@@ -1,10 +1,4 @@
 [build]
-<<<<<<< HEAD
   Command = "yarn build"
   functions = "functions/dist"
   publish = "dist" 
-=======
- Command = "yarn generate"
- functions = "tentyu/functions/dist"
- publish = "dist"
->>>>>>> 63837959c712a162b1fe91b15dadb29b7a057916
