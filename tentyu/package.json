@@ -3,10 +3,10 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
+        "build": "nuxt build",
         "start": "nuxt build && nuxt start",
-        "generate": "netlify-lambda build functions/api & nuxt generate",
-        "dev": "netlify-lambda serve functions/api & nuxt && nuxt",
-        "build": "netlify-lambda build functions/api && nuxt generate && nuxt build"
+        "dev": "netlify-lambda serve functions/api --config webpack.functions.js & nuxt",
+        "generate": "netlify-lambda build functions/api & nuxt generate"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.13.1",

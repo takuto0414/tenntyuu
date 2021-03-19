@@ -1,4 +1,4 @@
 [build]
-  Command = "yarn build"
-  functions = "functions/dist"
-  publish = "dist" 
+ Command = "yarn generate"
+ functions = "tentyu/functions/dist"
+ publish = "dist"
