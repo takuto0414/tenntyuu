@@ -6,7 +6,7 @@
         "build": "nuxt build",
         "start": "nuxt build && nuxt start",
         "dev": "netlify-lambda serve functions/api --config webpack.functions.js & nuxt",
-        "generate": "netlify-lambda build functions/api & nuxt generate"
+        "generate": "netlify-lambda build functions/api && nuxt generate"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.13.1",
@@ -24,4 +24,6 @@
         "vuelidate": "^0.7.6",
         "vuex": "^3.6.2"
     }
+}
+}
 }
