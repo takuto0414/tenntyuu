@@ -1,4 +1,4 @@
 [build]
- Command = "netlify-lambda serve functions/api --config webpack.functions.js & nuxt"
- functions = "tentyu/functions/dist"
- publish = "tentyu/dist"
+Command = "yarn build"
+functions = "tentyu/functions/dist"
+publish = "tentyu/dist"
