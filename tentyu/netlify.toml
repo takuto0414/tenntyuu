@@ -1,4 +1,4 @@
 [build]
- Command = "cd tentyu && yarn build"
+ Command = "netlify-lambda serve functions/api --config webpack.functions.js & nuxt"
  functions = "tentyu/functions/dist"
- publish = "cd tentyu && dist"
+ publish = "tentyu/dist"
