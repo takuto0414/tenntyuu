@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "private": true,
     "scripts": {
-        "build": "netlify-lambda build tentyu/functions/api && nuxt generate",
+        "build": "netlify-lambda build /functions/api && nuxt build",
         "start": "nuxt build && nuxt start",
         "dev": "netlify-lambda serve functions/api --config webpack.functions.js && nuxt",
         "generate": "netlify-lambda build tentyu/functions/api && nuxt generate"
